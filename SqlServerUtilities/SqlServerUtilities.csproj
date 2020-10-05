@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\ColumnDefinition.cs" />
     <Compile Include="Classes\ColumnDescription.cs" />
     <Compile Include="Classes\Constraints.cs" />
     <Compile Include="Classes\DataCommandParameterExtensions.cs" />

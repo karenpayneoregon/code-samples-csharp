@@ -69,6 +69,24 @@ ORDER BY TableName, ColumnName;
             $"SELECT TABLE_NAME FROM [{databaseName}].INFORMATION_SCHEMA.TABLES " + 
             "WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME <> 'sysdiagrams' ORDER BY TABLE_NAME";
 
+        public static string GetColumnProperties =>
+            @"
+SELECT TABLE_CATALOG, 
+       TABLE_SCHEMA, 
+       COLUMN_NAME, 
+       ORDINAL_POSITION, 
+       IS_NULLABLE, 
+       DATA_TYPE, 
+       CHARACTER_MAXIMUM_LENGTH, 
+       CHARACTER_OCTET_LENGTH, 
+       NUMERIC_PRECISION, 
+       NUMERIC_PRECISION_RADIX, 
+       NUMERIC_SCALE, 
+       DATETIME_PRECISION
+FROM INFORMATION_SCHEMA.COLUMNS
+WHERE TABLE_NAME = @TableName
+";
+
         /// <summary>
         /// Get descriptions for each column in a table, if none use column name
         /// </summary>
