@@ -31,8 +31,7 @@ namespace PostBuildRemoveFolder.Forms
             try
             {
 
-                var btn = new Button();
-                btn.Size = new Size(25, txtExcelFileName.ClientSize.Height + 2);
+                var btn = new Button {Size = new Size(25, txtExcelFileName.ClientSize.Height + 2)};
                 btn.Location = new Point(txtExcelFileName.ClientSize.Width - btn.Width, -1);
                 btn.Cursor = Cursors.Default;
                 btn.Click += OpenExcelFileClick;
@@ -51,14 +50,11 @@ namespace PostBuildRemoveFolder.Forms
                 txtSheetName.Text = config.Settings.WorkSheetName;
                 chkLoadOnStartUp.Checked = config.Settings.LoadOnStartUp;
 
-                //var ops = new Operations();
-                //var sheets = ops.WorkSheets(txtExcelFileName.Text);
-
                 // make TextBox inputs read-only to prevent bad entries
-                Controls.OfType<TextBox>().ToList().ForEach(tb =>
+                Controls.OfType<TextBox>().ToList().ForEach(textBox =>
                 {
-                    tb.ReadOnly = true;
-                    tb.BackColor = Color.LightYellow;
+                    textBox.ReadOnly = true;
+                    textBox.BackColor = Color.LightYellow;
                 });
 
                 ActiveControl = txtDestinationPath;
