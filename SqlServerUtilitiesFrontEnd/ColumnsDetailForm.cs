@@ -16,8 +16,11 @@ namespace SqlServerUtilitiesFrontEnd
 
             Shown += Form1_Shown;
 
-            ColumnDetailsListView.ItemSelectionChanged += ListView1_ItemSelectionChanged;
+            ColumnDetailsListView.ItemSelectionChanged += ColumnDetailsListView_ItemSelectionChanged;
+            tableInformationComboBox.SelectedIndexChanged += TableInformationComboBox_SelectedIndexChanged;
         }
+
+
         /// <summary>
         /// Set description text box with (if present) the description for the
         /// current column.
@@ -29,7 +32,7 @@ namespace SqlServerUtilitiesFrontEnd
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void ListView1_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
+        private void ColumnDetailsListView_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
         {
             if (e.IsSelected)
             {
@@ -50,13 +53,25 @@ namespace SqlServerUtilitiesFrontEnd
         /// <param name="e"></param>
         private void GetInformationButton_Click(object sender, EventArgs e)
         {
+            Display();
+        }
+        private void TableInformationComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Display();
+        }
+
+
+        private void Display()
+        {
             ColumnDetailsListView.Items.Clear();
 
-            var detailItems = ((KeyValuePair<string, List<ServerTableItem> >) tableInformationComboBox.SelectedItem);
+            var detailItems = ((KeyValuePair<string, List<ServerTableItem>>) tableInformationComboBox.SelectedItem);
 
             foreach (var serverTableItem in detailItems.Value)
             {
+
                 var item = ColumnDetailsListView.Items.Add(serverTableItem.FieldOrder.ToString());
+
                 item.SubItems.Add(serverTableItem.Field);
                 item.SubItems.Add(serverTableItem.DataType);
                 item.SubItems.Add(serverTableItem.Length.ToString());
@@ -69,8 +84,9 @@ namespace SqlServerUtilitiesFrontEnd
                 item.SubItems.Add(serverTableItem.RelatedTable);
 
                 item.Tag = serverTableItem.Description;
+
             }
-      
+
             ColumnDetailsListView.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
             ColumnDetailsListView.FocusedItem = ColumnDetailsListView.Items[0];
             ColumnDetailsListView.Items[0].Selected = true;
