@@ -111,6 +111,6 @@
   <PropertyGroup>
     <PostBuildEvent>RD /S /Q "$(TargetDir)\Configuration\"
 mkdir $(TargetDir)\Configuration
-xcopy "$(ProjectDir)applications.json" "$(TargetDir)Configuration" /Y</PostBuildEvent>
+start xcopy "$(ProjectDir)applications.json" "$(TargetDir)Configuration" /Y</PostBuildEvent>
   </PropertyGroup>
 </Project>

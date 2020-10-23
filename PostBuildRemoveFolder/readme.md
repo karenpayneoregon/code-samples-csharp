@@ -2,6 +2,7 @@
 
 -  Requires Newtonsoft.Json NuGet package to read the json file.
 Shows how to remove a folder, create a folder and finally copy a file into that folder in the project post build event.
+- Start XCOPY rather than XCOPY can be used to get around a permissions issue which prevented copying.
 
 
 The conventional option is done under properties, *Copy to Output Directory* but there may be time this does not suit a developers requirements.
