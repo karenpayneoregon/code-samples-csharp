@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
+﻿using System.Data.SqlClient;
 using System.Threading.Tasks;
 
 namespace IteratingCodeSample
@@ -36,7 +32,11 @@ namespace IteratingCodeSample
                          */
                         await Task.Delay(500);
 
-                        var country = new Countries() {CountryIdentifier = reader.GetInt32(0), Name = reader.GetString(1)};
+                        var country = new Countries()
+                        {
+                            CountryIdentifier = reader.GetInt32(0),
+                            Name = reader.GetString(1)
+                        };
                         
                         DisplayInformationHandler?.Invoke(country);
                     }
