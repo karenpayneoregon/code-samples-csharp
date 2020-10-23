@@ -1,7 +1,7 @@
 ﻿using System.Data.SqlClient;
 using System.Threading.Tasks;
 
-namespace IteratingCodeSample
+namespace IteratingCodeSample.Classes
 {
     public class Operations
     {

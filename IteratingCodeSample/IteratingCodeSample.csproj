@@ -41,13 +41,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Countries.cs" />
-    <Compile Include="Operations.cs" />
+    <Compile Include="Classes\Countries.cs" />
+    <Compile Include="Classes\Operations.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Classes\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="readme.md" />
   </ItemGroup>

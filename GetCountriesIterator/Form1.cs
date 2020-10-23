@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using IteratingCodeSample;
+using IteratingCodeSample.Classes;
 
 namespace GetCountriesIterator
 {
