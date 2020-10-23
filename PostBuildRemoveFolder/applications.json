@@ -1,0 +1,11 @@
+﻿[
+  {
+    "DestinationPath": "C:\\OED\\TestData\\Done",
+    "PdfFileLocationPath": "C:\\OED\\TestData",
+    "ExcelFileLocationPath": "C:\\OED\\TestData\\Excel",
+    "ExcelFileName": "copy.xlsx",
+    "WorkSheetName": "SuccessfulRecords",
+    "LoadOnStartUp": true
+  }
+]
+
