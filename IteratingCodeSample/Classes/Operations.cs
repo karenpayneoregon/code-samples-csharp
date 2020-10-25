@@ -1,4 +1,6 @@
-﻿using System.Data.SqlClient;
+﻿using System;
+using System.Data;
+using System.Data.SqlClient;
 using System.Threading.Tasks;
 
 namespace IteratingCodeSample.Classes
@@ -10,6 +12,7 @@ namespace IteratingCodeSample.Classes
 
         private static string _connectionString = "Data Source=.\\sqlexpress;Initial " +
                                           "Catalog=northwind2020;Integrated Security=True";
+
         /// <summary>
         /// Get countries, the user interface remains responsive
         /// </summary>
