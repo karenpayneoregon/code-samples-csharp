@@ -27,7 +27,7 @@ namespace CommandLineArguments
         public static bool Refresh => HasCommandLineArguments && CommandLineArguments.Contains("-REFRESH");
 
         /// <summary>
-        /// Used to get command argument count
+        /// Are there arguments
         /// </summary>
         /// <returns>Count of command arguments sent on startup of application</returns>
         public static bool HasCommandLineArguments => CommandLineArguments.Length > 0;
