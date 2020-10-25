@@ -14,7 +14,7 @@ private void Form1_Shown(object sender, System.EventArgs e)
 {
     if (!ApplicationHelper.HasCommandLineArguments) return;
 
-    Console.WriteLine(ApplicationHelper.AdminMode ? "Admin mode" : "Normal mode");
+    Console.WriteLine(ApplicationHelper.IsAdminMode ? "Admin mode" : "Normal mode");
     Console.WriteLine(ApplicationHelper.Refresh ? "Refresh" : "Do not refresh");
 }
 ```
