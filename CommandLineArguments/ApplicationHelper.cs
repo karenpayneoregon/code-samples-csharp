@@ -31,5 +31,9 @@ namespace CommandLineArguments
         /// </summary>
         /// <returns>Count of command arguments sent on startup of application</returns>
         public static bool HasCommandLineArguments => CommandLineArguments.Length > 0;
+        /// <summary>
+        /// Get command line argument count
+        /// </summary>
+        public static int ArgumentCount => CommandLineArguments.Length;
     }
 }
