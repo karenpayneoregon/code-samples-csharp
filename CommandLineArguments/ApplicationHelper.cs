@@ -23,7 +23,7 @@ namespace CommandLineArguments
             }
         }
 
-        public static bool AdminMode => HasCommandLineArguments && CommandLineArguments.Contains("-ADMIN");
+        public static bool IsAdminMode => HasCommandLineArguments && CommandLineArguments.Contains("-ADMIN");
         public static bool Refresh => HasCommandLineArguments && CommandLineArguments.Contains("-REFRESH");
 
         /// <summary>
