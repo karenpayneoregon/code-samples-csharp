@@ -3,6 +3,13 @@ using System.Linq;
 
 namespace CommandLineArguments
 {
+    /// <summary>
+    /// For obtaining command line arguments
+    /// </summary>
+    /// <remarks>
+    /// VB.NET version
+    /// https://github.com/karenpayneoregon/visual-basic-getting-started/blob/master/MyApplicationNamespace/ApplicationEvents.vb
+    /// </remarks>
     public class ApplicationHelper
     {
         /// <summary>
