@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WinFormsControlsExtensions;
 
 namespace ProcessCmdKeyExample
 {
@@ -16,6 +17,14 @@ namespace ProcessCmdKeyExample
         {
             InitializeComponent();
         }
+        public IEnumerable<Control> GetAll(Control control, Type type)
+        {
+            var controls = control.Controls.Cast<Control>();
+
+            return controls.SelectMany(ctrl => GetAll(ctrl, type))
+                .Concat(controls)
+                .Where(c => c.GetType() == type);
+        }
         /// <summary>
         /// Pick a key combination to toggle the CheckBox
         /// </summary>
@@ -24,9 +33,22 @@ namespace ProcessCmdKeyExample
         /// <returns></returns>
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
         {
-            if (keyData == (Keys.Control | Keys.Alt | Keys.Space))
+            if (keyData == (Keys.Control | Keys.Space))
             {
-                checkBox1.Checked = !checkBox1.Checked;
+
+                this.CheckBoxList().ForEach(cb =>
+                {
+                    var cBox = (CheckBox) cb;
+                    if (cBox.Checked)
+                    {
+                        cBox.Checked = false;
+                    }
+                    else
+                    {
+                        cBox.Checked = true;
+                    }
+                });
+
                 return true;
             }
 
@@ -35,7 +57,7 @@ namespace ProcessCmdKeyExample
                 if (ActiveControl.Name == FirstNameTextBox.Name)
                 {
                     ActiveControl = checkBox1;
-                    Console.WriteLine(this.ActiveControl.Name);
+                    Console.WriteLine(ActiveControl.Name);
                     return true;
                 }
 

@@ -80,5 +80,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WinFormsControlsExtensions\WinFormsControlsExtensions.csproj">
+      <Project>{789a3c2e-436f-4d33-86b6-ccec9f98f7b3}</Project>
+      <Name>WinFormsControlsExtensions</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
