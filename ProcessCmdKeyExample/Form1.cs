@@ -57,13 +57,13 @@ namespace ProcessCmdKeyExample
                 if (ActiveControl.Name == FirstNameTextBox.Name)
                 {
                     ActiveControl = checkBox1;
-                    Console.WriteLine(ActiveControl.Name);
                     return true;
                 }
 
             }
 
             return base.ProcessCmdKey(ref msg, keyData);
+
         }
     }
 }
