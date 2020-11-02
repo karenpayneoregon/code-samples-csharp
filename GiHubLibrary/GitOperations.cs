@@ -54,8 +54,14 @@ namespace GiHubLibrary
 
 
         }
+
+        private int PublicRepositoryCount()
+        {
+            return 0;
+        }
+
         /// <summary>
-        /// Get repo details
+        /// Get repo details, need to better read json
         /// </summary>
         /// <returns></returns>
         public static RepositoryDetails Details()
