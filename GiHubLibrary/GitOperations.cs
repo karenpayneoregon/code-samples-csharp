@@ -56,7 +56,10 @@ namespace GiHubLibrary
 
         }
 
-
+        /// <summary>
+        /// Count of repositories
+        /// </summary>
+        /// <returns></returns>
         private static int PublicRepositoryCount()
         {
             return Details().public_repos;
@@ -68,9 +71,7 @@ namespace GiHubLibrary
         /// <returns></returns>
         public static RepositoryDetails Details()
         {
-
-            var request = WebRequest.Create("https://api.github.com/users/karenpayneoregon") as HttpWebRequest;
-            if (request != null)
+            if (WebRequest.Create("https://api.github.com/users/karenpayneoregon") is HttpWebRequest request)
             {
                 request.UserAgent = "TestApp";
 
