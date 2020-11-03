@@ -40,8 +40,6 @@ namespace GitHubRepositoryExamples
                 _lastSelectedRepositoryName = RepositoryListBox.Text;
             }
 
-
-
             RepositoryListBox.DataSource = null;
 
             _repositories = new BindingList<Repository>(await GitOperations.DownLoadPublicRepositoriesAsync());

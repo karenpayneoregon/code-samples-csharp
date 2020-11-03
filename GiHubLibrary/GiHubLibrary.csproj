@@ -45,6 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="GitOperations.cs" />
+    <Compile Include="GitSettings.cs" />
     <Compile Include="Owner.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository.cs" />
