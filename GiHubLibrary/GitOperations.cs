@@ -31,33 +31,85 @@ namespace GiHubLibrary
         }
 
         /// <summary>
-        /// TODO - refactor into for-next using count from Details()
+        /// TODO
+        ///   - refactor into for-next using count from Details()
+        ///   - placeholder for user name
+        ///   - token for page and per page
         /// </summary>
         public static void DownLoad()
         {
-            HttpWebRequest request = WebRequest.Create("https://api.github.com/users/karenpayneoregon/repos?page=3&per_page=100; rel=\"last") as HttpWebRequest;
-            request.UserAgent = "TestApp";
-            using (HttpWebResponse response = request.GetResponse() as HttpWebResponse)
+            //var request = WebRequest.Create("https://api.github.com/users/karenpayneoregon/repos?page=3&per_page=100; rel=\"last") as HttpWebRequest;
+            var request = WebRequest.Create("https://api.github.com/users/karenpayneoregon/repos?per_page=100") as HttpWebRequest;
+
+            if (request != null)
             {
-                StreamReader reader = new StreamReader(response.GetResponseStream());
-                var json = reader.ReadToEnd();
-                List<Repository> repositories = JsonConvert.DeserializeObject<List<Repository>>(json);
+                request.UserAgent = "TestApp";
 
-                Console.WriteLine();
-                foreach (var repository in repositories)
+                using (HttpWebResponse response = request.GetResponse() as HttpWebResponse)
                 {
-                    Console.WriteLine(repository.Name);
-                }
-                Console.WriteLine(repositories.Count);
+                    var reader = new StreamReader(response.GetResponseStream());
+                    var json = reader.ReadToEnd();
+                    var repositories = JsonConvert.DeserializeObject<List<Repository>>(json);
 
+
+                    foreach (var repository in repositories)
+                    {
+                        Console.WriteLine(repository.Name);
+                    }
+
+                    Console.WriteLine(repositories.Count);
+                }
             }
+        }
+
+        public static async  Task<List<Repository>> DownLoadPublicRepositoriesAsync()
+        {
+
+            var repoList = new List<Repository>();
+
+
+            return await Task.Run(async () =>
+            {
+                var page = 1;
+
+                while (true)
+                {
+
+                    var request = WebRequest.Create($"https://api.github.com/users/karenpayneoregon/repos?page={page}&per_page=100; rel=\"next") as HttpWebRequest;
+
+                    request.UserAgent = "TestApp";
+
+                    using (var response = request.GetResponse() as HttpWebResponse)
+                    {
+                        var reader = new StreamReader(response.GetResponseStream());
+                        var json = await reader.ReadToEndAsync();
+                        var repositories = JsonConvert.DeserializeObject<List<Repository>>(json);
+
+                        if (repositories.Count != 0)
+                        {
+                            repoList.AddRange(repositories);
+                        }
+                        else
+                        {
+                            break;
+                        }
+
+                        page += 1;
+                    }
+
+                }
+
+                return repoList;
+
+            });
 
 
         }
 
-        private int PublicRepositoryCount()
+
+        private static int PublicRepositoryCount()
         {
-            return 0;
+            return Details().public_repos;
         }
 
         /// <summary>
@@ -68,31 +120,40 @@ namespace GiHubLibrary
         {
 
             var request = WebRequest.Create("https://api.github.com/users/karenpayneoregon") as HttpWebRequest;
-            request.UserAgent = "TestApp";
-
-            using (var response = request.GetResponse() as HttpWebResponse)
+            if (request != null)
             {
-                if (response != null)
-                {
-                    StreamReader reader = new StreamReader(response.GetResponseStream());
-                    var json = $"[{reader.ReadToEnd()}]";
+                request.UserAgent = "TestApp";
 
-                    try
+                using (var response = request.GetResponse() as HttpWebResponse)
+                {
+                    if (response != null)
                     {
-                        RepositoryDetails[] results = JsonConvert.DeserializeObject<RepositoryDetails[]>(json);
-                        return results[0];
+                        var reader = new StreamReader(response.GetResponseStream());
+                        var json = $"[{reader.ReadToEnd()}]";
+
+                        try
+                        {
+                            var results = JsonConvert.DeserializeObject<RepositoryDetails[]>(json);
+                            return results[0];
+                        }
+                        catch (Exception)
+                        {
+                            return null;
+                        }
                     }
-                    catch (Exception)
+                    else
                     {
                         return null;
                     }
                 }
-                else
-                {
-                    return null;
-                }
+            }
+            else
+            {
+                return null;
             }
         }
     }
+
+
 }
 

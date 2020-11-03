@@ -11,6 +11,7 @@ namespace GiHubLibrary
         [JsonProperty(PropertyName = "name")]
         public string Name { get; set; }
         public string full_name { get; set; }
+
         [JsonProperty(PropertyName = "private")]
         public bool Private { get; set; }
         public Owner owner { get; set; }
@@ -81,5 +82,9 @@ namespace GiHubLibrary
         public int open_issues { get; set; }
         public int watchers { get; set; }
         public string default_branch { get; set; }
+        public override string ToString()
+        {
+            return Name;
+        }
     }
 }
