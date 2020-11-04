@@ -103,6 +103,7 @@
     <None Include="Resources\Web_16x.png" />
     <None Include="Resources\ASX_Run_blue_16x.png" />
     <Content Include="git1.ico" />
+    <None Include="Resources\spinner.gif" />
     <Content Include="TextFile1.txt" />
   </ItemGroup>
   <ItemGroup />

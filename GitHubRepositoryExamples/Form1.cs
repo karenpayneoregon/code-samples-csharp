@@ -11,10 +11,17 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using GiHubLibrary;
 using GitHubRepositoryExamples.Classes;
+using static GitHubRepositoryExamples.Properties.Resources;
 
 
 namespace GitHubRepositoryExamples
 {
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <remarks>
+    /// Larger repositories will take longer to load.
+    /// </remarks>
     public partial class Form1 : Form
     {
         private BindingList<Repository> _repositories;
@@ -70,6 +77,9 @@ namespace GitHubRepositoryExamples
         /// <returns></returns>
         private async Task FetchSelectedRepository()
         {
+
+            WorkingPictureBox.Image = spinner;
+
             if (RepositoryListBox.DataSource != null)
             {
                 _lastSelectedRepositoryName = RepositoryListBox.Text;
@@ -105,6 +115,7 @@ namespace GitHubRepositoryExamples
             }
 
             ActiveControl = RepositoryListBox;
+            WorkingPictureBox.Image = null;
         }
 
         /// <summary>

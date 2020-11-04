@@ -48,14 +48,18 @@
             this.label6 = new System.Windows.Forms.Label();
             this.StarGazersCountTextBox = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.RepositoryTextBox = new GitHubRepositoryExamples.Classes.NoBeepTextBox();
             this.RepoListContextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.dotnetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.erikEJToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.kamiKillertOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.googleCloudPlatformToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.regawleinadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.karenpayneoregonToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sindresorhusToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.WorkingPictureBox = new System.Windows.Forms.PictureBox();
+            this.RepositoryTextBox = new GitHubRepositoryExamples.Classes.NoBeepTextBox();
             this.RepoListContextMenu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.WorkingPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // RepositoryListBox
@@ -150,7 +154,7 @@
             // BrowseRepositoryButton
             // 
             this.BrowseRepositoryButton.Image = global::GitHubRepositoryExamples.Properties.Resources.Web_16x;
-            this.BrowseRepositoryButton.Location = new System.Drawing.Point(983, 168);
+            this.BrowseRepositoryButton.Location = new System.Drawing.Point(983, 171);
             this.BrowseRepositoryButton.Name = "BrowseRepositoryButton";
             this.BrowseRepositoryButton.Size = new System.Drawing.Size(33, 23);
             this.BrowseRepositoryButton.TabIndex = 13;
@@ -188,7 +192,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(372, 309);
+            this.label6.Location = new System.Drawing.Point(372, 303);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(61, 13);
             this.label6.TabIndex = 18;
@@ -196,7 +200,7 @@
             // 
             // StarGazersCountTextBox
             // 
-            this.StarGazersCountTextBox.Location = new System.Drawing.Point(375, 325);
+            this.StarGazersCountTextBox.Location = new System.Drawing.Point(375, 319);
             this.StarGazersCountTextBox.Name = "StarGazersCountTextBox";
             this.StarGazersCountTextBox.Size = new System.Drawing.Size(138, 20);
             this.StarGazersCountTextBox.TabIndex = 19;
@@ -210,14 +214,6 @@
             this.label7.TabIndex = 20;
             this.label7.Text = "Repository";
             // 
-            // RepositoryTextBox
-            // 
-            this.RepositoryTextBox.ContextMenuStrip = this.RepoListContextMenu;
-            this.RepositoryTextBox.Location = new System.Drawing.Point(18, 26);
-            this.RepositoryTextBox.Name = "RepositoryTextBox";
-            this.RepositoryTextBox.Size = new System.Drawing.Size(335, 20);
-            this.RepositoryTextBox.TabIndex = 22;
-            // 
             // RepoListContextMenu
             // 
             this.RepoListContextMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -225,9 +221,11 @@
             this.erikEJToolStripMenuItem,
             this.kamiKillertOToolStripMenuItem,
             this.googleCloudPlatformToolStripMenuItem,
-            this.regawleinadToolStripMenuItem});
+            this.regawleinadToolStripMenuItem,
+            this.karenpayneoregonToolStripMenuItem,
+            this.sindresorhusToolStripMenuItem});
             this.RepoListContextMenu.Name = "RepoListContextMenu";
-            this.RepoListContextMenu.Size = new System.Drawing.Size(191, 114);
+            this.RepoListContextMenu.Size = new System.Drawing.Size(191, 158);
             // 
             // dotnetToolStripMenuItem
             // 
@@ -259,11 +257,40 @@
             this.regawleinadToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
             this.regawleinadToolStripMenuItem.Text = "regaw-leinad";
             // 
+            // karenpayneoregonToolStripMenuItem
+            // 
+            this.karenpayneoregonToolStripMenuItem.Name = "karenpayneoregonToolStripMenuItem";
+            this.karenpayneoregonToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
+            this.karenpayneoregonToolStripMenuItem.Text = "karenpayneoregon";
+            // 
+            // sindresorhusToolStripMenuItem
+            // 
+            this.sindresorhusToolStripMenuItem.Name = "sindresorhusToolStripMenuItem";
+            this.sindresorhusToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
+            this.sindresorhusToolStripMenuItem.Text = "sindresorhus";
+            // 
+            // WorkingPictureBox
+            // 
+            this.WorkingPictureBox.Location = new System.Drawing.Point(653, 270);
+            this.WorkingPictureBox.Name = "WorkingPictureBox";
+            this.WorkingPictureBox.Size = new System.Drawing.Size(67, 65);
+            this.WorkingPictureBox.TabIndex = 24;
+            this.WorkingPictureBox.TabStop = false;
+            // 
+            // RepositoryTextBox
+            // 
+            this.RepositoryTextBox.ContextMenuStrip = this.RepoListContextMenu;
+            this.RepositoryTextBox.Location = new System.Drawing.Point(18, 26);
+            this.RepositoryTextBox.Name = "RepositoryTextBox";
+            this.RepositoryTextBox.Size = new System.Drawing.Size(335, 20);
+            this.RepositoryTextBox.TabIndex = 22;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1024, 449);
+            this.Controls.Add(this.WorkingPictureBox);
             this.Controls.Add(this.RepositoryTextBox);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.StarGazersCountTextBox);
@@ -291,6 +318,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GitHub stuff";
             this.RepoListContextMenu.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.WorkingPictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -322,6 +350,9 @@
         private System.Windows.Forms.ToolStripMenuItem kamiKillertOToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem googleCloudPlatformToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem regawleinadToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem karenpayneoregonToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem sindresorhusToolStripMenuItem;
+        private System.Windows.Forms.PictureBox WorkingPictureBox;
     }
 }
 
