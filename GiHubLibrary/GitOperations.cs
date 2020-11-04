@@ -11,12 +11,15 @@ namespace GiHubLibrary
 {
     public class GitOperations
     {
-
-        public static async  Task<List<Repository>> DownLoadPublicRepositoriesAsync()
+        /// <summary>
+        /// Fetch repository
+        /// </summary>
+        /// <param name="domain">valid domain name</param>
+        /// <returns></returns>
+        public static async  Task<List<Repository>> DownLoadPublicRepositoriesAsync(string domain)
         {
 
             var repoList = new List<Repository>();
-
 
             return await Task.Run(async () =>
             {
@@ -25,7 +28,7 @@ namespace GiHubLibrary
                 while (true)
                 {
 
-                    var request = WebRequest.Create($"https://api.github.com/users/karenpayneoregon/repos?page={page}&per_page=100; rel=\"next") as HttpWebRequest;
+                    var request = WebRequest.Create($"https://api.github.com/users/{domain}/repos?page={page}&per_page=100; rel=\"next") as HttpWebRequest;
 
                     request.UserAgent = "TestApp";
 
@@ -62,16 +65,16 @@ namespace GiHubLibrary
         /// <returns></returns>
         private static int PublicRepositoryCount()
         {
-            return Details().public_repos;
+            return Details("").public_repos;
         }
 
         /// <summary>
         /// Get repo details, need to better read json
         /// </summary>
         /// <returns></returns>
-        public static RepositoryDetails Details()
+        public static RepositoryDetails Details(string domain)
         {
-            if (WebRequest.Create("https://api.github.com/users/karenpayneoregon") is HttpWebRequest request)
+            if (WebRequest.Create($"https://api.github.com/users/{domain}") is HttpWebRequest request)
             {
                 request.UserAgent = "TestApp";
 

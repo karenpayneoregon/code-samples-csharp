@@ -22,8 +22,35 @@ namespace GitHubRepositoryExamples
         {
             InitializeComponent();
 
+            // handles incremental search in repository ListBox
             SearchTextBox.TextChanged += SearchTextBox_TextChanged;
 
+            // notification ENTER was pressed to invoke repository fetch.
+            RepositoryTextBox.TriggerEvent += RepositoryTextBox_TriggerEvent;
+
+            // for each menu item subscribe to the Click event
+            RepoListContextMenu
+                .Items.Cast<ToolStripItem>()
+                .ToList()
+                .ForEach(item => item.Click += ContextMenuItem_Click);
+        }
+
+        /// <summary>
+        /// Place selected repository name into the TextBox
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ContextMenuItem_Click(object sender, EventArgs e)
+        {
+            RepositoryTextBox.Text = ((ToolStripMenuItem) sender).Text;
+            ActiveControl = RepositoryTextBox;
+        }
+        /// <summary>
+        /// Triggered when ENTER is pressed in the repository TextBox
+        /// </summary>
+        private async void RepositoryTextBox_TriggerEvent()
+        {
+            await FetchSelectedRepository();
         }
 
         private string _lastSelectedRepositoryName;
@@ -35,6 +62,14 @@ namespace GitHubRepositoryExamples
         /// <param name="e"></param>
         private async void FetchRepositoriesButton_Click(object sender, EventArgs e)
         {
+            await FetchSelectedRepository();
+        }
+        /// <summary>
+        /// Fetch repository in repository TextBox
+        /// </summary>
+        /// <returns></returns>
+        private async Task FetchSelectedRepository()
+        {
             if (RepositoryListBox.DataSource != null)
             {
                 _lastSelectedRepositoryName = RepositoryListBox.Text;
@@ -42,10 +77,22 @@ namespace GitHubRepositoryExamples
 
             RepositoryListBox.DataSource = null;
 
-            _repositories = new BindingList<Repository>(await GitOperations.DownLoadPublicRepositoriesAsync());
+            try
+            {
+                _repositories =
+                    new BindingList<Repository>(await GitOperations.DownLoadPublicRepositoriesAsync(RepositoryTextBox.Text));
+            }
+            catch (Exception ex)
+            {
+                // a consideration is rate limit
+                MessageBox.Show($"Failed to get repositories\n{ex.Message}");
+                return;
+            }
+
             RepositoryListBox.DataSource = _repositories;
 
             BindControls();
+
             ControlHelpers.SetWaterMarkers(this);
 
             if (!string.IsNullOrWhiteSpace(_lastSelectedRepositoryName))
@@ -58,8 +105,8 @@ namespace GitHubRepositoryExamples
             }
 
             ActiveControl = RepositoryListBox;
-
         }
+
         /// <summary>
         /// Incremental search on loaded repositories
         /// </summary>
@@ -89,6 +136,8 @@ namespace GitHubRepositoryExamples
             FullNameTextBox.DataBindings.Add("Text", _repositories, "full_name");
             HtmlUrlTextBox.DataBindings.Add("Text", _repositories, "html_url");
             LanguageTextBox.DataBindings.Add("Text", _repositories, "language");
+            LastUpdatedTextBox.DataBindings.Add("Text", _repositories, "LastUpdated");
+            StarGazersCountTextBox.DataBindings.Add("Text", _repositories, "StarGazersCount");
 
         }
         /// <summary>
@@ -96,10 +145,9 @@ namespace GitHubRepositoryExamples
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void button2_Click(object sender, EventArgs e)
+        private void TempCodeButton_Click(object sender, EventArgs e)
         {
-            var current = (Repository) RepositoryListBox.SelectedItem;
-            Console.WriteLine();
+            var test = GitOperations.Details(RepositoryTextBox.Text);
         }
         /// <summary>
         /// Browse to current repository on GitHub in default web browser
