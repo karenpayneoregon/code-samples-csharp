@@ -89,8 +89,7 @@ namespace GitHubRepositoryExamples
 
             try
             {
-                _repositories =
-                    new BindingList<Repository>(await GitOperations.DownLoadPublicRepositoriesAsync(RepositoryTextBox.Text));
+                _repositories = new BindingList<Repository>(await GitOperations.DownLoadPublicRepositoriesAsync(RepositoryTextBox.Text));
             }
             catch (Exception ex)
             {
@@ -152,13 +151,26 @@ namespace GitHubRepositoryExamples
 
         }
         /// <summary>
-        /// Temp code
+        /// Temp code for testing
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void TempCodeButton_Click(object sender, EventArgs e)
         {
-            var test = GitOperations.Details(RepositoryTextBox.Text);
+            if (RepositoryListBox.DataSource == null || string.IsNullOrWhiteSpace(RepositoryListBox.Text)) return;
+
+            var directories = GitOperations.Directories(RepositoryTextBox.Text, RepositoryListBox.Text);
+            var dirNames = directories.Where(item => item.type == "dir").Select(item => item.name).ToList();
+
+            var repoDirectoryForm = new RepositoryDirectoryForm(dirNames);
+            try
+            {
+                repoDirectoryForm.ShowDialog();
+            }
+            finally
+            {
+                repoDirectoryForm.Dispose();
+            }
         }
         /// <summary>
         /// Browse to current repository on GitHub in default web browser

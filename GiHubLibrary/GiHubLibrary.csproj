@@ -44,6 +44,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GitRepositoryDirectory.cs" />
+    <Compile Include="GitRepositoryLinks.cs" />
     <Compile Include="RepositoryProjectItem.cs" />
     <Compile Include="GitOperations.cs" />
     <Compile Include="GitSettings.cs" />
