@@ -1,6 +1,6 @@
-﻿namespace GitHubRepositoryExamples
+﻿namespace GitHubRepositoryExamples.Forms
 {
-    partial class Form1
+    partial class MainForm
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.RepositoryListBox = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.DescriptionTextBox = new System.Windows.Forms.TextBox();
@@ -41,8 +41,6 @@
             this.SearchTextBox = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.LanguageTextBox = new System.Windows.Forms.TextBox();
-            this.BrowseRepositoryButton = new System.Windows.Forms.Button();
-            this.FetchRepositoriesButton = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.LastUpdatedTextBox = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -56,8 +54,12 @@
             this.regawleinadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.karenpayneoregonToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sindresorhusToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ProjectRecentCommitsButton = new System.Windows.Forms.Button();
             this.WorkingPictureBox = new System.Windows.Forms.PictureBox();
+            this.BrowseRepositoryButton = new System.Windows.Forms.Button();
+            this.FetchRepositoriesButton = new System.Windows.Forms.Button();
             this.RepositoryTextBox = new GitHubRepositoryExamples.Classes.NoBeepTextBox();
+            this.CloseApplicationButton = new System.Windows.Forms.Button();
             this.RepoListContextMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.WorkingPictureBox)).BeginInit();
             this.SuspendLayout();
@@ -88,7 +90,7 @@
             // 
             // TempCodeButton
             // 
-            this.TempCodeButton.Location = new System.Drawing.Point(937, 408);
+            this.TempCodeButton.Location = new System.Drawing.Point(375, 368);
             this.TempCodeButton.Name = "TempCodeButton";
             this.TempCodeButton.Size = new System.Drawing.Size(75, 23);
             this.TempCodeButton.TabIndex = 7;
@@ -150,28 +152,6 @@
             this.LanguageTextBox.Name = "LanguageTextBox";
             this.LanguageTextBox.Size = new System.Drawing.Size(602, 20);
             this.LanguageTextBox.TabIndex = 15;
-            // 
-            // BrowseRepositoryButton
-            // 
-            this.BrowseRepositoryButton.Image = global::GitHubRepositoryExamples.Properties.Resources.Web_16x;
-            this.BrowseRepositoryButton.Location = new System.Drawing.Point(983, 171);
-            this.BrowseRepositoryButton.Name = "BrowseRepositoryButton";
-            this.BrowseRepositoryButton.Size = new System.Drawing.Size(33, 23);
-            this.BrowseRepositoryButton.TabIndex = 13;
-            this.BrowseRepositoryButton.UseVisualStyleBackColor = true;
-            this.BrowseRepositoryButton.Click += new System.EventHandler(this.BrowseRepositoryButton_Click);
-            // 
-            // FetchRepositoriesButton
-            // 
-            this.FetchRepositoriesButton.Image = global::GitHubRepositoryExamples.Properties.Resources.ASX_Run_blue_16x;
-            this.FetchRepositoriesButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.FetchRepositoriesButton.Location = new System.Drawing.Point(375, 408);
-            this.FetchRepositoriesButton.Name = "FetchRepositoriesButton";
-            this.FetchRepositoriesButton.Size = new System.Drawing.Size(125, 23);
-            this.FetchRepositoriesButton.TabIndex = 3;
-            this.FetchRepositoriesButton.Text = "Fetch repositories";
-            this.FetchRepositoriesButton.UseVisualStyleBackColor = true;
-            this.FetchRepositoriesButton.Click += new System.EventHandler(this.FetchRepositoriesButton_Click);
             // 
             // label5
             // 
@@ -269,6 +249,18 @@
             this.sindresorhusToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
             this.sindresorhusToolStripMenuItem.Text = "sindresorhus";
             // 
+            // ProjectRecentCommitsButton
+            // 
+            this.ProjectRecentCommitsButton.Image = global::GitHubRepositoryExamples.Properties.Resources.Commit_16x;
+            this.ProjectRecentCommitsButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.ProjectRecentCommitsButton.Location = new System.Drawing.Point(535, 411);
+            this.ProjectRecentCommitsButton.Name = "ProjectRecentCommitsButton";
+            this.ProjectRecentCommitsButton.Size = new System.Drawing.Size(154, 23);
+            this.ProjectRecentCommitsButton.TabIndex = 25;
+            this.ProjectRecentCommitsButton.Text = "Project recent commits";
+            this.ProjectRecentCommitsButton.UseVisualStyleBackColor = true;
+            this.ProjectRecentCommitsButton.Click += new System.EventHandler(this.ProjectRecentCommitsButton_Click);
+            // 
             // WorkingPictureBox
             // 
             this.WorkingPictureBox.Location = new System.Drawing.Point(653, 270);
@@ -276,6 +268,28 @@
             this.WorkingPictureBox.Size = new System.Drawing.Size(67, 65);
             this.WorkingPictureBox.TabIndex = 24;
             this.WorkingPictureBox.TabStop = false;
+            // 
+            // BrowseRepositoryButton
+            // 
+            this.BrowseRepositoryButton.Image = global::GitHubRepositoryExamples.Properties.Resources.Web_16x;
+            this.BrowseRepositoryButton.Location = new System.Drawing.Point(983, 171);
+            this.BrowseRepositoryButton.Name = "BrowseRepositoryButton";
+            this.BrowseRepositoryButton.Size = new System.Drawing.Size(33, 23);
+            this.BrowseRepositoryButton.TabIndex = 13;
+            this.BrowseRepositoryButton.UseVisualStyleBackColor = true;
+            this.BrowseRepositoryButton.Click += new System.EventHandler(this.BrowseRepositoryButton_Click);
+            // 
+            // FetchRepositoriesButton
+            // 
+            this.FetchRepositoriesButton.Image = global::GitHubRepositoryExamples.Properties.Resources.ASX_Run_blue_16x;
+            this.FetchRepositoriesButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.FetchRepositoriesButton.Location = new System.Drawing.Point(375, 411);
+            this.FetchRepositoriesButton.Name = "FetchRepositoriesButton";
+            this.FetchRepositoriesButton.Size = new System.Drawing.Size(154, 23);
+            this.FetchRepositoriesButton.TabIndex = 3;
+            this.FetchRepositoriesButton.Text = "Fetch repositories";
+            this.FetchRepositoriesButton.UseVisualStyleBackColor = true;
+            this.FetchRepositoriesButton.Click += new System.EventHandler(this.FetchRepositoriesButton_Click);
             // 
             // RepositoryTextBox
             // 
@@ -285,11 +299,25 @@
             this.RepositoryTextBox.Size = new System.Drawing.Size(335, 20);
             this.RepositoryTextBox.TabIndex = 22;
             // 
-            // Form1
+            // CloseApplicationButton
+            // 
+            this.CloseApplicationButton.Image = global::GitHubRepositoryExamples.Properties.Resources.Close_8x_16x;
+            this.CloseApplicationButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.CloseApplicationButton.Location = new System.Drawing.Point(858, 408);
+            this.CloseApplicationButton.Name = "CloseApplicationButton";
+            this.CloseApplicationButton.Size = new System.Drawing.Size(154, 23);
+            this.CloseApplicationButton.TabIndex = 27;
+            this.CloseApplicationButton.Text = "Close";
+            this.CloseApplicationButton.UseVisualStyleBackColor = true;
+            this.CloseApplicationButton.Click += new System.EventHandler(this.CloseApplicationButton_Click);
+            // 
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1024, 449);
+            this.Controls.Add(this.CloseApplicationButton);
+            this.Controls.Add(this.ProjectRecentCommitsButton);
             this.Controls.Add(this.WorkingPictureBox);
             this.Controls.Add(this.RepositoryTextBox);
             this.Controls.Add(this.label7);
@@ -314,7 +342,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "Form1";
+            this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GitHub stuff";
             this.RepoListContextMenu.ResumeLayout(false);
@@ -353,6 +381,8 @@
         private System.Windows.Forms.ToolStripMenuItem karenpayneoregonToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sindresorhusToolStripMenuItem;
         private System.Windows.Forms.PictureBox WorkingPictureBox;
+        private System.Windows.Forms.Button ProjectRecentCommitsButton;
+        private System.Windows.Forms.Button CloseApplicationButton;
     }
 }
 

@@ -83,12 +83,48 @@ namespace GiHubLibrary
                     if (response != null)
                     {
                         var reader = new StreamReader(response.GetResponseStream());
+
                         var json = $"[{reader.ReadToEnd()}]";
 
                         try
                         {
                             var results = JsonConvert.DeserializeObject<RepositoryDetails[]>(json);
                             return results[0];
+                        }
+                        catch (Exception)
+                        {
+                            return null;
+                        }
+                    }
+                    else
+                    {
+                        return null;
+                    }
+                }
+            }
+            else
+            {
+                return null;
+            }
+        }
+        public static RepositoryCommitItem[] RecentCommits(string organization, string projectName)
+        {
+            if (WebRequest.Create($"https://api.github.com/repos/{organization}/{projectName}/commits") is HttpWebRequest request)
+            {
+                request.UserAgent = "TestApp";
+
+                using (var response = request.GetResponse() as HttpWebResponse)
+                {
+                    if (response != null)
+                    {
+                        var reader = new StreamReader(response.GetResponseStream());
+
+                        var json = reader.ReadToEnd();
+
+                        try
+                        {
+                            var results = JsonConvert.DeserializeObject<RepositoryCommitItem[]>(json);
+                            return results;
                         }
                         catch (Exception)
                         {
@@ -142,10 +178,7 @@ namespace GiHubLibrary
                 return null;
             }
         }
-    }
-
-
-
+    } 
 
 }
 

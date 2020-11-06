@@ -1,12 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Diagnostics;
-using System.Drawing;
-using System.IO;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using GiHubLibrary;
@@ -14,18 +9,19 @@ using GitHubRepositoryExamples.Classes;
 using static GitHubRepositoryExamples.Properties.Resources;
 
 
-namespace GitHubRepositoryExamples
+namespace GitHubRepositoryExamples.Forms
 {
     /// <summary>
-    /// 
+    /// Entry form for application
     /// </summary>
     /// <remarks>
     /// Larger repositories will take longer to load.
     /// </remarks>
-    public partial class Form1 : Form
+    public partial class MainForm : Form
     {
         private BindingList<Repository> _repositories;
-        public Form1()
+        private BindingSource _repositoriesBindingSource = new BindingSource();
+        public MainForm()
         {
             InitializeComponent();
 
@@ -77,6 +73,11 @@ namespace GitHubRepositoryExamples
         /// <returns></returns>
         private async Task FetchSelectedRepository()
         {
+            if (string.IsNullOrWhiteSpace(RepositoryTextBox.Text))
+            {
+                MessageBox.Show("Requires a repo");
+                return;
+            }
 
             WorkingPictureBox.Image = spinner;
 
@@ -98,7 +99,8 @@ namespace GitHubRepositoryExamples
                 return;
             }
 
-            RepositoryListBox.DataSource = _repositories;
+            _repositoriesBindingSource.DataSource = _repositories;
+            RepositoryListBox.DataSource = _repositoriesBindingSource;
 
             BindControls();
 
@@ -129,7 +131,7 @@ namespace GitHubRepositoryExamples
             var index = RepositoryListBox.FindString(SearchTextBox.Text);
             if (index >= 0)
             {
-                RepositoryListBox.SelectedIndex = index;
+                _repositoriesBindingSource.Position = index;
             }
         }
 
@@ -142,12 +144,12 @@ namespace GitHubRepositoryExamples
 
             ControlHelpers.ClearTextBoxBindings(this);
 
-            DescriptionTextBox.DataBindings.Add("Text", _repositories, "Description");
-            FullNameTextBox.DataBindings.Add("Text", _repositories, "full_name");
-            HtmlUrlTextBox.DataBindings.Add("Text", _repositories, "html_url");
-            LanguageTextBox.DataBindings.Add("Text", _repositories, "language");
-            LastUpdatedTextBox.DataBindings.Add("Text", _repositories, "LastUpdated");
-            StarGazersCountTextBox.DataBindings.Add("Text", _repositories, "StarGazersCount");
+            DescriptionTextBox.DataBindings.Add("Text", _repositoriesBindingSource, "Description");
+            FullNameTextBox.DataBindings.Add("Text", _repositoriesBindingSource, "full_name");
+            HtmlUrlTextBox.DataBindings.Add("Text", _repositoriesBindingSource, "html_url");
+            LanguageTextBox.DataBindings.Add("Text", _repositoriesBindingSource, "language");
+            LastUpdatedTextBox.DataBindings.Add("Text", _repositoriesBindingSource, "LastUpdated");
+            StarGazersCountTextBox.DataBindings.Add("Text", _repositoriesBindingSource, "StarGazersCount");
 
         }
         /// <summary>
@@ -183,6 +185,37 @@ namespace GitHubRepositoryExamples
             {
                 Process.Start(HtmlUrlTextBox.Text);
             }
+        }
+        /// <summary>
+        /// Get last 30 or less commits for current repository
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ProjectRecentCommitsButton_Click(object sender, EventArgs e)
+        {
+            RepositoryCommitItem[] recentCommits = GitOperations.RecentCommits(RepositoryTextBox.Text, RepositoryListBox.Text);
+
+            if (recentCommits.Length > 0)
+            {
+                var commitForm = new RepositoryRecentCommitsForm(recentCommits);
+                try
+                {
+                    commitForm.ShowDialog();
+                }
+                finally
+                {
+                    commitForm.Dispose();
+                }
+            }
+            else
+            {
+                MessageBox.Show("No commits found");
+            }
+        }
+
+        private void CloseApplicationButton_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

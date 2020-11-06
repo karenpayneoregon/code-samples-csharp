@@ -1,4 +1,4 @@
-﻿namespace GitHubRepositoryExamples
+﻿namespace GitHubRepositoryExamples.Forms
 {
     partial class RepositoryDirectoryForm
     {
@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.DirectoryNamesListBox = new System.Windows.Forms.ListBox();
+            this.CloseButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // DirectoryNamesListBox
@@ -39,11 +40,24 @@
             this.DirectoryNamesListBox.Size = new System.Drawing.Size(400, 238);
             this.DirectoryNamesListBox.TabIndex = 0;
             // 
+            // CloseButton
+            // 
+            this.CloseButton.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.CloseButton.Image = global::GitHubRepositoryExamples.Properties.Resources.Close_8x_16x;
+            this.CloseButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.CloseButton.Location = new System.Drawing.Point(254, 269);
+            this.CloseButton.Name = "CloseButton";
+            this.CloseButton.Size = new System.Drawing.Size(154, 23);
+            this.CloseButton.TabIndex = 27;
+            this.CloseButton.Text = "Close";
+            this.CloseButton.UseVisualStyleBackColor = true;
+            // 
             // RepositoryDirectoryForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(420, 314);
+            this.Controls.Add(this.CloseButton);
             this.Controls.Add(this.DirectoryNamesListBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "RepositoryDirectoryForm";
@@ -56,5 +70,6 @@
         #endregion
 
         private System.Windows.Forms.ListBox DirectoryNamesListBox;
+        private System.Windows.Forms.Button CloseButton;
     }
 }

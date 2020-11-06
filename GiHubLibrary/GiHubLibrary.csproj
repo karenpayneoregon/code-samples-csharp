@@ -46,6 +46,7 @@
   <ItemGroup>
     <Compile Include="GitRepositoryDirectory.cs" />
     <Compile Include="GitRepositoryLinks.cs" />
+    <Compile Include="RepositoryCommitItem.cs" />
     <Compile Include="RepositoryProjectItem.cs" />
     <Compile Include="GitOperations.cs" />
     <Compile Include="GitSettings.cs" />
