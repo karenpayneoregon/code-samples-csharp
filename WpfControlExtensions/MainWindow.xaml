@@ -1,0 +1,73 @@
+﻿<Window x:Class="WpfControlExtensions.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:WpfControlExtensions"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="Clear labels example"
+    Width="544.562"
+    Height="280.504"
+    ResizeMode="NoResize"
+    WindowStartupLocation="CenterScreen"
+    mc:Ignorable="d">
+    <Grid>
+        <Label
+            Margin="21,17,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Label 1" />
+        <Label
+            Margin="21,52,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Label 2" />
+        <Label
+            Margin="21,89,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Label 3" />
+        <Label
+            Margin="115,17,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Label 4" />
+        <Label
+            Margin="115,52,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Label 5" />
+        <Label
+            Margin="115,89,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Label 6" />
+        <Button
+            Width="116"
+            Margin="21,209,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Command="{x:Static local:MainWindow.ClearLabelsRoutedCommand}"
+            Content="Clear labels"
+            IsEnabled="True" />
+        <TabControl
+            Width="267"
+            Height="196"
+            Margin="227,17,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top">
+            <TabItem Header="TabItem">
+                <Grid Background="#FFE5E5E5">
+                    <Label
+                        Margin="10,10,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Content="Label in tab" />
+                </Grid>
+            </TabItem>
+            <TabItem Header="TabItem">
+                <Grid Background="#FFE5E5E5" />
+            </TabItem>
+        </TabControl>
+
+    </Grid>
+</Window>
