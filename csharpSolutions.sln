@@ -88,6 +88,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfControlExtensions", "Wpf
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfCommandBinding", "WpfCommandBinding\WpfCommandBinding.csproj", "{36962043-13D0-4AC0-8C41-945B83EA4FA6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntityFrameworkCoreImages", "EntityFrameworkCoreImages\EntityFrameworkCoreImages.csproj", "{9EBC5379-4823-4D63-9976-0FC56D9BDD4E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -263,6 +265,12 @@ Global
 		{36962043-13D0-4AC0-8C41-945B83EA4FA6}.NormalDebug|Any CPU.Build.0 = Debug|Any CPU
 		{36962043-13D0-4AC0-8C41-945B83EA4FA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{36962043-13D0-4AC0-8C41-945B83EA4FA6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9EBC5379-4823-4D63-9976-0FC56D9BDD4E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9EBC5379-4823-4D63-9976-0FC56D9BDD4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9EBC5379-4823-4D63-9976-0FC56D9BDD4E}.NormalDebug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9EBC5379-4823-4D63-9976-0FC56D9BDD4E}.NormalDebug|Any CPU.Build.0 = Debug|Any CPU
+		{9EBC5379-4823-4D63-9976-0FC56D9BDD4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9EBC5379-4823-4D63-9976-0FC56D9BDD4E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -302,6 +310,7 @@ Global
 		{06357257-567E-44AF-ABCC-7C73658776E6} = {4F944C2C-2EF7-4DCD-AC42-C02721E66C80}
 		{ADE011B9-22A1-4C46-BEB6-3727952EF439} = {3725D314-71BA-4E48-AD46-1AF1DDA62903}
 		{36962043-13D0-4AC0-8C41-945B83EA4FA6} = {3725D314-71BA-4E48-AD46-1AF1DDA62903}
+		{9EBC5379-4823-4D63-9976-0FC56D9BDD4E} = {7E7B6C8D-F6D3-44E0-A325-94D16A588708}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D3524478-BF74-469F-8C79-7CBBFCC7C4EA}
