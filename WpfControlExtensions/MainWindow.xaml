@@ -10,6 +10,14 @@
     ResizeMode="NoResize"
     WindowStartupLocation="CenterScreen"
     mc:Ignorable="d">
+
+    <Window.CommandBindings>
+        <CommandBinding
+            CanExecute="ClearLabelsCanExecute"
+            Command="{x:Static local:MainWindow.ClearLabelsRoutedCommand}"
+            Executed="ClearLabelsCommandOnExecute" />
+    </Window.CommandBindings>
+
     <Grid>
         <Label
             Margin="21,17,0,0"
@@ -55,16 +63,24 @@
             Margin="227,17,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top">
-            <TabItem Header="TabItem">
+            <TabItem Header="Tab 1">
                 <Grid Background="#FFE5E5E5">
+                    <TextBlock HorizontalAlignment="Center" Margin="56,28,49,103" Width="156">
+                        <Run>Clearing</Run>
+                        <Run
+                            FontWeight="Bold"
+                            Foreground="CornflowerBlue"
+                            Text="labels" />
+                        <Run>on window</Run>
+                    </TextBlock>
                     <Label
-                        Margin="10,10,0,0"
-                        HorizontalAlignment="Left"
+                        Margin="0,65,0,0"
+                        HorizontalAlignment="Center"
                         VerticalAlignment="Top"
                         Content="Label in tab" />
                 </Grid>
             </TabItem>
-            <TabItem Header="TabItem">
+            <TabItem Header="Tab 2">
                 <Grid Background="#FFE5E5E5" />
             </TabItem>
         </TabControl>

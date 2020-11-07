@@ -19,14 +19,14 @@ namespace GeneralExperimentsWithTrace
             Application.ApplicationExit += Application_ApplicationExit;
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            SideTraceListener.Instance.CreateLog(AppSettings["SidesListenerLogName"], AppSettings["SidesListenerName"]);
-            SideTraceListener.Instance.WriteToTraceFile = true;
+            ApplicationTraceListener.Instance.CreateLog(AppSettings["SidesListenerLogName"], AppSettings["SidesListenerName"]);
+            ApplicationTraceListener.Instance.WriteToTraceFile = true;
             Application.Run(new Form1());
         }
 
         private static void Application_ApplicationExit(object sender, EventArgs e)
         {
-            SideTraceListener.Instance.Close();
+            ApplicationTraceListener.Instance.Close();
         }
     }
 }

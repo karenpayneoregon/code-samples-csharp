@@ -1,22 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using System.Windows.Threading;
 using ExceptionHandling;
 using WpfControlExtensions.Classes;
-using static WpfControlExtensions.Classes.CommonDialogs;
 
 namespace WpfControlExtensions
 {
@@ -30,11 +19,6 @@ namespace WpfControlExtensions
         public MainWindow()
         {
             InitializeComponent();
-
-            CommandBindings.Add(new CommandBinding(
-                ClearLabelsRoutedCommand, 
-                ClearLabelsCommandOnExecute, 
-                ClearLabelsCanExecute));
         }
 
         private void ClearLabelsCanExecute(object sender, CanExecuteRoutedEventArgs e)
@@ -63,5 +47,6 @@ namespace WpfControlExtensions
 
 
         }
+
     }
 }

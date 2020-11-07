@@ -1,0 +1,47 @@
+﻿<Window x:Class="WpfCommandBinding.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:WpfCommandBinding"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="Code sample"
+    Width="425.199"
+    Height="148.01"
+    ResizeMode="NoResize"
+    WindowStartupLocation="CenterScreen"
+    mc:Ignorable="d">
+
+    <Window.CommandBindings>
+        <CommandBinding
+            CanExecute="ColorCmdCanExecute"
+            Command="{x:Static local:MainWindow.ColorCommand}"
+            Executed="ColorCmdExecuted" />
+    </Window.CommandBindings>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40" />
+            <RowDefinition Height="61" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <TextBlock HorizontalAlignment="Center">
+            <Run>Demonstration using a</Run>
+            <Run
+                FontWeight="Bold"
+                Foreground="CornflowerBlue"
+                Text="RoutedCommand" />
+            <LineBreak />
+            <Run>to toggle button fore and background colors</Run>
+        </TextBlock>
+        <Button
+            Grid.Row="1"
+            Height="35"
+            Margin="25,9,29,0"
+            VerticalAlignment="Top"
+            Command="{x:Static local:MainWindow.ColorCommand}"
+            Content="Toggle fore/back colors" />
+    </Grid>
+
+
+</Window>
+
