@@ -33,7 +33,7 @@ namespace IteratingCodeSample.Classes
                         /*
                          * Since there are only a few records let's act like more is going on
                          */
-                        await Task.Delay(500);
+                        await Task.Delay(200);
 
                         var country = new Countries()
                         {

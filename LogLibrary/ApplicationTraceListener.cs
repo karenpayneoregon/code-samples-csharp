@@ -9,13 +9,13 @@ using System.Threading.Tasks;
 
 namespace LogLibrary
 {
-    public sealed class SideTraceListener
+    public sealed class ApplicationTraceListener
     {
-        private static readonly Lazy<SideTraceListener> Lazy =
-            new Lazy<SideTraceListener>(() =>
-                new SideTraceListener());
+        private static readonly Lazy<ApplicationTraceListener> Lazy =
+            new Lazy<ApplicationTraceListener>(() =>
+                new ApplicationTraceListener());
 
-        public static SideTraceListener Instance => Lazy.Value;
+        public static ApplicationTraceListener Instance => Lazy.Value;
         private static TextWriterTraceListener _textWriterTraceListener;
 
         public void CreateLog()

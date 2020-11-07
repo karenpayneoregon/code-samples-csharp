@@ -16,7 +16,7 @@ namespace GeneralExperimentsWithTrace.Classes
             }
             catch (Exception e)
             {
-                SideTraceListener.Instance.Exception(e);
+                ApplicationTraceListener.Instance.Exception(e);
 
                 return new List<string>();
             }

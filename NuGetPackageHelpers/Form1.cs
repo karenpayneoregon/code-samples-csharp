@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,10 +24,12 @@ namespace NuGetPackageHelpers
             InitializeComponent();
 
             Operations.DisplayInformationHandler += Operations_DisplayHandler;
+            Operations.ExportWebPageFileName = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "results.html");
 
             ProjectTypeComboBox.DataSource = ProjectTypes.ProjectTypesList();
 
             Shown += Form1_Shown;
+
         }
 
         private void Form1_Shown(object sender, EventArgs e)
@@ -53,11 +56,14 @@ namespace NuGetPackageHelpers
         private void ProcessCurrentSolutionButton_Click(object sender, EventArgs e)
         {
             listView1.Items.Clear();
+
             var projectType = ((ProjectType) ProjectTypeComboBox.SelectedItem).Extension;
             Operations.BuilderPackageTable(GetFoldersToParent.GetSolutionFolderPath(), projectType);
 
             Solution = Operations.Solution;
+
             DisplayDetails();
+            ExportToWebPageButton.Enabled = Solution.Packages.Any();
 
         }
         /// <summary>
@@ -67,9 +73,19 @@ namespace NuGetPackageHelpers
         /// <param name="e"></param>
         private void ProcessSelectSolutionButton_Click(object sender, EventArgs e)
         {
+
+            listView1.Items.Clear();
+
+            var initialPath = @"C:\OED\Dotnetland\";
+
+            if (Environment.UserName != "PayneK")
+            {
+                initialPath = @"C:\";
+            }
             var dialog = new Ookii.Dialogs.WinForms.VistaFolderBrowserDialog
             {
-                SelectedPath = @"C:\OED\Dotnetland\",
+
+                SelectedPath = initialPath,
                 ShowNewFolderButton = false,
                 Description = @"Select solution folder",
                 UseDescriptionForTitle = true
@@ -77,39 +93,28 @@ namespace NuGetPackageHelpers
 
             if (dialog.ShowDialog() == DialogResult.OK)
             {
-                listView1.Items.Clear();
+
                 var projectType = ((ProjectType)ProjectTypeComboBox.SelectedItem).Extension;
                 Operations.BuilderPackageTable(dialog.SelectedPath, projectType);
 
                 Solution = Operations.Solution;
+
                 DisplayDetails();
+                ExportToWebPageButton.Enabled = Solution.Packages.Any();
 
             }
         }
-        private void ExportToMarkupButton_Click(object sender, EventArgs e)
+        private void ExportToWebPageButtonButton_Click(object sender, EventArgs e)
         {
 
             if (Solution.Count >0)
             {
-                Console.WriteLine(Solution.Folder);
-                foreach (var package in Solution.Packages)
-                {
-                    Console.WriteLine(package.ProjectName);
-                    foreach (var packageItem in package.PackageItems)
-                    {
-                        Console.WriteLine($"\t{packageItem.Delimited}");
-                    }
-
-                    Console.WriteLine();
-                }
-                
+                Operations.ExportAsWebPage();
             }
             else
             {
-                MessageBox.Show("None");
+                MessageBox.Show("Please select and process and solution");
             }
         }
-
-
     }
 }
