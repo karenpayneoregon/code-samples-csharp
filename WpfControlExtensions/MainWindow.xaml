@@ -65,7 +65,10 @@
             VerticalAlignment="Top">
             <TabItem Header="Tab 1">
                 <Grid Background="#FFE5E5E5">
-                    <TextBlock HorizontalAlignment="Center" Margin="56,28,49,103" Width="156">
+                    <TextBlock
+                        Width="156"
+                        Margin="56,28,49,103"
+                        HorizontalAlignment="Center">
                         <Run>Clearing</Run>
                         <Run
                             FontWeight="Bold"
