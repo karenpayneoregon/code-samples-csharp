@@ -1,10 +1,16 @@
 ﻿using System;
 using System.Drawing;
+using System.IO;
 
 namespace EntityFrameworkCoreImages.Classes
 {
     public class ImageHelpers
     {
+        /// <summary>
+        /// For image column type
+        /// </summary>
+        /// <param name="contents"></param>
+        /// <returns>A Image</returns>
         public static Image ByteArrayToImage(byte[] contents)
         {
             if (contents is null)
@@ -17,6 +23,18 @@ namespace EntityFrameworkCoreImages.Classes
                 var image = (Image)converter.ConvertFrom(contents);
 
                 return image;
+            }
+        }
+        /// <summary>
+        /// For varbinary (MAX) column type
+        /// </summary>
+        /// <param name="contents"></param>
+        /// <returns>A Image</returns>
+        public static Image ByteArrayToImage1(byte[] contents)
+        {
+            using (var ms = new MemoryStream(contents))
+            {
+                return Image.FromStream(ms);
             }
         }
 
