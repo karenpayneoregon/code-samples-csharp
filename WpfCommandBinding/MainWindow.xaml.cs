@@ -9,9 +9,6 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace WpfCommandBinding
 {
@@ -24,16 +21,24 @@ namespace WpfCommandBinding
             InitializeComponent();
         }
         /// <summary>
-        /// ExecutedRoutedEventHandler for the custom color command.
+        /// ExecutedRoutedEventHandler for toggling fore and background colors
+        /// along 
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void ColorCmdExecuted(object sender, ExecutedRoutedEventArgs e)
         {
-            if (e.Source is Button target)
+            if (!(e.Source is Button target)) return;
+
+            if (target.Background == Brushes.Brown)
             {
-                target.Background = target.Background == Brushes.AliceBlue ? Brushes.Black : Brushes.AliceBlue;
-                target.Foreground = target.Foreground == Brushes.Black ? Brushes.White : Brushes.Black;
+                target.Background = Brushes.Red;
+                target.Foreground = new SolidColorBrush(Colors.White);
+            }
+            else
+            {
+                target.Background = Brushes.Brown;
+                target.Foreground = new SolidColorBrush(Colors.White);
             }
         }
 

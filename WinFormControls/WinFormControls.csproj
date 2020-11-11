@@ -46,7 +46,7 @@
     <Compile Include="CueTextBox.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="PasteDetectorTextBox.cs">
+    <Compile Include="NumericTextBox.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
