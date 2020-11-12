@@ -40,6 +40,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
@@ -67,6 +68,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Classes\ColorHelpers.cs" />
     <Compile Include="Classes\CommonDialogs.cs" />
     <Compile Include="Classes\WindowHelpers.cs" />
     <Compile Include="MainWindow.xaml.cs">

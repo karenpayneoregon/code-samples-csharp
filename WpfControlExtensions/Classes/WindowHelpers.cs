@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
@@ -35,14 +36,26 @@ namespace WpfControlExtensions.Classes
                 textBox.Content = defaultValue;
             }
         }
+        /// <summary>
+        /// For demonstration 
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="control"></param>
         public static void ResetLabels<T>(this DependencyObject control)
         {
             int index = 1;
-            foreach (var textBox in Descendants<Label>(control))
+
+            foreach (var label in Descendants<Label>(control))
             {
-                textBox.Content = index;
+                label.Content = index;
+
+                label.Foreground = ColorHelpers.ColorToSolidColorBrush(System.Drawing.Color.Yellow); 
+                label.Background = ColorHelpers.ColorToSolidColorBrush(System.Drawing.Color.Brown); 
+                label.FontWeight = FontWeights.Bold;
+
                 index += 1;
             }
+
         }
         /// <summary>
         /// Enable or disable all check boxes in a container

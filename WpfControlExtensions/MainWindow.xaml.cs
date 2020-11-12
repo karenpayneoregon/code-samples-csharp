@@ -28,7 +28,6 @@ namespace WpfControlExtensions
 
         private void ClearLabelsCommandOnExecute(object sender, ExecutedRoutedEventArgs e)
         {
-
             var thread = new Thread(delegate()
             {
                 Thread.Sleep(100);
