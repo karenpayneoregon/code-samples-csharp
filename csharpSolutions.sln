@@ -102,6 +102,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfCommandBinding1", "WpfCo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StartStopButton", "WpfStartStop\StartStopButton.csproj", "{69E9067E-4E8A-4E45-BF7B-D4098079985F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ValidationLibrary", "WpfDataAnnotations\ValidationLibrary\ValidationLibrary.csproj", "{7630FCB6-B946-4CE1-9172-F52960726C5F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ValidateLogin", "WpfDataAnnotations\ValidateLogin\ValidateLogin.csproj", "{21AA71A1-D350-4008-B272-117169DCCEDE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -313,6 +317,18 @@ Global
 		{69E9067E-4E8A-4E45-BF7B-D4098079985F}.NormalDebug|Any CPU.Build.0 = Debug|Any CPU
 		{69E9067E-4E8A-4E45-BF7B-D4098079985F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{69E9067E-4E8A-4E45-BF7B-D4098079985F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7630FCB6-B946-4CE1-9172-F52960726C5F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7630FCB6-B946-4CE1-9172-F52960726C5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7630FCB6-B946-4CE1-9172-F52960726C5F}.NormalDebug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7630FCB6-B946-4CE1-9172-F52960726C5F}.NormalDebug|Any CPU.Build.0 = Debug|Any CPU
+		{7630FCB6-B946-4CE1-9172-F52960726C5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7630FCB6-B946-4CE1-9172-F52960726C5F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{21AA71A1-D350-4008-B272-117169DCCEDE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21AA71A1-D350-4008-B272-117169DCCEDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21AA71A1-D350-4008-B272-117169DCCEDE}.NormalDebug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21AA71A1-D350-4008-B272-117169DCCEDE}.NormalDebug|Any CPU.Build.0 = Debug|Any CPU
+		{21AA71A1-D350-4008-B272-117169DCCEDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21AA71A1-D350-4008-B272-117169DCCEDE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -359,6 +375,8 @@ Global
 		{699FB060-FBD6-48B9-805F-EF5254E005DB} = {4F944C2C-2EF7-4DCD-AC42-C02721E66C80}
 		{ADD25B40-2D97-4B30-BEA8-3028D836AFE4} = {3725D314-71BA-4E48-AD46-1AF1DDA62903}
 		{69E9067E-4E8A-4E45-BF7B-D4098079985F} = {3725D314-71BA-4E48-AD46-1AF1DDA62903}
+		{7630FCB6-B946-4CE1-9172-F52960726C5F} = {3725D314-71BA-4E48-AD46-1AF1DDA62903}
+		{21AA71A1-D350-4008-B272-117169DCCEDE} = {3725D314-71BA-4E48-AD46-1AF1DDA62903}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D3524478-BF74-469F-8C79-7CBBFCC7C4EA}

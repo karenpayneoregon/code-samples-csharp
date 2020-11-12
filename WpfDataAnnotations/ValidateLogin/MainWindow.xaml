@@ -1,0 +1,87 @@
+﻿<Window x:Class="ValidateLogin.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:ValidateLogin"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="Reset password"
+    Width="320.12"
+    Height="251.129"
+    Closing="MainWindow_OnClosing"
+    Icon="sharp.ico"
+    KeyDown="Window_KeyDown"
+    ResizeMode="NoResize"
+    WindowStartupLocation="CenterScreen"
+    mc:Ignorable="d">
+
+
+    <Window.CommandBindings>
+
+        <CommandBinding
+            CanExecute="PasswordCheckCanExecuteCommand"
+            Command="{x:Static local:MainWindow.ContinueRoutedCommand}"
+            Executed="PasswordCheckCommandOnExecute" />
+
+        <CommandBinding
+            CanExecute="ApplicationExitCanExecute"
+            Command="{x:Static local:MainWindow.ExitRoutedCommand}"
+            Executed="ExitApplicationCommandOnExecute" />
+
+    </Window.CommandBindings>
+
+    <Grid FocusManager.FocusedElement="{Binding ElementName=UserNameTextBox}">
+        <Label
+            Margin="14,30,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="User name"
+            RenderTransformOrigin="0.45,0.261" />
+        <TextBox
+            Width="187"
+            Height="23"
+            Margin="88,34,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Text="{Binding UserName, UpdateSourceTrigger=PropertyChanged}"
+            TextWrapping="Wrap" />
+        <Label
+            Margin="21,70,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Password" />
+        <Label
+            Margin="29,110,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Confirm" />
+        <PasswordBox
+            Width="187"
+            Height="23"
+            Margin="88,70,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            PasswordChanged="PasswordTextBox_OnPasswordChanged" />
+        <PasswordBox
+            Width="187"
+            Height="23"
+            Margin="88,113,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            PasswordChanged="PasswordConfirmTextBox_OnPasswordChanged" />
+        <Button
+            Width="75"
+            Margin="23,173,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Command="{x:Static local:MainWindow.ContinueRoutedCommand}"
+            Content="Continue" />
+        <Button
+            Width="75"
+            Margin="200,173,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Command="{x:Static local:MainWindow.ExitRoutedCommand}"
+            Content="Cancel" />
+
+    </Grid>
+</Window>
