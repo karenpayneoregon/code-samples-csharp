@@ -28,10 +28,11 @@ namespace IteratingCodeSample.Classes
                     cmd.CommandText = "SELECT CountryIdentifier, Name FROM dbo.Countries;";
                     var reader = await cmd.ExecuteReaderAsync();
 
-                    while (reader.Read())
+                    while (await reader.ReadAsync())
                     {
                         /*
-                         * Since there are only a few records let's act like more is going on
+                         * Since there are only a few records let's act like more is going on,
+                         * otherwise the operation here will happen in less than a second.
                          */
                         await Task.Delay(200);
 

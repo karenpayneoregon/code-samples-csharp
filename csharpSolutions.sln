@@ -106,6 +106,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ValidationLibrary", "WpfDat
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ValidateLogin", "WpfDataAnnotations\ValidateLogin\ValidateLogin.csproj", "{21AA71A1-D350-4008-B272-117169DCCEDE}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Forum questions (some to move some get deleted)", "Forum questions (some to move some get deleted)", "{AF1D6999-6E01-45C2-A94C-D20F032B4CF3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MockupAsyncDataOperations", "MockupAsyncDataOperations\MockupAsyncDataOperations.csproj", "{B4001D9C-E8FA-4750-B7A8-DB81CEF50F9C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -329,6 +333,12 @@ Global
 		{21AA71A1-D350-4008-B272-117169DCCEDE}.NormalDebug|Any CPU.Build.0 = Debug|Any CPU
 		{21AA71A1-D350-4008-B272-117169DCCEDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{21AA71A1-D350-4008-B272-117169DCCEDE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B4001D9C-E8FA-4750-B7A8-DB81CEF50F9C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4001D9C-E8FA-4750-B7A8-DB81CEF50F9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4001D9C-E8FA-4750-B7A8-DB81CEF50F9C}.NormalDebug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4001D9C-E8FA-4750-B7A8-DB81CEF50F9C}.NormalDebug|Any CPU.Build.0 = Debug|Any CPU
+		{B4001D9C-E8FA-4750-B7A8-DB81CEF50F9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4001D9C-E8FA-4750-B7A8-DB81CEF50F9C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -377,6 +387,7 @@ Global
 		{69E9067E-4E8A-4E45-BF7B-D4098079985F} = {3725D314-71BA-4E48-AD46-1AF1DDA62903}
 		{7630FCB6-B946-4CE1-9172-F52960726C5F} = {3725D314-71BA-4E48-AD46-1AF1DDA62903}
 		{21AA71A1-D350-4008-B272-117169DCCEDE} = {3725D314-71BA-4E48-AD46-1AF1DDA62903}
+		{B4001D9C-E8FA-4750-B7A8-DB81CEF50F9C} = {AF1D6999-6E01-45C2-A94C-D20F032B4CF3}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D3524478-BF74-469F-8C79-7CBBFCC7C4EA}
