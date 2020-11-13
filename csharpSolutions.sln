@@ -110,6 +110,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Forum questions (some to mo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MockupAsyncDataOperations", "MockupAsyncDataOperations\MockupAsyncDataOperations.csproj", "{B4001D9C-E8FA-4750-B7A8-DB81CEF50F9C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TempFilesOperations", "TempFilesOperations\TempFilesOperations.csproj", "{63F34F8B-6C5D-4D85-A09D-87410C217C01}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -339,6 +341,12 @@ Global
 		{B4001D9C-E8FA-4750-B7A8-DB81CEF50F9C}.NormalDebug|Any CPU.Build.0 = Debug|Any CPU
 		{B4001D9C-E8FA-4750-B7A8-DB81CEF50F9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B4001D9C-E8FA-4750-B7A8-DB81CEF50F9C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{63F34F8B-6C5D-4D85-A09D-87410C217C01}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63F34F8B-6C5D-4D85-A09D-87410C217C01}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63F34F8B-6C5D-4D85-A09D-87410C217C01}.NormalDebug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63F34F8B-6C5D-4D85-A09D-87410C217C01}.NormalDebug|Any CPU.Build.0 = Debug|Any CPU
+		{63F34F8B-6C5D-4D85-A09D-87410C217C01}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63F34F8B-6C5D-4D85-A09D-87410C217C01}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -388,6 +396,7 @@ Global
 		{7630FCB6-B946-4CE1-9172-F52960726C5F} = {3725D314-71BA-4E48-AD46-1AF1DDA62903}
 		{21AA71A1-D350-4008-B272-117169DCCEDE} = {3725D314-71BA-4E48-AD46-1AF1DDA62903}
 		{B4001D9C-E8FA-4750-B7A8-DB81CEF50F9C} = {AF1D6999-6E01-45C2-A94C-D20F032B4CF3}
+		{63F34F8B-6C5D-4D85-A09D-87410C217C01} = {AF1D6999-6E01-45C2-A94C-D20F032B4CF3}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D3524478-BF74-469F-8C79-7CBBFCC7C4EA}
