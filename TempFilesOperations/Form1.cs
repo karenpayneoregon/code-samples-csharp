@@ -38,19 +38,6 @@ namespace TempFilesOperations
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-            var fileName = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, $"{Guid.NewGuid()}.kp");
-            FileOperations.InitializeFileStream(fileName);
-            var customers = FileOperations.ReadCustomersFromXml();
-
-            _bindingList = new BindingList<Customer>(customers);
-            _bindingSource.DataSource = _bindingList;
-            dataGridView1.DataSource = _bindingSource;
-
-        }
-
         private void WriteChangesButton_Click(object sender, EventArgs e)
         {
             FileOperations.WriteXml(_bindingList.ToList());
