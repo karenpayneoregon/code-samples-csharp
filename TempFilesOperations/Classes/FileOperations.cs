@@ -14,10 +14,10 @@ namespace TempFilesOperations.Classes
         public static FileStream _creator1;
         private static string _customerXmlFileName = "Customers.xml";
 
-        public static FileStream InitializeFileStream(string fileName)
+        public static FileStream InitializeFileStream()
         {
 
-            _creator1 = new FileStream(fileName, FileMode.Create, 
+            _creator1 = new FileStream(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, $"{Guid.NewGuid()}.kp"), FileMode.Create, 
                 System.Security.AccessControl.FileSystemRights.Modify, 
                 FileShare.None, 8, FileOptions.DeleteOnClose);
 

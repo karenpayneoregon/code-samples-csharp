@@ -28,8 +28,7 @@ namespace TempFilesOperations
 
             dataGridView1.AutoGenerateColumns = false;
 
-            var fileName = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, $"{Guid.NewGuid()}.kp");
-            FileOperations.InitializeFileStream(fileName);
+            FileOperations.InitializeFileStream();
             var customers = FileOperations.ReadCustomersFromXml();
 
             _bindingList = new BindingList<Customer>(customers);
