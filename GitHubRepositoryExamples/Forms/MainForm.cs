@@ -94,6 +94,7 @@ namespace GitHubRepositoryExamples.Forms
             }
             catch (Exception ex)
             {
+                WorkingPictureBox.Image = null;
                 // a consideration is rate limit
                 MessageBox.Show($"Failed to get repositories\n{ex.Message}");
                 return;

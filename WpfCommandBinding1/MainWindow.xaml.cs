@@ -42,19 +42,5 @@ namespace WpfCommandBinding1
             }
 
         }
-
-        //public MainWindow()
-        //{
-        //    InitializeComponent();
-        //}
-
-        //private void Window_Loaded(object sender, RoutedEventArgs e)
-        //{
-        //    CommandBindings.Add(new CommandBinding(ExitRoutedCommand, ExitApplicationCommandOnExecute, ApplicationExitCanExecute));
-        //    CommandBindings.Add(new CommandBinding(ExitRoutedCommandForKeys, ExitApplicationCommandOnExecute, ApplicationExitCanExecute));
-
-        //    ExitRoutedCommandForKeys.InputGestures.Add(new KeyGesture(Key.E, ModifierKeys.Control));
-
-        //}
     }
 }
