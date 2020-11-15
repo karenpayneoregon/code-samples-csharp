@@ -49,9 +49,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\CommonDialogs.cs" />
     <Compile Include="Classes\ControlHelpers.cs" />
     <Compile Include="Classes\NoBeepTextBox.cs">
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\CreateDownloadBatchForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CreateDownloadBatchForm.Designer.cs">
+      <DependentUpon>CreateDownloadBatchForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\MainForm.cs">
       <SubType>Form</SubType>
@@ -65,6 +72,7 @@
     <Compile Include="Forms\RepositoryRecentCommitsForm.Designer.cs">
       <DependentUpon>RepositoryRecentCommitsForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="LanguageExtensions\CheckedListBoxExtensions.cs" />
     <Compile Include="LanguageExtensions\TextBoxWatermarkExtensionMethod.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -74,6 +82,9 @@
     <Compile Include="Forms\RepositoryDirectoryForm.Designer.cs">
       <DependentUpon>RepositoryDirectoryForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Forms\CreateDownloadBatchForm.resx">
+      <DependentUpon>CreateDownloadBatchForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -113,6 +124,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ExceptionHandling\ExceptionHandling.csproj">
+      <Project>{6d49f625-e9f5-4751-833b-b0c0a01c4d7a}</Project>
+      <Name>ExceptionHandling</Name>
+    </ProjectReference>
     <ProjectReference Include="..\GiHubLibrary\GiHubLibrary.csproj">
       <Project>{1c81e24f-63c2-4718-9b9c-e5a265de9120}</Project>
       <Name>GiHubLibrary</Name>
@@ -125,6 +140,9 @@
     <None Include="Resources\spinner.gif" />
     <None Include="Resources\Commit_16x.png" />
     <None Include="Resources\Close_8x_16x.png" />
+    <None Include="Resources\ExportFile_16x.png" />
+    <None Include="Resources\Folder_16x.png" />
+    <None Include="Resources\Download_16x.png" />
     <Content Include="TextFile1.txt" />
   </ItemGroup>
   <ItemGroup />

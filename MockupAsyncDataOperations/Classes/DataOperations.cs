@@ -10,6 +10,7 @@ namespace MockupAsyncDataOperations.Classes
 
         public delegate void OnError(Exception sender);
         public static event OnError OnErrorHandler;
+
         /// <summary>
         /// Simple mockup for performing a operation for SQL-Server
         /// </summary>
@@ -27,11 +28,15 @@ namespace MockupAsyncDataOperations.Classes
                     using (var cmd = new SqlCommand() {Connection = cn, Transaction = trans })
                     {
 
-                        cmd.CommandText = "Place SQL hhere";
+                        cmd.CommandText = "Place first SQL here";
 
                         try
                         {
                             await cmd.ExecuteNonQueryAsync(token);
+
+                            cmd.CommandText = "Next SQL goes here";
+                            await cmd.ExecuteNonQueryAsync(token);
+
                             return true;
 
                         }

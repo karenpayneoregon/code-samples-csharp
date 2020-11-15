@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ExceptionHandling;
 using GiHubLibrary;
 using GitHubRepositoryExamples.Classes;
 using static GitHubRepositoryExamples.Properties.Resources;
@@ -158,7 +159,7 @@ namespace GitHubRepositoryExamples.Forms
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void TempCodeButton_Click(object sender, EventArgs e)
+        private void FoldersForSelectedButton_Click(object sender, EventArgs e)
         {
             if (RepositoryListBox.DataSource == null || string.IsNullOrWhiteSpace(RepositoryListBox.Text)) return;
 
@@ -194,7 +195,17 @@ namespace GitHubRepositoryExamples.Forms
         /// <param name="e"></param>
         private void ProjectRecentCommitsButton_Click(object sender, EventArgs e)
         {
-            RepositoryCommitItem[] recentCommits = GitOperations.RecentCommits(RepositoryTextBox.Text, RepositoryListBox.Text);
+            RepositoryCommitItem[] recentCommits = {};
+            try
+            {
+                recentCommits = GitOperations.RecentCommits(RepositoryTextBox.Text, RepositoryListBox.Text);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Failed to get commits\n{ex.Message}");
+                Exceptions.Write(ex);
+                return;
+            }
 
             if (recentCommits.Length > 0)
             {
@@ -217,6 +228,25 @@ namespace GitHubRepositoryExamples.Forms
         private void CloseApplicationButton_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void CreateDownLoadBatchFileButton_Click(object sender, EventArgs e)
+        {
+            if (RepositoryListBox.DataSource == null || string.IsNullOrWhiteSpace(RepositoryListBox.Text)) return;
+
+            var directories = GitOperations.Directories(RepositoryTextBox.Text, RepositoryListBox.Text);
+            var dirNames = directories.Where(item => item.type == "dir").Select(item => item.name).ToList();
+
+            var f = new CreateDownloadBatchForm(dirNames, HtmlUrlTextBox.Text);
+
+            try
+            {
+                f.ShowDialog();
+            }
+            finally
+            {
+                f.Dispose();
+            }
         }
     }
 }

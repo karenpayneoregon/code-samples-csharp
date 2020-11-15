@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using ExceptionHandling;
 
 namespace Events_1
 {
@@ -66,6 +67,7 @@ namespace Events_1
                 catch (Exception ex)
                 {
                     OnErrorHandler?.Invoke(ex, currentLineNumber);
+                    Exceptions.Write(ex);
                     SkippedLineCount += 1;
                 }
             }

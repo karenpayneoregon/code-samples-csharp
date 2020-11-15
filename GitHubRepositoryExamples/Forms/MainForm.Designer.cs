@@ -33,7 +33,7 @@
             this.RepositoryListBox = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.DescriptionTextBox = new System.Windows.Forms.TextBox();
-            this.TempCodeButton = new System.Windows.Forms.Button();
+            this.FoldersForSelectedButton = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.FullNameTextBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -54,12 +54,16 @@
             this.regawleinadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.karenpayneoregonToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sindresorhusToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.machinelearningsamplesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.julielermanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pituachToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.CreateDownLoadBatchFileButton = new System.Windows.Forms.Button();
+            this.CloseApplicationButton = new System.Windows.Forms.Button();
             this.ProjectRecentCommitsButton = new System.Windows.Forms.Button();
             this.WorkingPictureBox = new System.Windows.Forms.PictureBox();
             this.BrowseRepositoryButton = new System.Windows.Forms.Button();
             this.FetchRepositoriesButton = new System.Windows.Forms.Button();
             this.RepositoryTextBox = new GitHubRepositoryExamples.Classes.NoBeepTextBox();
-            this.CloseApplicationButton = new System.Windows.Forms.Button();
             this.RepoListContextMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.WorkingPictureBox)).BeginInit();
             this.SuspendLayout();
@@ -88,15 +92,17 @@
             this.DescriptionTextBox.Size = new System.Drawing.Size(602, 20);
             this.DescriptionTextBox.TabIndex = 6;
             // 
-            // TempCodeButton
+            // FoldersForSelectedButton
             // 
-            this.TempCodeButton.Location = new System.Drawing.Point(375, 368);
-            this.TempCodeButton.Name = "TempCodeButton";
-            this.TempCodeButton.Size = new System.Drawing.Size(75, 23);
-            this.TempCodeButton.TabIndex = 7;
-            this.TempCodeButton.Text = "Temp";
-            this.TempCodeButton.UseVisualStyleBackColor = true;
-            this.TempCodeButton.Click += new System.EventHandler(this.TempCodeButton_Click);
+            this.FoldersForSelectedButton.Image = global::GitHubRepositoryExamples.Properties.Resources.Folder_16x;
+            this.FoldersForSelectedButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.FoldersForSelectedButton.Location = new System.Drawing.Point(375, 368);
+            this.FoldersForSelectedButton.Name = "FoldersForSelectedButton";
+            this.FoldersForSelectedButton.Size = new System.Drawing.Size(174, 23);
+            this.FoldersForSelectedButton.TabIndex = 7;
+            this.FoldersForSelectedButton.Text = "Folder for selected";
+            this.FoldersForSelectedButton.UseVisualStyleBackColor = true;
+            this.FoldersForSelectedButton.Click += new System.EventHandler(this.FoldersForSelectedButton_Click);
             // 
             // label2
             // 
@@ -203,59 +209,104 @@
             this.googleCloudPlatformToolStripMenuItem,
             this.regawleinadToolStripMenuItem,
             this.karenpayneoregonToolStripMenuItem,
-            this.sindresorhusToolStripMenuItem});
+            this.sindresorhusToolStripMenuItem,
+            this.machinelearningsamplesToolStripMenuItem,
+            this.julielermanToolStripMenuItem,
+            this.pituachToolStripMenuItem});
             this.RepoListContextMenu.Name = "RepoListContextMenu";
-            this.RepoListContextMenu.Size = new System.Drawing.Size(191, 158);
+            this.RepoListContextMenu.Size = new System.Drawing.Size(212, 224);
             // 
             // dotnetToolStripMenuItem
             // 
             this.dotnetToolStripMenuItem.Name = "dotnetToolStripMenuItem";
-            this.dotnetToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
+            this.dotnetToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
             this.dotnetToolStripMenuItem.Text = "dotnet";
             // 
             // erikEJToolStripMenuItem
             // 
             this.erikEJToolStripMenuItem.Name = "erikEJToolStripMenuItem";
-            this.erikEJToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
+            this.erikEJToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
             this.erikEJToolStripMenuItem.Text = "ErikEJ";
             // 
             // kamiKillertOToolStripMenuItem
             // 
             this.kamiKillertOToolStripMenuItem.Name = "kamiKillertOToolStripMenuItem";
-            this.kamiKillertOToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
+            this.kamiKillertOToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
             this.kamiKillertOToolStripMenuItem.Text = "KamiKillertO";
             // 
             // googleCloudPlatformToolStripMenuItem
             // 
             this.googleCloudPlatformToolStripMenuItem.Name = "googleCloudPlatformToolStripMenuItem";
-            this.googleCloudPlatformToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
+            this.googleCloudPlatformToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
             this.googleCloudPlatformToolStripMenuItem.Text = "GoogleCloudPlatform";
             // 
             // regawleinadToolStripMenuItem
             // 
             this.regawleinadToolStripMenuItem.Name = "regawleinadToolStripMenuItem";
-            this.regawleinadToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
+            this.regawleinadToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
             this.regawleinadToolStripMenuItem.Text = "regaw-leinad";
             // 
             // karenpayneoregonToolStripMenuItem
             // 
             this.karenpayneoregonToolStripMenuItem.Name = "karenpayneoregonToolStripMenuItem";
-            this.karenpayneoregonToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
+            this.karenpayneoregonToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
             this.karenpayneoregonToolStripMenuItem.Text = "karenpayneoregon";
             // 
             // sindresorhusToolStripMenuItem
             // 
             this.sindresorhusToolStripMenuItem.Name = "sindresorhusToolStripMenuItem";
-            this.sindresorhusToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
+            this.sindresorhusToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
             this.sindresorhusToolStripMenuItem.Text = "sindresorhus";
+            // 
+            // machinelearningsamplesToolStripMenuItem
+            // 
+            this.machinelearningsamplesToolStripMenuItem.Name = "machinelearningsamplesToolStripMenuItem";
+            this.machinelearningsamplesToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
+            this.machinelearningsamplesToolStripMenuItem.Text = "machinelearning-samples";
+            // 
+            // julielermanToolStripMenuItem
+            // 
+            this.julielermanToolStripMenuItem.Name = "julielermanToolStripMenuItem";
+            this.julielermanToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
+            this.julielermanToolStripMenuItem.Text = "julielerman";
+            // 
+            // pituachToolStripMenuItem
+            // 
+            this.pituachToolStripMenuItem.Name = "pituachToolStripMenuItem";
+            this.pituachToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
+            this.pituachToolStripMenuItem.Text = "pituach";
+            // 
+            // CreateDownLoadBatchFileButton
+            // 
+            this.CreateDownLoadBatchFileButton.Image = global::GitHubRepositoryExamples.Properties.Resources.Download_16x;
+            this.CreateDownLoadBatchFileButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.CreateDownLoadBatchFileButton.Location = new System.Drawing.Point(555, 368);
+            this.CreateDownLoadBatchFileButton.Name = "CreateDownLoadBatchFileButton";
+            this.CreateDownLoadBatchFileButton.Size = new System.Drawing.Size(174, 23);
+            this.CreateDownLoadBatchFileButton.TabIndex = 28;
+            this.CreateDownLoadBatchFileButton.Text = "Create batch for  download";
+            this.CreateDownLoadBatchFileButton.UseVisualStyleBackColor = true;
+            this.CreateDownLoadBatchFileButton.Click += new System.EventHandler(this.CreateDownLoadBatchFileButton_Click);
+            // 
+            // CloseApplicationButton
+            // 
+            this.CloseApplicationButton.Image = global::GitHubRepositoryExamples.Properties.Resources.Close_8x_16x;
+            this.CloseApplicationButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.CloseApplicationButton.Location = new System.Drawing.Point(842, 409);
+            this.CloseApplicationButton.Name = "CloseApplicationButton";
+            this.CloseApplicationButton.Size = new System.Drawing.Size(174, 23);
+            this.CloseApplicationButton.TabIndex = 27;
+            this.CloseApplicationButton.Text = "Close";
+            this.CloseApplicationButton.UseVisualStyleBackColor = true;
+            this.CloseApplicationButton.Click += new System.EventHandler(this.CloseApplicationButton_Click);
             // 
             // ProjectRecentCommitsButton
             // 
             this.ProjectRecentCommitsButton.Image = global::GitHubRepositoryExamples.Properties.Resources.Commit_16x;
-            this.ProjectRecentCommitsButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.ProjectRecentCommitsButton.Location = new System.Drawing.Point(535, 411);
+            this.ProjectRecentCommitsButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ProjectRecentCommitsButton.Location = new System.Drawing.Point(555, 411);
             this.ProjectRecentCommitsButton.Name = "ProjectRecentCommitsButton";
-            this.ProjectRecentCommitsButton.Size = new System.Drawing.Size(154, 23);
+            this.ProjectRecentCommitsButton.Size = new System.Drawing.Size(174, 23);
             this.ProjectRecentCommitsButton.TabIndex = 25;
             this.ProjectRecentCommitsButton.Text = "Project recent commits";
             this.ProjectRecentCommitsButton.UseVisualStyleBackColor = true;
@@ -282,10 +333,10 @@
             // FetchRepositoriesButton
             // 
             this.FetchRepositoriesButton.Image = global::GitHubRepositoryExamples.Properties.Resources.ASX_Run_blue_16x;
-            this.FetchRepositoriesButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.FetchRepositoriesButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.FetchRepositoriesButton.Location = new System.Drawing.Point(375, 411);
             this.FetchRepositoriesButton.Name = "FetchRepositoriesButton";
-            this.FetchRepositoriesButton.Size = new System.Drawing.Size(154, 23);
+            this.FetchRepositoriesButton.Size = new System.Drawing.Size(174, 23);
             this.FetchRepositoriesButton.TabIndex = 3;
             this.FetchRepositoriesButton.Text = "Fetch repositories";
             this.FetchRepositoriesButton.UseVisualStyleBackColor = true;
@@ -299,23 +350,12 @@
             this.RepositoryTextBox.Size = new System.Drawing.Size(335, 20);
             this.RepositoryTextBox.TabIndex = 22;
             // 
-            // CloseApplicationButton
-            // 
-            this.CloseApplicationButton.Image = global::GitHubRepositoryExamples.Properties.Resources.Close_8x_16x;
-            this.CloseApplicationButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.CloseApplicationButton.Location = new System.Drawing.Point(858, 408);
-            this.CloseApplicationButton.Name = "CloseApplicationButton";
-            this.CloseApplicationButton.Size = new System.Drawing.Size(154, 23);
-            this.CloseApplicationButton.TabIndex = 27;
-            this.CloseApplicationButton.Text = "Close";
-            this.CloseApplicationButton.UseVisualStyleBackColor = true;
-            this.CloseApplicationButton.Click += new System.EventHandler(this.CloseApplicationButton_Click);
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1024, 449);
+            this.Controls.Add(this.CreateDownLoadBatchFileButton);
             this.Controls.Add(this.CloseApplicationButton);
             this.Controls.Add(this.ProjectRecentCommitsButton);
             this.Controls.Add(this.WorkingPictureBox);
@@ -333,7 +373,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.FullNameTextBox);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.TempCodeButton);
+            this.Controls.Add(this.FoldersForSelectedButton);
             this.Controls.Add(this.DescriptionTextBox);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.RepositoryListBox);
@@ -357,7 +397,7 @@
         private System.Windows.Forms.ListBox RepositoryListBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox DescriptionTextBox;
-        private System.Windows.Forms.Button TempCodeButton;
+        private System.Windows.Forms.Button FoldersForSelectedButton;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox FullNameTextBox;
         private System.Windows.Forms.Label label3;
@@ -383,6 +423,10 @@
         private System.Windows.Forms.PictureBox WorkingPictureBox;
         private System.Windows.Forms.Button ProjectRecentCommitsButton;
         private System.Windows.Forms.Button CloseApplicationButton;
+        private System.Windows.Forms.Button CreateDownLoadBatchFileButton;
+        private System.Windows.Forms.ToolStripMenuItem machinelearningsamplesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem julielermanToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem pituachToolStripMenuItem;
     }
 }
 
