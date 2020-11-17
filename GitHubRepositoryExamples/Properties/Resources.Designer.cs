@@ -93,6 +93,16 @@ namespace GitHubRepositoryExamples.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap down_24x {
+            get {
+                object obj = ResourceManager.GetObject("down_24x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Download_16x {
             get {
                 object obj = ResourceManager.GetObject("Download_16x", resourceCulture);
@@ -126,6 +136,16 @@ namespace GitHubRepositoryExamples.Properties {
         internal static System.Drawing.Bitmap spinner {
             get {
                 object obj = ResourceManager.GetObject("spinner", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap up_24x {
+            get {
+                object obj = ResourceManager.GetObject("up_24x", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

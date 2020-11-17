@@ -51,6 +51,7 @@
   <ItemGroup>
     <Compile Include="Classes\CommonDialogs.cs" />
     <Compile Include="Classes\ControlHelpers.cs" />
+    <Compile Include="Classes\DataGridViewExtensions.cs" />
     <Compile Include="Classes\NoBeepTextBox.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -152,6 +153,8 @@
     <None Include="Resources\ExportFile_16x.png" />
     <None Include="Resources\Folder_16x.png" />
     <None Include="Resources\Download_16x.png" />
+    <None Include="Resources\up_24x.png" />
+    <None Include="Resources\down_24x.png" />
     <Content Include="TextFile1.txt" />
   </ItemGroup>
   <ItemGroup />

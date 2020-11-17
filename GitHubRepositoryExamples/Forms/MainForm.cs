@@ -251,26 +251,13 @@ namespace GitHubRepositoryExamples.Forms
 
         private void CloseApplicationButton_Click(object sender, EventArgs e)
         {
-            
-            //var json = GitToolMenuOperations.Json();
-            //GitToolMenuOperations.WriteToFile();
-            var menuItems = GitToolMenuOperations.ReadFromFile();
-
-            foreach (var gitToolMenu in menuItems)
-            {
-                var item = new ToolStripMenuItem {Text = gitToolMenu.Text, Tag = gitToolMenu.Id};
-                RepoListContextMenu.Items.Add(item);
-
-            }
-
-            //Close();
+            Close();
         }
-
-        private void PopulateRepositoryMenuContextMenuItems()
-        {
-
-        }
-
+        /// <summary>
+        /// Provides logic to move menu items up/down
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void CreateDownLoadBatchFileButton_Click(object sender, EventArgs e)
         {
             if (RepositoryListBox.DataSource == null || string.IsNullOrWhiteSpace(RepositoryListBox.Text)) return;
@@ -288,6 +275,46 @@ namespace GitHubRepositoryExamples.Forms
             {
                 f.Dispose();
             }
+        }
+
+        private void repositoryConfigurationToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var f = new GitMenuItemsConfigurationForm();
+            f.OnUpdateListEvent += OnUpdateMenuListEvent;
+            try
+            {
+                f.ShowDialog();
+            }
+            finally
+            {
+                f.Dispose();
+            }
+        }
+        /// <summary>
+        /// Invoked from GitMenuItemsConfigurationForm save button
+        /// </summary>
+        /// <param name="list"></param>
+        private void OnUpdateMenuListEvent(List<GitToolMenuItem> list)
+        {
+            RepoListContextMenu
+                .Items.Cast<ToolStripItem>()
+                .ToList()
+                .ForEach(item => item.Click -= ContextMenuItem_Click);
+
+            RepoListContextMenu.Items.Clear();
+
+            foreach (var gitToolMenu in list)
+            {
+                var item = new ToolStripMenuItem { Text = gitToolMenu.Text, Tag = gitToolMenu.Id };
+                RepoListContextMenu.Items.Add(item);
+
+            }
+
+            RepoListContextMenu
+                .Items.Cast<ToolStripItem>()
+                .ToList()
+                .ForEach(item => item.Click += ContextMenuItem_Click);
+
         }
     }
 

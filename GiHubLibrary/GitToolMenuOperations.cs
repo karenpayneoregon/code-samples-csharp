@@ -13,8 +13,11 @@ namespace GiHubLibrary
         /// <summary>
         /// File containing menu items
         /// </summary>
-        private static string _fileName = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "MenuItems.json");
-
+        private static readonly string _fileName = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "MenuItems.json");
+        /// <summary>
+        /// Seed initial data
+        /// </summary>
+        /// <returns></returns>
         private static List<GitToolMenuItem> CreateList()
         {
             return new List<GitToolMenuItem>
@@ -54,7 +57,19 @@ namespace GiHubLibrary
             var json = Json();
             File.WriteAllText(_fileName, json);
         }
-
+        /// <summary>
+        /// Write data from configuration form to json file
+        /// </summary>
+        /// <param name="list"></param>
+        public static void WriteToFile(List<GitToolMenuItem> list)
+        {
+            var json = JsonConvertEx.SerializeObject(list);
+            File.WriteAllText(_fileName, json);
+        }
+        /// <summary>
+        /// Read menu items from file
+        /// </summary>
+        /// <returns></returns>
         public static List<GitToolMenuItem> ReadFromFile()
         {
             var json = File.ReadAllText(_fileName);
