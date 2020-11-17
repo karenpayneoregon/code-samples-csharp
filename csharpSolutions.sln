@@ -131,6 +131,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeleteMember", "DeleteMembe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StackOverflow_PressScrollLock", "StackOverflow_PressScrollLock\StackOverflow_PressScrollLock.csproj", "{9B2C3FBB-8574-4BA0-B011-BD3B60E18D07}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectHelpers", "ProjectHelpers\ProjectHelpers.csproj", "{4F0E4C3C-FDD2-4494-84A2-A17A7EAFBA5D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -402,6 +404,12 @@ Global
 		{9B2C3FBB-8574-4BA0-B011-BD3B60E18D07}.NormalDebug|Any CPU.Build.0 = Debug|Any CPU
 		{9B2C3FBB-8574-4BA0-B011-BD3B60E18D07}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9B2C3FBB-8574-4BA0-B011-BD3B60E18D07}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4F0E4C3C-FDD2-4494-84A2-A17A7EAFBA5D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F0E4C3C-FDD2-4494-84A2-A17A7EAFBA5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F0E4C3C-FDD2-4494-84A2-A17A7EAFBA5D}.NormalDebug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F0E4C3C-FDD2-4494-84A2-A17A7EAFBA5D}.NormalDebug|Any CPU.Build.0 = Debug|Any CPU
+		{4F0E4C3C-FDD2-4494-84A2-A17A7EAFBA5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F0E4C3C-FDD2-4494-84A2-A17A7EAFBA5D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -460,6 +468,7 @@ Global
 		{7ACB9F4F-E040-4A8B-A999-5C9A0F56F98A} = {8A9EA835-4E7F-4EF5-94B3-C4F2D0921A2C}
 		{BF5C443D-9FCA-403A-99DE-A9DE522A5B5D} = {AF1D6999-6E01-45C2-A94C-D20F032B4CF3}
 		{9B2C3FBB-8574-4BA0-B011-BD3B60E18D07} = {AF1D6999-6E01-45C2-A94C-D20F032B4CF3}
+		{4F0E4C3C-FDD2-4494-84A2-A17A7EAFBA5D} = {59913604-EA0C-4F44-ABF9-0B75371FD20B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D3524478-BF74-469F-8C79-7CBBFCC7C4EA}
