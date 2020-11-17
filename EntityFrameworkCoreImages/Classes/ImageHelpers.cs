@@ -7,6 +7,10 @@ namespace EntityFrameworkCoreImages.Classes
     public class ImageHelpers
     {
         /// <summary>
+        /// Image to display when there is no image in the database table.
+        /// </summary>
+        private static readonly Bitmap MissingCategoryBitmap = new Bitmap(Properties.Resources.FailedToFindImage);
+        /// <summary>
         /// For image column type
         /// </summary>
         /// <param name="contents"></param>
@@ -15,7 +19,7 @@ namespace EntityFrameworkCoreImages.Classes
         {
             if (contents is null)
             {
-                return InvalidImage(); // or return null
+                return MissingCategoryBitmap; // or return null
             }
             else
             {
@@ -60,6 +64,7 @@ namespace EntityFrameworkCoreImages.Classes
             return bitmap;
 
         }
-
+  
+  
     }
 }

@@ -18,6 +18,7 @@ namespace ProjectHelpers
         {
             var referencedAssemblies = new List<string>();
 
+            // ReSharper disable once PossibleNullReferenceException
             foreach (AssemblyName assembly in GetEntryAssembly()?.GetReferencedAssemblies())
             {
                 referencedAssemblies.Add(assembly.ToString());
