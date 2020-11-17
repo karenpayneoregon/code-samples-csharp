@@ -31,13 +31,13 @@
             this.Panel1 = new System.Windows.Forms.Panel();
             this.DisplayInformationTextBox = new System.Windows.Forms.TextBox();
             this.CustomersDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.numericUpDownColumnRight1 = new DataGridViewCombo1.Controls.NumericUpDownColumnRight();
             this.ItemTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColorComboBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.QtyNumericUpDownColumn = new DataGridViewCombo1.Controls.NumericUpDownColumnRight();
             this.InCartCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.VendorComboBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.numericUpDownColumnRight1 = new DataGridViewCombo1.Controls.NumericUpDownColumnRight();
             this.Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CustomersDataGridView)).BeginInit();
             this.SuspendLayout();
@@ -73,11 +73,22 @@
             this.CustomersDataGridView.Size = new System.Drawing.Size(563, 187);
             this.CustomersDataGridView.TabIndex = 3;
             // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.HeaderText = "Item";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // numericUpDownColumnRight1
+            // 
+            this.numericUpDownColumnRight1.DecimalPlaces = 2;
+            this.numericUpDownColumnRight1.HeaderText = "Qty";
+            this.numericUpDownColumnRight1.Name = "numericUpDownColumnRight1";
+            // 
             // ItemTextBoxColumn
             // 
             this.ItemTextBoxColumn.HeaderText = "Item";
             this.ItemTextBoxColumn.Name = "ItemTextBoxColumn";
-            this.ItemTextBoxColumn.ReadOnly = true;
             // 
             // ColorComboBoxColumn
             // 
@@ -100,18 +111,6 @@
             // 
             this.VendorComboBoxColumn.HeaderText = "Vendor";
             this.VendorComboBoxColumn.Name = "VendorComboBoxColumn";
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.HeaderText = "Item";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // numericUpDownColumnRight1
-            // 
-            this.numericUpDownColumnRight1.DecimalPlaces = 2;
-            this.numericUpDownColumnRight1.HeaderText = "Qty";
-            this.numericUpDownColumnRight1.Name = "numericUpDownColumnRight1";
             // 
             // Form1
             // 

@@ -1,13 +1,18 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
+using System.Globalization;
+using System.IO;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ExceptionHandling;
 using GiHubLibrary;
 using GitHubRepositoryExamples.Classes;
 using static GitHubRepositoryExamples.Properties.Resources;
+using Formatting = System.Xml.Formatting;
 
 
 namespace GitHubRepositoryExamples.Forms
@@ -20,7 +25,7 @@ namespace GitHubRepositoryExamples.Forms
     /// </remarks>
     public partial class MainForm : Form
     {
-        private BindingList<Repository> _repositories;
+        private BindingList<Repository> _repositoriesBindingList;
         private BindingSource _repositoriesBindingSource = new BindingSource();
         public MainForm()
         {
@@ -32,11 +37,29 @@ namespace GitHubRepositoryExamples.Forms
             // notification ENTER was pressed to invoke repository fetch.
             RepositoryTextBox.TriggerEvent += RepositoryTextBox_TriggerEvent;
 
+            LoadToolStripFromFile();
+
+
+        }
+
+        /// <summary>
+        /// Load menu items from json file
+        /// </summary>
+        private void LoadToolStripFromFile()
+        {
+            var menuItems = GitToolMenuOperations.ReadFromFile();
+
+            foreach (var item in menuItems.Select(gitToolMenu => new ToolStripMenuItem { Text = gitToolMenu.Text, Tag = gitToolMenu.Id }))
+            {
+                RepoListContextMenu.Items.Add(item);
+            }
+
             // for each menu item subscribe to the Click event
             RepoListContextMenu
                 .Items.Cast<ToolStripItem>()
                 .ToList()
                 .ForEach(item => item.Click += ContextMenuItem_Click);
+
         }
 
         /// <summary>
@@ -46,6 +69,7 @@ namespace GitHubRepositoryExamples.Forms
         /// <param name="e"></param>
         private void ContextMenuItem_Click(object sender, EventArgs e)
         {
+            var test = ((ToolStripMenuItem)sender).Text;
             RepositoryTextBox.Text = ((ToolStripMenuItem) sender).Text;
             ActiveControl = RepositoryTextBox;
         }
@@ -91,7 +115,7 @@ namespace GitHubRepositoryExamples.Forms
 
             try
             {
-                _repositories = new BindingList<Repository>(await GitOperations.DownLoadPublicRepositoriesAsync(RepositoryTextBox.Text));
+                _repositoriesBindingList = new BindingList<Repository>(await GitOperations.DownLoadPublicRepositoriesAsync(RepositoryTextBox.Text));
             }
             catch (Exception ex)
             {
@@ -101,7 +125,7 @@ namespace GitHubRepositoryExamples.Forms
                 return;
             }
 
-            _repositoriesBindingSource.DataSource = _repositories;
+            _repositoriesBindingSource.DataSource = _repositoriesBindingList;
             RepositoryListBox.DataSource = _repositoriesBindingSource;
 
             BindControls();
@@ -128,7 +152,7 @@ namespace GitHubRepositoryExamples.Forms
         /// <param name="e"></param>
         private void SearchTextBox_TextChanged(object sender, EventArgs e)
         {
-            if (_repositories == null) return;
+            if (_repositoriesBindingList == null) return;
 
             var index = RepositoryListBox.FindString(SearchTextBox.Text);
             if (index >= 0)
@@ -227,7 +251,24 @@ namespace GitHubRepositoryExamples.Forms
 
         private void CloseApplicationButton_Click(object sender, EventArgs e)
         {
-            Close();
+            
+            //var json = GitToolMenuOperations.Json();
+            //GitToolMenuOperations.WriteToFile();
+            var menuItems = GitToolMenuOperations.ReadFromFile();
+
+            foreach (var gitToolMenu in menuItems)
+            {
+                var item = new ToolStripMenuItem {Text = gitToolMenu.Text, Tag = gitToolMenu.Id};
+                RepoListContextMenu.Items.Add(item);
+
+            }
+
+            //Close();
+        }
+
+        private void PopulateRepositoryMenuContextMenuItems()
+        {
+
         }
 
         private void CreateDownLoadBatchFileButton_Click(object sender, EventArgs e)
@@ -249,4 +290,5 @@ namespace GitHubRepositoryExamples.Forms
             }
         }
     }
+
 }

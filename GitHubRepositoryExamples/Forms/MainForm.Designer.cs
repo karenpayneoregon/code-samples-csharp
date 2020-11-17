@@ -47,16 +47,6 @@
             this.StarGazersCountTextBox = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.RepoListContextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.dotnetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.erikEJToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.kamiKillertOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.googleCloudPlatformToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.regawleinadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.karenpayneoregonToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.sindresorhusToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.machinelearningsamplesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.julielermanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pituachToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.CreateDownLoadBatchFileButton = new System.Windows.Forms.Button();
             this.CloseApplicationButton = new System.Windows.Forms.Button();
             this.ProjectRecentCommitsButton = new System.Windows.Forms.Button();
@@ -64,7 +54,6 @@
             this.BrowseRepositoryButton = new System.Windows.Forms.Button();
             this.FetchRepositoriesButton = new System.Windows.Forms.Button();
             this.RepositoryTextBox = new GitHubRepositoryExamples.Classes.NoBeepTextBox();
-            this.RepoListContextMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.WorkingPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -202,79 +191,8 @@
             // 
             // RepoListContextMenu
             // 
-            this.RepoListContextMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.dotnetToolStripMenuItem,
-            this.erikEJToolStripMenuItem,
-            this.kamiKillertOToolStripMenuItem,
-            this.googleCloudPlatformToolStripMenuItem,
-            this.regawleinadToolStripMenuItem,
-            this.karenpayneoregonToolStripMenuItem,
-            this.sindresorhusToolStripMenuItem,
-            this.machinelearningsamplesToolStripMenuItem,
-            this.julielermanToolStripMenuItem,
-            this.pituachToolStripMenuItem});
             this.RepoListContextMenu.Name = "RepoListContextMenu";
-            this.RepoListContextMenu.Size = new System.Drawing.Size(212, 224);
-            // 
-            // dotnetToolStripMenuItem
-            // 
-            this.dotnetToolStripMenuItem.Name = "dotnetToolStripMenuItem";
-            this.dotnetToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
-            this.dotnetToolStripMenuItem.Text = "dotnet";
-            // 
-            // erikEJToolStripMenuItem
-            // 
-            this.erikEJToolStripMenuItem.Name = "erikEJToolStripMenuItem";
-            this.erikEJToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
-            this.erikEJToolStripMenuItem.Text = "ErikEJ";
-            // 
-            // kamiKillertOToolStripMenuItem
-            // 
-            this.kamiKillertOToolStripMenuItem.Name = "kamiKillertOToolStripMenuItem";
-            this.kamiKillertOToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
-            this.kamiKillertOToolStripMenuItem.Text = "KamiKillertO";
-            // 
-            // googleCloudPlatformToolStripMenuItem
-            // 
-            this.googleCloudPlatformToolStripMenuItem.Name = "googleCloudPlatformToolStripMenuItem";
-            this.googleCloudPlatformToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
-            this.googleCloudPlatformToolStripMenuItem.Text = "GoogleCloudPlatform";
-            // 
-            // regawleinadToolStripMenuItem
-            // 
-            this.regawleinadToolStripMenuItem.Name = "regawleinadToolStripMenuItem";
-            this.regawleinadToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
-            this.regawleinadToolStripMenuItem.Text = "regaw-leinad";
-            // 
-            // karenpayneoregonToolStripMenuItem
-            // 
-            this.karenpayneoregonToolStripMenuItem.Name = "karenpayneoregonToolStripMenuItem";
-            this.karenpayneoregonToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
-            this.karenpayneoregonToolStripMenuItem.Text = "karenpayneoregon";
-            // 
-            // sindresorhusToolStripMenuItem
-            // 
-            this.sindresorhusToolStripMenuItem.Name = "sindresorhusToolStripMenuItem";
-            this.sindresorhusToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
-            this.sindresorhusToolStripMenuItem.Text = "sindresorhus";
-            // 
-            // machinelearningsamplesToolStripMenuItem
-            // 
-            this.machinelearningsamplesToolStripMenuItem.Name = "machinelearningsamplesToolStripMenuItem";
-            this.machinelearningsamplesToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
-            this.machinelearningsamplesToolStripMenuItem.Text = "machinelearning-samples";
-            // 
-            // julielermanToolStripMenuItem
-            // 
-            this.julielermanToolStripMenuItem.Name = "julielermanToolStripMenuItem";
-            this.julielermanToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
-            this.julielermanToolStripMenuItem.Text = "julielerman";
-            // 
-            // pituachToolStripMenuItem
-            // 
-            this.pituachToolStripMenuItem.Name = "pituachToolStripMenuItem";
-            this.pituachToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
-            this.pituachToolStripMenuItem.Text = "pituach";
+            this.RepoListContextMenu.Size = new System.Drawing.Size(181, 26);
             // 
             // CreateDownLoadBatchFileButton
             // 
@@ -385,7 +303,6 @@
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GitHub stuff";
-            this.RepoListContextMenu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.WorkingPictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -413,20 +330,10 @@
         private System.Windows.Forms.Label label7;
         private Classes.NoBeepTextBox RepositoryTextBox;
         private System.Windows.Forms.ContextMenuStrip RepoListContextMenu;
-        private System.Windows.Forms.ToolStripMenuItem dotnetToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem erikEJToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem kamiKillertOToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem googleCloudPlatformToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem regawleinadToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem karenpayneoregonToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem sindresorhusToolStripMenuItem;
         private System.Windows.Forms.PictureBox WorkingPictureBox;
         private System.Windows.Forms.Button ProjectRecentCommitsButton;
         private System.Windows.Forms.Button CloseApplicationButton;
         private System.Windows.Forms.Button CreateDownLoadBatchFileButton;
-        private System.Windows.Forms.ToolStripMenuItem machinelearningsamplesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem julielermanToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem pituachToolStripMenuItem;
     }
 }
 

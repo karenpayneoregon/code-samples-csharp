@@ -1,0 +1,3 @@
+* SQL Apostrophes, parameters
+* Working with dates
+* Casting without assertion

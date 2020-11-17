@@ -47,5 +47,8 @@
   <ItemGroup>
     <None Include="readme.md" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Stash.txt" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

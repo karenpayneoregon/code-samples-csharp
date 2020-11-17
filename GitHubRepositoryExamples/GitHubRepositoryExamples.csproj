@@ -60,6 +60,12 @@
     <Compile Include="Forms\CreateDownloadBatchForm.Designer.cs">
       <DependentUpon>CreateDownloadBatchForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\GitMenuItemsConfigurationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\GitMenuItemsConfigurationForm.Designer.cs">
+      <DependentUpon>GitMenuItemsConfigurationForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,6 +90,9 @@
     </Compile>
     <EmbeddedResource Include="Forms\CreateDownloadBatchForm.resx">
       <DependentUpon>CreateDownloadBatchForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\GitMenuItemsConfigurationForm.resx">
+      <DependentUpon>GitMenuItemsConfigurationForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
