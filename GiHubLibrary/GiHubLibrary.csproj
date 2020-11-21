@@ -44,6 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GitReadmeRoot.cs" />
     <Compile Include="GitRepositoryDirectory.cs" />
     <Compile Include="GitRepositoryLinks.cs" />
     <Compile Include="GitToolMenuOperations.cs" />

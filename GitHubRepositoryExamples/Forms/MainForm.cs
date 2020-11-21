@@ -31,6 +31,10 @@ namespace GitHubRepositoryExamples.Forms
         {
             InitializeComponent();
 
+            exitToolStripMenuItem.Click += CloseApplicationButton_Click;
+
+            CueBannerTextCode.SetCueText(RepositoryTextBox,"Right click for list");
+
             // handles incremental search in repository ListBox
             SearchTextBox.TextChanged += SearchTextBox_TextChanged;
 
@@ -39,7 +43,13 @@ namespace GitHubRepositoryExamples.Forms
 
             LoadToolStripFromFile();
 
+            GitOperations.OnExceptionEvent += GitOperations_OnExceptionEvent;
 
+        }
+
+        private void GitOperations_OnExceptionEvent(Exception exception)
+        {
+            MessageBox.Show($"An error occoured\n{exception.Message}");
         }
 
         /// <summary>
@@ -100,7 +110,7 @@ namespace GitHubRepositoryExamples.Forms
         {
             if (string.IsNullOrWhiteSpace(RepositoryTextBox.Text))
             {
-                MessageBox.Show("Requires a repo");
+                MessageBox.Show(@"Requires a repository");
                 return;
             }
 
@@ -121,12 +131,17 @@ namespace GitHubRepositoryExamples.Forms
             {
                 WorkingPictureBox.Image = null;
                 // a consideration is rate limit
-                MessageBox.Show($"Failed to get repositories\n{ex.Message}");
+                MessageBox.Show($@"Failed to get repositories {ex.Message}");
                 return;
             }
 
             _repositoriesBindingSource.DataSource = _repositoriesBindingList;
             RepositoryListBox.DataSource = _repositoriesBindingSource;
+
+            if (_repositoriesBindingSource.Count >0)
+            {
+                RepositoryListBox.SelectedIndex = 0;
+            }
 
             BindControls();
 
@@ -188,9 +203,9 @@ namespace GitHubRepositoryExamples.Forms
             if (RepositoryListBox.DataSource == null || string.IsNullOrWhiteSpace(RepositoryListBox.Text)) return;
 
             var directories = GitOperations.Directories(RepositoryTextBox.Text, RepositoryListBox.Text);
-            var dirNames = directories.Where(item => item.type == "dir").Select(item => item.name).ToList();
+            var directoryNameList = directories.Where(item => item.type == "dir").Select(item => item.name).ToList();
 
-            var repoDirectoryForm = new RepositoryDirectoryForm(dirNames);
+            var repoDirectoryForm = new RepositoryDirectoryForm(directoryNameList);
             try
             {
                 repoDirectoryForm.ShowDialog();
@@ -220,6 +235,7 @@ namespace GitHubRepositoryExamples.Forms
         private void ProjectRecentCommitsButton_Click(object sender, EventArgs e)
         {
             RepositoryCommitItem[] recentCommits = {};
+
             try
             {
                 recentCommits = GitOperations.RecentCommits(RepositoryTextBox.Text, RepositoryListBox.Text);
@@ -263,9 +279,9 @@ namespace GitHubRepositoryExamples.Forms
             if (RepositoryListBox.DataSource == null || string.IsNullOrWhiteSpace(RepositoryListBox.Text)) return;
 
             var directories = GitOperations.Directories(RepositoryTextBox.Text, RepositoryListBox.Text);
-            var dirNames = directories.Where(item => item.type == "dir").Select(item => item.name).ToList();
+            var directoryList = directories.Where(item => item.type == "dir").Select(item => item.name).ToList();
 
-            var f = new CreateDownloadBatchForm(dirNames, HtmlUrlTextBox.Text);
+            var f = new CreateDownloadBatchForm(directoryList, HtmlUrlTextBox.Text);
 
             try
             {
@@ -315,6 +331,20 @@ namespace GitHubRepositoryExamples.Forms
                 .ToList()
                 .ForEach(item => item.Click += ContextMenuItem_Click);
 
+        }
+
+        private void GetMainReadMeFileButton_Click(object sender, EventArgs e)
+        {
+            var url = GitOperations.GetRepositoryMainReadmeFileLink(RepositoryTextBox.Text, RepositoryListBox.Text);
+            RepositoryReadMeTextBox.Text = url;
+        }
+
+        private void TraverseToReadmeButton_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrWhiteSpace(RepositoryReadMeTextBox.Text))
+            {
+                Process.Start(RepositoryReadMeTextBox.Text);
+            }
         }
     }
 

@@ -43,6 +43,7 @@
             // 
             // CancelButton
             // 
+            this.CancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.CancelButton.Image = global::GitHubRepositoryExamples.Properties.Resources.Close_8x_16x;
             this.CancelButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.CancelButton.Location = new System.Drawing.Point(214, 272);

@@ -53,12 +53,15 @@
             this.WorkingPictureBox = new System.Windows.Forms.PictureBox();
             this.BrowseRepositoryButton = new System.Windows.Forms.Button();
             this.FetchRepositoriesButton = new System.Windows.Forms.Button();
-            this.RepositoryTextBox = new GitHubRepositoryExamples.Classes.NoBeepTextBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.miscToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reposoriesConfigurationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.GetMainReadMeFileButton = new System.Windows.Forms.Button();
+            this.RepositoryReadMeTextBox = new System.Windows.Forms.TextBox();
+            this.RepositoryTextBox = new GitHubRepositoryExamples.Classes.NoBeepTextBox();
+            this.TraverseToReadmeButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.WorkingPictureBox)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -74,7 +77,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(372, 75);
+            this.label1.Location = new System.Drawing.Point(372, 55);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(60, 13);
             this.label1.TabIndex = 5;
@@ -82,7 +85,7 @@
             // 
             // DescriptionTextBox
             // 
-            this.DescriptionTextBox.Location = new System.Drawing.Point(375, 91);
+            this.DescriptionTextBox.Location = new System.Drawing.Point(375, 71);
             this.DescriptionTextBox.Name = "DescriptionTextBox";
             this.DescriptionTextBox.Size = new System.Drawing.Size(602, 20);
             this.DescriptionTextBox.TabIndex = 6;
@@ -91,7 +94,7 @@
             // 
             this.FoldersForSelectedButton.Image = global::GitHubRepositoryExamples.Properties.Resources.Folder_16x;
             this.FoldersForSelectedButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.FoldersForSelectedButton.Location = new System.Drawing.Point(375, 393);
+            this.FoldersForSelectedButton.Location = new System.Drawing.Point(375, 436);
             this.FoldersForSelectedButton.Name = "FoldersForSelectedButton";
             this.FoldersForSelectedButton.Size = new System.Drawing.Size(174, 23);
             this.FoldersForSelectedButton.TabIndex = 7;
@@ -102,7 +105,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(372, 125);
+            this.label2.Location = new System.Drawing.Point(372, 106);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(52, 13);
             this.label2.TabIndex = 8;
@@ -110,7 +113,7 @@
             // 
             // FullNameTextBox
             // 
-            this.FullNameTextBox.Location = new System.Drawing.Point(375, 141);
+            this.FullNameTextBox.Location = new System.Drawing.Point(375, 122);
             this.FullNameTextBox.Name = "FullNameTextBox";
             this.FullNameTextBox.Size = new System.Drawing.Size(602, 20);
             this.FullNameTextBox.TabIndex = 9;
@@ -118,7 +121,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(372, 177);
+            this.label3.Location = new System.Drawing.Point(372, 154);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(29, 13);
             this.label3.TabIndex = 10;
@@ -126,7 +129,7 @@
             // 
             // HtmlUrlTextBox
             // 
-            this.HtmlUrlTextBox.Location = new System.Drawing.Point(375, 196);
+            this.HtmlUrlTextBox.Location = new System.Drawing.Point(375, 173);
             this.HtmlUrlTextBox.Name = "HtmlUrlTextBox";
             this.HtmlUrlTextBox.Size = new System.Drawing.Size(602, 20);
             this.HtmlUrlTextBox.TabIndex = 11;
@@ -141,7 +144,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(372, 229);
+            this.label4.Location = new System.Drawing.Point(372, 204);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(55, 13);
             this.label4.TabIndex = 14;
@@ -149,7 +152,7 @@
             // 
             // LanguageTextBox
             // 
-            this.LanguageTextBox.Location = new System.Drawing.Point(375, 249);
+            this.LanguageTextBox.Location = new System.Drawing.Point(375, 224);
             this.LanguageTextBox.Name = "LanguageTextBox";
             this.LanguageTextBox.Size = new System.Drawing.Size(602, 20);
             this.LanguageTextBox.TabIndex = 15;
@@ -157,7 +160,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(372, 279);
+            this.label5.Location = new System.Drawing.Point(372, 255);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(69, 13);
             this.label5.TabIndex = 16;
@@ -165,7 +168,7 @@
             // 
             // LastUpdatedTextBox
             // 
-            this.LastUpdatedTextBox.Location = new System.Drawing.Point(375, 295);
+            this.LastUpdatedTextBox.Location = new System.Drawing.Point(375, 271);
             this.LastUpdatedTextBox.Name = "LastUpdatedTextBox";
             this.LastUpdatedTextBox.Size = new System.Drawing.Size(138, 20);
             this.LastUpdatedTextBox.TabIndex = 17;
@@ -173,7 +176,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(372, 328);
+            this.label6.Location = new System.Drawing.Point(372, 300);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(61, 13);
             this.label6.TabIndex = 18;
@@ -181,7 +184,7 @@
             // 
             // StarGazersCountTextBox
             // 
-            this.StarGazersCountTextBox.Location = new System.Drawing.Point(375, 344);
+            this.StarGazersCountTextBox.Location = new System.Drawing.Point(375, 316);
             this.StarGazersCountTextBox.Name = "StarGazersCountTextBox";
             this.StarGazersCountTextBox.Size = new System.Drawing.Size(138, 20);
             this.StarGazersCountTextBox.TabIndex = 19;
@@ -204,7 +207,7 @@
             // 
             this.CreateDownLoadBatchFileButton.Image = global::GitHubRepositoryExamples.Properties.Resources.Download_16x;
             this.CreateDownLoadBatchFileButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.CreateDownLoadBatchFileButton.Location = new System.Drawing.Point(555, 393);
+            this.CreateDownLoadBatchFileButton.Location = new System.Drawing.Point(555, 436);
             this.CreateDownLoadBatchFileButton.Name = "CreateDownLoadBatchFileButton";
             this.CreateDownLoadBatchFileButton.Size = new System.Drawing.Size(174, 23);
             this.CreateDownLoadBatchFileButton.TabIndex = 28;
@@ -216,7 +219,7 @@
             // 
             this.CloseApplicationButton.Image = global::GitHubRepositoryExamples.Properties.Resources.Close_8x_16x;
             this.CloseApplicationButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.CloseApplicationButton.Location = new System.Drawing.Point(842, 434);
+            this.CloseApplicationButton.Location = new System.Drawing.Point(842, 473);
             this.CloseApplicationButton.Name = "CloseApplicationButton";
             this.CloseApplicationButton.Size = new System.Drawing.Size(174, 23);
             this.CloseApplicationButton.TabIndex = 27;
@@ -228,7 +231,7 @@
             // 
             this.ProjectRecentCommitsButton.Image = global::GitHubRepositoryExamples.Properties.Resources.Commit_16x;
             this.ProjectRecentCommitsButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ProjectRecentCommitsButton.Location = new System.Drawing.Point(555, 436);
+            this.ProjectRecentCommitsButton.Location = new System.Drawing.Point(555, 473);
             this.ProjectRecentCommitsButton.Name = "ProjectRecentCommitsButton";
             this.ProjectRecentCommitsButton.Size = new System.Drawing.Size(174, 23);
             this.ProjectRecentCommitsButton.TabIndex = 25;
@@ -238,7 +241,7 @@
             // 
             // WorkingPictureBox
             // 
-            this.WorkingPictureBox.Location = new System.Drawing.Point(653, 295);
+            this.WorkingPictureBox.Location = new System.Drawing.Point(542, 271);
             this.WorkingPictureBox.Name = "WorkingPictureBox";
             this.WorkingPictureBox.Size = new System.Drawing.Size(67, 65);
             this.WorkingPictureBox.TabIndex = 24;
@@ -247,7 +250,7 @@
             // BrowseRepositoryButton
             // 
             this.BrowseRepositoryButton.Image = global::GitHubRepositoryExamples.Properties.Resources.Web_16x;
-            this.BrowseRepositoryButton.Location = new System.Drawing.Point(983, 196);
+            this.BrowseRepositoryButton.Location = new System.Drawing.Point(983, 173);
             this.BrowseRepositoryButton.Name = "BrowseRepositoryButton";
             this.BrowseRepositoryButton.Size = new System.Drawing.Size(33, 23);
             this.BrowseRepositoryButton.TabIndex = 13;
@@ -258,21 +261,13 @@
             // 
             this.FetchRepositoriesButton.Image = global::GitHubRepositoryExamples.Properties.Resources.ASX_Run_blue_16x;
             this.FetchRepositoriesButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.FetchRepositoriesButton.Location = new System.Drawing.Point(375, 436);
+            this.FetchRepositoriesButton.Location = new System.Drawing.Point(375, 473);
             this.FetchRepositoriesButton.Name = "FetchRepositoriesButton";
             this.FetchRepositoriesButton.Size = new System.Drawing.Size(174, 23);
             this.FetchRepositoriesButton.TabIndex = 3;
             this.FetchRepositoriesButton.Text = "Fetch repositories";
             this.FetchRepositoriesButton.UseVisualStyleBackColor = true;
             this.FetchRepositoriesButton.Click += new System.EventHandler(this.FetchRepositoriesButton_Click);
-            // 
-            // RepositoryTextBox
-            // 
-            this.RepositoryTextBox.ContextMenuStrip = this.RepoListContextMenu;
-            this.RepositoryTextBox.Location = new System.Drawing.Point(18, 51);
-            this.RepositoryTextBox.Name = "RepositoryTextBox";
-            this.RepositoryTextBox.Size = new System.Drawing.Size(335, 20);
-            this.RepositoryTextBox.TabIndex = 22;
             // 
             // menuStrip1
             // 
@@ -296,7 +291,7 @@
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(93, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             // 
             // miscToolStripMenuItem
@@ -314,11 +309,51 @@
             this.reposoriesConfigurationToolStripMenuItem.Text = "Reposories configuration";
             this.reposoriesConfigurationToolStripMenuItem.Click += new System.EventHandler(this.repositoryConfigurationToolStripMenuItem_Click);
             // 
+            // GetMainReadMeFileButton
+            // 
+            this.GetMainReadMeFileButton.Image = global::GitHubRepositoryExamples.Properties.Resources.ASX_Run_blue_16x;
+            this.GetMainReadMeFileButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.GetMainReadMeFileButton.Location = new System.Drawing.Point(375, 364);
+            this.GetMainReadMeFileButton.Name = "GetMainReadMeFileButton";
+            this.GetMainReadMeFileButton.Size = new System.Drawing.Size(174, 23);
+            this.GetMainReadMeFileButton.TabIndex = 30;
+            this.GetMainReadMeFileButton.Text = "Get main readme.md";
+            this.GetMainReadMeFileButton.UseVisualStyleBackColor = true;
+            this.GetMainReadMeFileButton.Click += new System.EventHandler(this.GetMainReadMeFileButton_Click);
+            // 
+            // RepositoryReadMeTextBox
+            // 
+            this.RepositoryReadMeTextBox.Location = new System.Drawing.Point(375, 393);
+            this.RepositoryReadMeTextBox.Name = "RepositoryReadMeTextBox";
+            this.RepositoryReadMeTextBox.Size = new System.Drawing.Size(602, 20);
+            this.RepositoryReadMeTextBox.TabIndex = 31;
+            // 
+            // RepositoryTextBox
+            // 
+            this.RepositoryTextBox.ContextMenuStrip = this.RepoListContextMenu;
+            this.RepositoryTextBox.Location = new System.Drawing.Point(18, 51);
+            this.RepositoryTextBox.Name = "RepositoryTextBox";
+            this.RepositoryTextBox.Size = new System.Drawing.Size(335, 20);
+            this.RepositoryTextBox.TabIndex = 22;
+            // 
+            // TraverseToReadmeButton
+            // 
+            this.TraverseToReadmeButton.Image = global::GitHubRepositoryExamples.Properties.Resources.Web_16x;
+            this.TraverseToReadmeButton.Location = new System.Drawing.Point(983, 390);
+            this.TraverseToReadmeButton.Name = "TraverseToReadmeButton";
+            this.TraverseToReadmeButton.Size = new System.Drawing.Size(33, 23);
+            this.TraverseToReadmeButton.TabIndex = 32;
+            this.TraverseToReadmeButton.UseVisualStyleBackColor = true;
+            this.TraverseToReadmeButton.Click += new System.EventHandler(this.TraverseToReadmeButton_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1024, 484);
+            this.ClientSize = new System.Drawing.Size(1024, 508);
+            this.Controls.Add(this.TraverseToReadmeButton);
+            this.Controls.Add(this.RepositoryReadMeTextBox);
+            this.Controls.Add(this.GetMainReadMeFileButton);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.CreateDownLoadBatchFileButton);
             this.Controls.Add(this.CloseApplicationButton);
@@ -389,6 +424,9 @@
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem miscToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reposoriesConfigurationToolStripMenuItem;
+        private System.Windows.Forms.Button GetMainReadMeFileButton;
+        private System.Windows.Forms.TextBox RepositoryReadMeTextBox;
+        private System.Windows.Forms.Button TraverseToReadmeButton;
     }
 }
 

@@ -11,6 +11,11 @@ namespace GiHubLibrary
 {
     public class GitOperations
     {
+        public delegate void OnException(Exception exception);
+        /// <summary>
+        /// Callback for subscribers to know about a problem
+        /// </summary>
+        public static event OnException OnExceptionEvent;
         /// <summary>
         /// Fetch repository
         /// </summary>
@@ -177,6 +182,41 @@ namespace GiHubLibrary
             {
                 return null;
             }
+        }
+        /// <summary>
+        /// Get current repository readme file
+        /// </summary>
+        /// <param name="organization"></param>
+        /// <param name="projectName"></param>
+        /// <returns></returns>
+        public static string GetRepositoryMainReadmeFileLink(string organization, string projectName)
+        {
+            var readmeAddress = "";
+            try
+            {
+                if (WebRequest.Create($"https://api.github.com/repos/{organization}/{projectName}/readme") is HttpWebRequest request)
+                {
+                    request.UserAgent = "TestApp";
+
+                    using (var response = request.GetResponse() as HttpWebResponse)
+                    {
+                        if (response != null)
+                        {
+                            var reader = new StreamReader(response.GetResponseStream());
+
+                            var json = reader.ReadToEnd();
+                            var results = JsonConvert.DeserializeObject<GitReadmeRoot>(json);
+                            readmeAddress = results.HtmlLink;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                OnExceptionEvent?.Invoke(ex);
+            }
+
+            return readmeAddress;
         }
     } 
 

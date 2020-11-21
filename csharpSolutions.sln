@@ -135,6 +135,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectHelpers", "ProjectHe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConverterLibrary", "ConverterLibrary\ConverterLibrary.csproj", "{052799EC-C83B-4D4E-9256-998510B34C5F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesserializeJson_1", "DesserializeJson_1\DesserializeJson_1.csproj", "{EFB9804E-82E8-41A2-B3A8-AF48805AC36E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -418,6 +420,12 @@ Global
 		{052799EC-C83B-4D4E-9256-998510B34C5F}.NormalDebug|Any CPU.Build.0 = Debug|Any CPU
 		{052799EC-C83B-4D4E-9256-998510B34C5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{052799EC-C83B-4D4E-9256-998510B34C5F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EFB9804E-82E8-41A2-B3A8-AF48805AC36E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EFB9804E-82E8-41A2-B3A8-AF48805AC36E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EFB9804E-82E8-41A2-B3A8-AF48805AC36E}.NormalDebug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EFB9804E-82E8-41A2-B3A8-AF48805AC36E}.NormalDebug|Any CPU.Build.0 = Debug|Any CPU
+		{EFB9804E-82E8-41A2-B3A8-AF48805AC36E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EFB9804E-82E8-41A2-B3A8-AF48805AC36E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -478,6 +486,7 @@ Global
 		{9B2C3FBB-8574-4BA0-B011-BD3B60E18D07} = {AF1D6999-6E01-45C2-A94C-D20F032B4CF3}
 		{4F0E4C3C-FDD2-4494-84A2-A17A7EAFBA5D} = {59913604-EA0C-4F44-ABF9-0B75371FD20B}
 		{052799EC-C83B-4D4E-9256-998510B34C5F} = {59913604-EA0C-4F44-ABF9-0B75371FD20B}
+		{EFB9804E-82E8-41A2-B3A8-AF48805AC36E} = {AF1D6999-6E01-45C2-A94C-D20F032B4CF3}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D3524478-BF74-469F-8C79-7CBBFCC7C4EA}
