@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Runtime.InteropServices;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace StackOverflow_PressScrollLock
@@ -26,13 +27,15 @@ namespace StackOverflow_PressScrollLock
             keybd_event(vkScroll, 0x45, keyeventfKeyup, (UIntPtr)0);
         }
         /// <summary>
-        /// This would go in a Timer.Tick event
+        /// This would go in a Timer.Tick event.
+        /// Note the Delay is unnecessary, only there to allow seeing toggling.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void ExecuteButton_Click(object sender, EventArgs e)
+        private async void ExecuteButton_Click(object sender, EventArgs e)
         {
             PressScrollLock();
+            await Task.Delay(500);
             PressScrollLock();
         }
     }
