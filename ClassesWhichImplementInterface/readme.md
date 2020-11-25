@@ -7,4 +7,4 @@ Basic code samples on how to determine
 
 ### See also
 
-Class project AssemblyExtensions.
+Class project [AssemblyExtensions](https://github.com/karenpayneoregon/code-samples-csharp/tree/master/AssemblyExtensions).
