@@ -1,0 +1,1096 @@
+[
+    {
+        "CustomerIdentifier": 1,
+        "CompanyName": "Alfreds Futterkiste",
+        "ContactId": 1,
+        "Street": "Obere Str. 57",
+        "City": "Berlin",
+        "PostalCode": "12209",
+        "Phone": "030-0074321",
+        "ContactTypeIdentifier": 1,
+        "ContactType": [
+            {
+                "ContactTitle": "Accounting Manager",
+                "Contacts": []
+            }
+        ]
+    },
+    {
+        "CustomerIdentifier": 2,
+        "CompanyName": "Ana Trujillo Emparedados y helados",
+        "ContactId": 2,
+        "Street": "Avda. de la Constitución 2222",
+        "City": "México D.F.",
+        "PostalCode": "05021",
+        "CountryIdentifier": 12,
+        "Phone": "(5) 555-4729",
+        "ContactTypeIdentifier": 7,
+        "ContactType": [
+            {
+                "ContactTitle": "Owner",
+                "Contacts": [
+                    {
+                        "FirstName": "Ana",
+                        "LastName": "Trujillo"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "CustomerIdentifier": 3,
+        "CompanyName": "Antonio Moreno Taquería",
+        "ContactId": 3,
+        "Street": "Mataderos  2312",
+        "City": "México D.F.",
+        "PostalCode": "05023",
+        "CountryIdentifier": 12,
+        "Phone": "(5) 555-3932",
+        "ContactTypeIdentifier": 7,
+        "ContactType": [
+            {
+                "ContactTitle": "Owner",
+                "Contacts": [
+                    {
+                        "FirstName": "Antonio",
+                        "LastName": "Moreno"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "CustomerIdentifier": 4,
+        "CompanyName": "Around the Horn",
+        "ContactId": 4,
+        "Street": "120 Hanover Sq.",
+        "City": "London",
+        "PostalCode": "WA1 1DP",
+        "CountryIdentifier": 19,
+        "Phone": "(171) 555-7788",
+        "ContactTypeIdentifier": 12,
+        "ContactType": [
+            {
+                "ContactTitle": "Sales Representative",
+                "Contacts": [
+                    {
+                        "FirstName": "Thomas",
+                        "LastName": "Hardy"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "CustomerIdentifier": 5,
+        "CompanyName": "Berglunds snabbköp",
+        "ContactId": 5,
+        "Street": "Berguvsvägen  8",
+        "City": "Luleå",
+        "PostalCode": "S-958 22",
+        "CountryIdentifier": 17,
+        "Phone": "0921-12 34 65",
+        "ContactTypeIdentifier": 6,
+        "ContactType": [
+            {
+                "ContactTitle": "Order Administrator",
+                "Contacts": [
+                    {
+                        "FirstName": "Christina",
+                        "LastName": "Berglund"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "CustomerIdentifier": 6,
+        "CompanyName": "Blauer See Delikatessen",
+        "ContactId": 6,
+        "Street": "Forsterstr. 57",
+        "City": "Mannheim",
+        "PostalCode": "68306",
+        "CountryIdentifier": 8,
+        "Phone": "0621-08460",
+        "ContactTypeIdentifier": 12,
+        "ContactType": [
+            {
+                "ContactTitle": "Sales Representative",
+                "Contacts": [
+                    {
+                        "FirstName": "Hanna",
+                        "LastName": "Moos"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "CustomerIdentifier": 7,
+        "CompanyName": "Blondesddsl père et fils",
+        "ContactId": 7,
+        "Street": "24, place Kléber",
+        "City": "Strasbourg",
+        "PostalCode": "67000",
+        "CountryIdentifier": 9,
+        "Phone": "88.60.15.31",
+        "ContactTypeIdentifier": 5,
+        "ContactType": [
+            {
+                "ContactTitle": "Marketing Manager",
+                "Contacts": [
+                    {
+                        "FirstName": "Frédérique",
+                        "LastName": "Citeaux"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "CustomerIdentifier": 8,
+        "CompanyName": "Bólido Comidas preparadas",
+        "ContactId": 8,
+        "Street": "C\/ Araquil, 67",
+        "City": "Madrid",
+        "PostalCode": "28023",
+        "CountryIdentifier": 16,
+        "Phone": "(91) 555 22 82",
+        "ContactTypeIdentifier": 7,
+        "ContactType": [
+            {
+                "ContactTitle": "Owner",
+                "Contacts": [
+                    {
+                        "FirstName": "Martín",
+                        "LastName": "Sommer"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "CustomerIdentifier": 9,
+        "CompanyName": "Bon app'",
+        "ContactId": 9,
+        "Street": "12, rue des Bouchers",
+        "City": "Marseille",
+        "PostalCode": "13008",
+        "CountryIdentifier": 1,
+        "Phone": "91.24.45.40",
+        "ContactTypeIdentifier": 7,
+        "ContactType": [
+            {
+                "ContactTitle": "Owner",
+                "Contacts": [
+                    {
+                        "FirstName": "Laurence",
+                        "LastName": "Lebihan"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "CustomerIdentifier": 12,
+        "CompanyName": "Centro comercial Moctezuma",
+        "ContactId": 12,
+        "Street": "Sierras de Granada 9993",
+        "City": "México D.F.",
+        "PostalCode": "05022",
+        "CountryIdentifier": 1,
+        "Phone": "(5) 555-3392",
+        "ContactTypeIdentifier": 5,
+        "ContactType": [
+            {
+                "ContactTitle": "Marketing Manager",
+                "Contacts": [
+                    {
+                        "FirstName": "Francisco",
+                        "LastName": "Chang"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "CustomerIdentifier": 13,
+        "CompanyName": "Chop-suey Chinese",
+        "ContactId": 13,
+        "Street": "Hauptstr. 29",
+        "City": "Bern",
+        "PostalCode": "3012",
+        "CountryIdentifier": 12,
+        "Phone": "0452-076545",
+        "ContactTypeIdentifier": 7,
+        "ContactType": [
+            {
+                "ContactTitle": "Owner",
+                "Contacts": [
+                    {
+                        "FirstName": "Yang",
+                        "LastName": "Wang"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "CustomerIdentifier": 14,
+        "CompanyName": "Consolidated Holdings",
+        "ContactId": 14,
+        "Street": "Berkeley Gardens 12  Brewery",
+        "City": "London",
+        "PostalCode": "WX1 6LT",
+        "CountryIdentifier": 19,
+        "Phone": "(171) 555-2282",
+        "ContactTypeIdentifier": 12,
+        "ContactType": [
+            {
+                "ContactTitle": "Sales Representative",
+                "Contacts": [
+                    {
+                        "FirstName": "Elizabeth",
+                        "LastName": "Brown"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "CustomerIdentifier": 15,
+        "CompanyName": "Drachenblut Delikatessen",
+        "ContactId": 15,
+        "Street": "Walserweg 21",
+        "City": "Aachen",
+        "PostalCode": "52066",
+        "CountryIdentifier": 9,
+        "Phone": "0241-039123",
+        "ContactTypeIdentifier": 6,
+        "ContactType": [
+            {
+                "ContactTitle": "Order Administrator",
+                "Contacts": [
+                    {
+                        "FirstName": "Sven",
+                        "LastName": "Ottlieb"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "CustomerIdentifier": 16,
+        "CompanyName": "Du monde entier",
+        "ContactId": 16,
+        "Street": "67, rue des Cinquante Otages",
+        "City": "Nantes",
+        "PostalCode": "44000",
+        "CountryIdentifier": 8,
+        "Phone": "40.67.88.88",
+        "ContactTypeIdentifier": 7,
+        "ContactType": [
+            {
+                "ContactTitle": "Owner",
+                "Contacts": [
+                    {
+                        "FirstName": "Janine",
+                        "LastName": "Labrune"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "CustomerIdentifier": 17,
+        "CompanyName": "Eastern Connection",
+        "ContactId": 17,
+        "Street": "35 King George",
+        "City": "London",
+        "PostalCode": "WX3 6FW",
+        "CountryIdentifier": 19,
+        "Phone": "(171) 555-0297",
+        "ContactTypeIdentifier": 9,
+        "ContactType": [
+            {
+                "ContactTitle": "Sales Agent",
+                "Contacts": [
+                    {
+                        "FirstName": "Ann",
+                        "LastName": "Devon"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "CustomerIdentifier": 18,
+        "CompanyName": "Ernst Handel",
+        "ContactId": 18,
+        "Street": "Kirchgasse 6",
+        "City": "Graz",
+        "PostalCode": "8010",
+        "CountryIdentifier": 2,
+        "Phone": "7675-3425",
+        "ContactTypeIdentifier": 11,
+        "ContactType": [
+            {
+                "ContactTitle": "Sales Manager",
+                "Contacts": [
+                    {
+                        "FirstName": "Roland",
+                        "LastName": "Mendel"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "CustomerIdentifier": 19,
+        "CompanyName": "FISSA Fabrica Inter. Salchichas S.A.",
+        "ContactId": 19,
+        "Street": "C\/ Moralzarzal, 86",
+        "City": "Madrid",
+        "PostalCode": "28034",
+        "CountryIdentifier": 16,
+        "Phone": "(91) 555 94 44",
+        "ContactTypeIdentifier": 1,
+        "ContactType": [
+            {
+                "ContactTitle": "Accounting Manager",
+                "Contacts": [
+                    {
+                        "FirstName": "Diego",
+                        "LastName": "Roel"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "CustomerIdentifier": 20,
+        "CompanyName": "Folies gourmandes",
+        "ContactId": 20,
+        "Street": "184, chaussée de Tournai",
+        "City": "Lille",
+        "PostalCode": "59000",
+        "CountryIdentifier": 8,
+        "Phone": "20.16.10.16",
+        "ContactTypeIdentifier": 2,
+        "ContactType": [
+            {
+                "ContactTitle": "Assistant Sales Agent",
+                "Contacts": [
+                    {
+                        "FirstName": "Martine",
+                        "LastName": "Rancé"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "CustomerIdentifier": 21,
+        "CompanyName": "Folk och fä HB",
+        "ContactId": 21,
+        "Street": "Åkergatan 24",
+        "City": "Bräcke",
+        "PostalCode": "S-844 67",
+        "CountryIdentifier": 17,
+        "Phone": "0695-34 67 21",
+        "ContactTypeIdentifier": 7,
+        "ContactType": [
+            {
+                "ContactTitle": "Owner",
+                "Contacts": [
+                    {
+                        "FirstName": "Maria",
+                        "LastName": "Larsson"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "CustomerIdentifier": 22,
+        "CompanyName": "Frankenversand",
+        "ContactId": 22,
+        "Street": "Berliner Platz 43",
+        "City": "München",
+        "PostalCode": "80805",
+        "CountryIdentifier": 9,
+        "Phone": "089-0877310",
+        "ContactTypeIdentifier": 5,
+        "ContactType": [
+            {
+                "ContactTitle": "Marketing Manager",
+                "Contacts": [
+                    {
+                        "FirstName": "Peter",
+                        "LastName": "Franken"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "CustomerIdentifier": 23,
+        "CompanyName": "France restauration",
+        "ContactId": 23,
+        "Street": "54, rue Royale",
+        "City": "Nantes",
+        "PostalCode": "44000",
+        "CountryIdentifier": 8,
+        "Phone": "40.32.21.21",
+        "ContactTypeIdentifier": 5,
+        "ContactType": [
+            {
+                "ContactTitle": "Marketing Manager",
+                "Contacts": [
+                    {
+                        "FirstName": "Carine",
+                        "LastName": "Schmitt"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "CustomerIdentifier": 24,
+        "CompanyName": "Franchi S.p.A.",
+        "ContactId": 24,
+        "Street": "Via Monte Bianco 34",
+        "City": "Torino",
+        "PostalCode": "10100",
+        "CountryIdentifier": 11,
+        "Phone": "011-4988260",
+        "ContactTypeIdentifier": 12,
+        "ContactType": [
+            {
+                "ContactTitle": "Sales Representative",
+                "Contacts": [
+                    {
+                        "FirstName": "Paolo",
+                        "LastName": "Accorti"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "CustomerIdentifier": 25,
+        "CompanyName": "Furia Bacalhau e Frutos do Mar",
+        "ContactId": 25,
+        "Street": "Jardim das rosas n. 32",
+        "City": "Lisboa",
+        "PostalCode": "1675",
+        "CountryIdentifier": 15,
+        "Phone": "(1) 354-2534",
+        "ContactTypeIdentifier": 11,
+        "ContactType": [
+            {
+                "ContactTitle": "Sales Manager",
+                "Contacts": [
+                    {
+                        "FirstName": "Lino",
+                        "LastName": "Rodriguez"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "CustomerIdentifier": 26,
+        "CompanyName": "Galería del gastrónomo",
+        "ContactId": 26,
+        "Street": "Rambla de Cataluña, 23",
+        "City": "Barcelona",
+        "PostalCode": "08022",
+        "CountryIdentifier": 16,
+        "Phone": "(93) 203 4560",
+        "ContactTypeIdentifier": 5,
+        "ContactType": [
+            {
+                "ContactTitle": "Marketing Manager",
+                "Contacts": [
+                    {
+                        "FirstName": "Eduardo",
+                        "LastName": "Saavedra"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "CustomerIdentifier": 27,
+        "CompanyName": "Godos Cocina Típica",
+        "ContactId": 27,
+        "Street": "C\/ Romero, 33",
+        "City": "Sevilla",
+        "PostalCode": "41101",
+        "CountryIdentifier": 16,
+        "Phone": "(95) 555 82 82",
+        "ContactTypeIdentifier": 11,
+        "ContactType": [
+            {
+                "ContactTitle": "Sales Manager",
+                "Contacts": [
+                    {
+                        "FirstName": "José",
+                        "LastName": "Pedro Freyre"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "CustomerIdentifier": 28,
+        "CompanyName": "Königlich Essen",
+        "ContactId": 28,
+        "Street": "Maubelstr. 90",
+        "City": "Brandenburg",
+        "PostalCode": "14776",
+        "CountryIdentifier": 9,
+        "Phone": "0555-09876",
+        "ContactTypeIdentifier": 10,
+        "ContactType": [
+            {
+                "ContactTitle": "Sales Associate",
+                "Contacts": [
+                    {
+                        "FirstName": "Philip",
+                        "LastName": "Cramer"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "CustomerIdentifier": 29,
+        "CompanyName": "La corne d'abondance",
+        "ContactId": 29,
+        "Street": "67, avenue de l'Europe",
+        "City": "Versailles",
+        "PostalCode": "78000",
+        "CountryIdentifier": 8,
+        "Phone": "30.59.84.10",
+        "ContactTypeIdentifier": 12,
+        "ContactType": [
+            {
+                "ContactTitle": "Sales Representative",
+                "Contacts": [
+                    {
+                        "FirstName": "Daniel",
+                        "LastName": "Tonini"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "CustomerIdentifier": 30,
+        "CompanyName": "La maison d'Asie",
+        "ContactId": 30,
+        "Street": "1 rue Alsace-Lorraine",
+        "City": "Toulouse",
+        "PostalCode": "31000",
+        "CountryIdentifier": 8,
+        "Phone": "61.77.61.10",
+        "ContactTypeIdentifier": 11,
+        "ContactType": [
+            {
+                "ContactTitle": "Sales Manager",
+                "Contacts": [
+                    {
+                        "FirstName": "Annette",
+                        "LastName": "Roulet"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "CustomerIdentifier": 31,
+        "CompanyName": "Lehmanns Marktstand",
+        "ContactId": 31,
+        "Street": "Magazinweg 7",
+        "City": "Frankfurt a.M.",
+        "PostalCode": "60528",
+        "CountryIdentifier": 9,
+        "Phone": "069-0245984",
+        "ContactTypeIdentifier": 12,
+        "ContactType": [
+            {
+                "ContactTitle": "Sales Representative",
+                "Contacts": [
+                    {
+                        "FirstName": "Renate",
+                        "LastName": "Messner"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "CustomerIdentifier": 32,
+        "CompanyName": "Magazzini Alimentari Riuniti",
+        "ContactId": 32,
+        "Street": "Via Ludovico il Moro 22",
+        "City": "Bergamo",
+        "PostalCode": "24100",
+        "CountryIdentifier": 11,
+        "Phone": "035-640230",
+        "ContactTypeIdentifier": 5,
+        "ContactType": [
+            {
+                "ContactTitle": "Marketing Manager",
+                "Contacts": [
+                    {
+                        "FirstName": "Giovanni",
+                        "LastName": "Rovelli"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "CustomerIdentifier": 33,
+        "CompanyName": "Maison Dewey",
+        "ContactId": 33,
+        "Street": "Rue Joseph-Bens 532",
+        "City": "Bruxelles",
+        "PostalCode": "B-1180",
+        "CountryIdentifier": 3,
+        "Phone": "(02) 201 24 67",
+        "ContactTypeIdentifier": 9,
+        "ContactType": [
+            {
+                "ContactTitle": "Sales Agent",
+                "Contacts": [
+                    {
+                        "FirstName": "Catherine",
+                        "LastName": "Dewey"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "CustomerIdentifier": 34,
+        "CompanyName": "Morgenstern Gesundkost",
+        "ContactId": 34,
+        "Street": "Heerstr. 22",
+        "City": "Leipzig",
+        "PostalCode": "04179",
+        "CountryIdentifier": 9,
+        "Phone": "0342-023176",
+        "ContactTypeIdentifier": 4,
+        "ContactType": [
+            {
+                "ContactTitle": "Marketing Assistant",
+                "Contacts": [
+                    {
+                        "FirstName": "Alexander",
+                        "LastName": "Feuer"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "CustomerIdentifier": 35,
+        "CompanyName": "North\/South",
+        "ContactId": 35,
+        "Street": "South House 300 Queensbridge",
+        "City": "London",
+        "PostalCode": "SW7 1RZ",
+        "CountryIdentifier": 19,
+        "Phone": "(171) 555-7733",
+        "ContactTypeIdentifier": 10,
+        "ContactType": [
+            {
+                "ContactTitle": "Sales Associate",
+                "Contacts": [
+                    {
+                        "FirstName": "Simon",
+                        "LastName": "Crowther"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "CustomerIdentifier": 36,
+        "CompanyName": "Océano Atlántico Ltda.",
+        "ContactId": 36,
+        "Street": "Ing. Gustavo Moncada 8585 Piso 20-A",
+        "City": "Buenos Aires",
+        "PostalCode": "1010",
+        "CountryIdentifier": 1,
+        "Phone": "(1) 135-5333",
+        "ContactTypeIdentifier": 9,
+        "ContactType": [
+            {
+                "ContactTitle": "Sales Agent",
+                "Contacts": [
+                    {
+                        "FirstName": "Yvonne",
+                        "LastName": "Moncada"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "CustomerIdentifier": 37,
+        "CompanyName": "Ottilies Käseladen",
+        "ContactId": 37,
+        "Street": "Mehrheimerstr. 369",
+        "City": "Köln",
+        "PostalCode": "50739",
+        "CountryIdentifier": 9,
+        "Phone": "0221-0644327",
+        "ContactTypeIdentifier": 7,
+        "ContactType": [
+            {
+                "ContactTitle": "Owner",
+                "Contacts": [
+                    {
+                        "FirstName": "Henriette",
+                        "LastName": "Pfalzheim"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "CustomerIdentifier": 38,
+        "CompanyName": "Paris spécialités",
+        "ContactId": 38,
+        "Street": "265, boulevard Charonne",
+        "City": "Paris",
+        "PostalCode": "75012",
+        "CountryIdentifier": 8,
+        "Phone": "(1) 42.34.22.66",
+        "ContactTypeIdentifier": 7,
+        "ContactType": [
+            {
+                "ContactTitle": "Owner",
+                "Contacts": [
+                    {
+                        "FirstName": "Marie",
+                        "LastName": "Bertrand"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "CustomerIdentifier": 39,
+        "CompanyName": "Pericles Comidas clásicas",
+        "ContactId": 39,
+        "Street": "Calle Dr. Jorge Cash 321",
+        "City": "México D.F.",
+        "PostalCode": "05033",
+        "CountryIdentifier": 12,
+        "Phone": "(5) 552-3745",
+        "ContactTypeIdentifier": 12,
+        "ContactType": [
+            {
+                "ContactTitle": "Sales Representative",
+                "Contacts": [
+                    {
+                        "FirstName": "Guillermo",
+                        "LastName": "Fernández"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "CustomerIdentifier": 40,
+        "CompanyName": "Piccolo und mehr",
+        "ContactId": 40,
+        "Street": "Geislweg 14",
+        "City": "Salzburg",
+        "PostalCode": "5020",
+        "CountryIdentifier": 2,
+        "Phone": "6562-9722",
+        "ContactTypeIdentifier": 11,
+        "ContactType": [
+            {
+                "ContactTitle": "Sales Manager",
+                "Contacts": [
+                    {
+                        "FirstName": "Georg",
+                        "LastName": "Pipps"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "CustomerIdentifier": 41,
+        "CompanyName": "Princesa Isabel Vinhos",
+        "ContactId": 41,
+        "Street": "Estrada da saúde n. 58",
+        "City": "Lisboa",
+        "PostalCode": "1756",
+        "CountryIdentifier": 15,
+        "Phone": "(1) 356-5634",
+        "ContactTypeIdentifier": 12,
+        "ContactType": [
+            {
+                "ContactTitle": "Sales Representative",
+                "Contacts": [
+                    {
+                        "FirstName": "Isabel",
+                        "LastName": "de Castro"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "CustomerIdentifier": 42,
+        "CompanyName": "QUICK Stop",
+        "ContactId": 42,
+        "Street": "Taucherstraße 10",
+        "City": "Cunewalde",
+        "PostalCode": "01307",
+        "CountryIdentifier": 9,
+        "Phone": "0372-035188",
+        "ContactTypeIdentifier": 1,
+        "ContactType": [
+            {
+                "ContactTitle": "Accounting Manager",
+                "Contacts": [
+                    {
+                        "FirstName": "Horst",
+                        "LastName": "Kloss"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "CustomerIdentifier": 43,
+        "CompanyName": "Rancho grande",
+        "ContactId": 43,
+        "Street": "Av. del Libertador 900",
+        "City": "Buenos Aires",
+        "PostalCode": "1010",
+        "CountryIdentifier": 1,
+        "Phone": "(1) 123-5555",
+        "ContactTypeIdentifier": 12,
+        "ContactType": [
+            {
+                "ContactTitle": "Sales Representative",
+                "Contacts": [
+                    {
+                        "FirstName": "Sergio",
+                        "LastName": "Gutiérrez"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "CustomerIdentifier": 44,
+        "CompanyName": "Reggiani Caseifici",
+        "ContactId": 44,
+        "Street": "Strada Provinciale 124",
+        "City": "Reggio Emilia",
+        "PostalCode": "42100",
+        "CountryIdentifier": 11,
+        "Phone": "0522-556721",
+        "ContactTypeIdentifier": 10,
+        "ContactType": [
+            {
+                "ContactTitle": "Sales Associate",
+                "Contacts": [
+                    {
+                        "FirstName": "Maurizio",
+                        "LastName": "Moroni"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "CustomerIdentifier": 45,
+        "CompanyName": "Richter Supermarkt",
+        "ContactId": 45,
+        "Street": "Grenzacherweg 237",
+        "City": "Genève",
+        "PostalCode": "1203",
+        "CountryIdentifier": 18,
+        "Phone": "0897-034214",
+        "ContactTypeIdentifier": 11,
+        "ContactType": [
+            {
+                "ContactTitle": "Sales Manager",
+                "Contacts": [
+                    {
+                        "FirstName": "Michael",
+                        "LastName": "Holz"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "CustomerIdentifier": 46,
+        "CompanyName": "Romero y tomillo",
+        "ContactId": 46,
+        "Street": "Gran Vía, 1",
+        "City": "Madrid",
+        "PostalCode": "28001",
+        "CountryIdentifier": 16,
+        "Phone": "(91) 745 6200",
+        "ContactTypeIdentifier": 1,
+        "ContactType": [
+            {
+                "ContactTitle": "Accounting Manager",
+                "Contacts": [
+                    {
+                        "FirstName": "Alejandra",
+                        "LastName": "Camino"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "CustomerIdentifier": 47,
+        "CompanyName": "Santé Gourmet",
+        "ContactId": 47,
+        "Street": "Erling Skakkes gate 78",
+        "City": "Stavern",
+        "PostalCode": "4110",
+        "CountryIdentifier": 13,
+        "Phone": "07-98 92 35",
+        "ContactTypeIdentifier": 7,
+        "ContactType": [
+            {
+                "ContactTitle": "Owner",
+                "Contacts": [
+                    {
+                        "FirstName": "Jonas",
+                        "LastName": "Bergulfsen"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "CustomerIdentifier": 48,
+        "CompanyName": "Seven Seas Imports",
+        "ContactId": 48,
+        "Street": "90 Wadhurst Rd.",
+        "City": "London",
+        "PostalCode": "OX15 4NB",
+        "CountryIdentifier": 19,
+        "Phone": "(171) 555-1717",
+        "ContactTypeIdentifier": 11,
+        "ContactType": [
+            {
+                "ContactTitle": "Sales Manager",
+                "Contacts": [
+                    {
+                        "FirstName": "Hari",
+                        "LastName": "Kumar"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "CustomerIdentifier": 49,
+        "CompanyName": "Simons bistro",
+        "ContactId": 49,
+        "Street": "Vinbæltet 34",
+        "City": "Kobenhavn",
+        "PostalCode": "1734",
+        "CountryIdentifier": 6,
+        "Phone": "31 12 34 56",
+        "ContactTypeIdentifier": 7,
+        "ContactType": [
+            {
+                "ContactTitle": "Owner",
+                "Contacts": [
+                    {
+                        "FirstName": "Jytte",
+                        "LastName": "Petersen"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "CustomerIdentifier": 50,
+        "CompanyName": "Spécialités du monde",
+        "ContactId": 50,
+        "Street": "25, rue Lauriston",
+        "City": "Paris",
+        "PostalCode": "75016",
+        "CountryIdentifier": 8,
+        "Phone": "(1) 47.55.60.10",
+        "ContactTypeIdentifier": 5,
+        "ContactType": [
+            {
+                "ContactTitle": "Marketing Manager",
+                "Contacts": [
+                    {
+                        "FirstName": "Dominique",
+                        "LastName": "Perrier"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "CustomerIdentifier": 51,
+        "CompanyName": "Suprêmes délices",
+        "ContactId": 51,
+        "Street": "Boulevard Tirou, 255",
+        "City": "Charleroi",
+        "PostalCode": "B-6000",
+        "CountryIdentifier": 3,
+        "Phone": "(071) 23 67 22 20",
+        "ContactTypeIdentifier": 1,
+        "ContactType": [
+            {
+                "ContactTitle": "Accounting Manager",
+                "Contacts": [
+                    {
+                        "FirstName": "Pascale",
+                        "LastName": "Cartrain"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "CustomerIdentifier": 52,
+        "CompanyName": "Toms Spezialitäten",
+        "ContactId": 52,
+        "Street": "Luisenstr. 48",
+        "City": "Münster",
+        "PostalCode": "44087",
+        "CountryIdentifier": 9,
+        "Phone": "0251-031259",
+        "ContactTypeIdentifier": 5,
+        "ContactType": [
+            {
+                "ContactTitle": "Marketing Manager",
+                "Contacts": [
+                    {
+                        "FirstName": "Karin",
+                        "LastName": "Josephs"
+                    }
+                ]
+            }
+        ]
+    }
+]

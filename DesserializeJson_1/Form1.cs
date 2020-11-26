@@ -9,6 +9,9 @@ using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using JsonSampleLibrary;
+using JsonSampleLibrary.Classes;
+using JsonSampleLibrary.Models;
 
 
 namespace DesserializeJson_1
@@ -22,6 +25,14 @@ namespace DesserializeJson_1
         public Form1()
         {
             InitializeComponent();
+            CustomerOperations.OnExceptionEvent += CustomerOperations_OnExceptionEvent;
+        }
+
+
+        private DeserializeException _deserializeException;
+        private void CustomerOperations_OnExceptionEvent(DeserializeException container)
+        {
+            _deserializeException = container;
         }
 
         private void deserializeButton_Click(object sender, EventArgs e)
@@ -126,6 +137,27 @@ namespace DesserializeJson_1
             sb.AppendLine("</html>");
 
             File.WriteAllText("coldfusion.html", sb.ToString());
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            List<Customer> customers;
+            _deserializeException = new DeserializeException();
+            customers = CustomerOperations.IgnoreNullValuesTest(5);
+
+            if (!_deserializeException.HasException)
+            {
+                foreach (var customer in customers)
+                {
+                    Console.WriteLine($"{customer.Id}, {customer.CompanyName}, [{customer.ContactTitle}] [{customer.ContactFirstName}] [{customer.ContactLastName}] [{customer.CountryIdentifier == null}]");
+                }
+
+            }
+            else
+            {
+                MessageBox.Show($"Failed to read customers\n{_deserializeException.Exception.Message}\nfrom {_deserializeException.MethodName}");
+            }
+
         }
     }
 
