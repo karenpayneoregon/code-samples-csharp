@@ -1,6 +1,10 @@
 ﻿# About Format package listing
 
-Execute in Package manager console: **Get-Package | ft -AutoSize** then run this project to get a formatted GitHub markdown table suitable for a readme.md file.
+Execute in Package manager console: **Get-Package -ProjectName "insert here"** then run this project to get a formatted GitHub markdown table suitable for a readme.md file.
+
+To get all packages and support packages **Get-Package | ft -AutoSize**
+
+The project does **Get-Package -ProjectName "insert here"** by reading the package file for conventional .NET Framework or if .NET Core reads from the project file.
 
 - Currently list packages for VB.NET or C#
 - Export part is still under development as the format has not been decided e.g. should it be HTML, CSV, Markdown table or options for all by selection say in a ComboBox.
@@ -44,4 +48,11 @@ del .yml
 del .editorconfig
 del *.md
 del *.sln
-```
+``````
+# Finding packages from the Package manager console
+
+**All packages for EF Core**
+> Find-Package Microsoft.EntityFrameworkCore | ft -AutoSize
+
+**All packages starting with Microsoft**
+> Find-Package Microsoft | ft -AutoSize
