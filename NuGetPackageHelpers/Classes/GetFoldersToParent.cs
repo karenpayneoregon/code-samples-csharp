@@ -5,6 +5,9 @@ using System.IO;
 namespace NuGetPackageHelpers.Classes
 {
   
+    /// <summary>
+    /// Directory helpers
+    /// </summary>
     public static class GetFoldersToParent
     {
         /// <summary>

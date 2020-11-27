@@ -59,9 +59,12 @@ namespace GitHubRepositoryDownloader.Forms
             }
 
             sb.AppendLine("git pull origin master");
+
             sb.AppendLine(":clean-up");
             sb.AppendLine("del .gitattributes");
             sb.AppendLine("del .gitignore");
+            sb.AppendLine("del .yml");
+            sb.AppendLine("del .editorconfig");
             sb.AppendLine("del *.md");
             sb.AppendLine("del *.sln");
 

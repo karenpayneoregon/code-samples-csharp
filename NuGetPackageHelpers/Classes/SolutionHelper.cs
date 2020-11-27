@@ -22,6 +22,7 @@ namespace NuGetPackageHelpers.Classes
 
             for (var index = 0; index < projects.Count; ++index)
             {
+
                 if (!Path.IsPathRooted(projects[index]))
                 {
                     projects[index] = Path.Combine(path1: Path.GetDirectoryName(solutionName) ?? string.Empty, path2: projects[index]);

@@ -37,11 +37,37 @@ namespace NuGetPackageHelpers
             ActiveControl = ProcessSelectSolutionButton;
         }
 
-        private void Operations_DisplayHandler(string sender)
-        {
-            listView1.Items.Add(sender);
-        }
+        /// <summary>
+        /// Font for project name row in ListView
+        /// </summary>
+        private readonly Font _projectNameFont = new Font("Calibri", 10, FontStyle.Bold); 
 
+        /// <summary>
+        /// Display progress in real time. Here there are three possibilities
+        /// * project name
+        /// * package name an version
+        /// * empty line to separate projects (could also have done a group)
+        /// </summary>
+        /// <param name="sender">Information to add to ListView</param>
+        /// <param name="bold"></param>
+        private void Operations_DisplayHandler(string sender, bool bold)
+        {
+            if (bold)
+            {
+                var item = new ListViewItem(sender) {Font = _projectNameFont};
+                item.ForeColor = Color.Crimson;
+                listView1.Items.Add(item);
+            }
+            else
+            {
+                listView1.Items.Add(sender);
+            }
+            
+        }
+        /// <summary>
+        /// Display confirmation of solution selected and solution folder
+        /// selected.
+        /// </summary>
         private void DisplayDetails()
         {
             SolutionFolderLabel.Text = $"Folder: {Solution.Folder}";
@@ -73,10 +99,10 @@ namespace NuGetPackageHelpers
         /// <param name="e"></param>
         private void ProcessSelectSolutionButton_Click(object sender, EventArgs e)
         {
-
+            Solution = Operations.Solution;
             listView1.Items.Clear();
 
-            var initialPath = @"C:\OED\Dotnetland\";
+            var initialPath = @"C:\OED\Dotnetland\VS2019\";
 
             if (Environment.UserName != "PayneK")
             {
@@ -100,10 +126,16 @@ namespace NuGetPackageHelpers
                 Solution = Operations.Solution;
 
                 DisplayDetails();
+
                 ExportToWebPageButton.Enabled = Solution.Packages.Any();
 
             }
         }
+        /// <summary>
+        /// Process ListView items to HTML file
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ExportToWebPageButtonButton_Click(object sender, EventArgs e)
         {
 

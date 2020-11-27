@@ -2,6 +2,9 @@
 
 namespace NuGetPackageHelpers.Classes
 {
+    /// <summary>
+    /// Container for results from parsing a solution for NuGet packages
+    /// </summary>
     public class Solution
     {
         /// <summary>

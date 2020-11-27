@@ -2,6 +2,9 @@
 
 namespace NuGetPackageHelpers.Classes
 {
+    /// <summary>
+    /// Supported project types
+    /// </summary>
     public class ProjectTypes
     {
         public static List<ProjectType> ProjectTypesList()

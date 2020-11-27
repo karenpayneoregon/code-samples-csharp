@@ -11,7 +11,7 @@ namespace NuGetPackageHelpers.Classes
 
     public class Operations 
     {
-        public delegate void DisplayInformation(string sender);
+        public delegate void DisplayInformation(string sender, bool bold);
         public static event DisplayInformation DisplayInformationHandler;
         public static Solution Solution;
 
@@ -56,7 +56,7 @@ namespace NuGetPackageHelpers.Classes
 
                     var projectNameWithoutExtension = Path.GetFileNameWithoutExtension(projectFiles[0]);
 
-                    DisplayInformationHandler?.Invoke(projectNameWithoutExtension);
+                    DisplayInformationHandler?.Invoke(projectNameWithoutExtension, true);
                     package.ProjectName = projectNameWithoutExtension;
 
                     var document = XDocument.Load(fileName);
@@ -66,17 +66,65 @@ namespace NuGetPackageHelpers.Classes
                         var packageName = packageNode.Attribute("id").Value;
                         var version = packageNode.Attribute("version").Value;
 
-                        DisplayInformationHandler?.Invoke($"    {packageName}, {version}");
+                        DisplayInformationHandler?.Invoke($"    {packageName}, {version}", false);
                         package.PackageItems.Add(new PackageItem() {Name = packageName, Version = version});
 
                     }
 
                     Solution.Packages.Add(package);
 
-                    DisplayInformationHandler?.Invoke("");
+                    DisplayInformationHandler?.Invoke("", false);
+                }
+                else
+                {
+                    package = new Package(); // {SolutionFolder = solutionFolder };
+                    var projectFiles = Directory.GetFiles(folder, projectType);
+                    if (projectFiles.Length == 0)
+                    {
+                        continue;
+                    }
+
+                    GetCorePackages(projectFiles[0],package);
                 }
              
             }
+        }
+        public static void GetCorePackages(string projectFileName, Package package)
+        {
+            if (!File.Exists(projectFileName))
+            {
+                return;
+            }
+
+            var doc = XDocument.Load(projectFileName);
+            var packageReferences = doc.XPathSelectElements("//PackageReference")
+                .Select(pr => new PackageReference
+                {
+                    Include = pr.Attribute("Include").Value,
+                    Version = new Version(pr.Attribute("Version").Value)
+                });
+
+            if (packageReferences.Count() == 0)
+            {
+                return;
+            }
+
+            package.ProjectName = Path.GetFileNameWithoutExtension(projectFileName);
+            Console.WriteLine(package.ProjectName);
+            DisplayInformationHandler?.Invoke(Path.GetFileNameWithoutExtension(projectFileName), true);
+            foreach (var packageReference in packageReferences)
+            {
+                package.PackageItems.Add(new PackageItem()
+                {
+                    Name = packageReference.Include,
+                    Version = packageReference.Version.ToString()
+                });
+                
+                
+                DisplayInformationHandler?.Invoke($"    {packageReference.Include}, {packageReference.Version}", false);
+            }
+            Solution.Packages.Add(package);
+
         }
         /// <summary>
         /// Export current solution packages to a HTML page.
@@ -111,7 +159,7 @@ namespace NuGetPackageHelpers.Classes
 
             foreach (var package in Solution.Packages)
             {
-
+                Console.WriteLine(package.ProjectName);
                 sb.AppendLine($"<tr><td style='background-color:#FFFF66 !important;'><strong>{package.ProjectName}</strong></td>" + 
                               "<td style='white-space: pre;background-color:#FFFF66 !important;'></td></tr>");
 
@@ -130,5 +178,7 @@ namespace NuGetPackageHelpers.Classes
             File.WriteAllText(ExportWebPageFileName, sb.ToString());
 
         }
+
+
     }
 }

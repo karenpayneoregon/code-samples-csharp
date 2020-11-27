@@ -32,13 +32,13 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.ProjectTypeComboBox = new System.Windows.Forms.ComboBox();
+            this.ProcessSelectSolutionButton = new System.Windows.Forms.Button();
+            this.ProcessCurrentSolutionButton = new System.Windows.Forms.Button();
+            this.ExportToWebPageButton = new System.Windows.Forms.Button();
             this.listView1 = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SolutionLabel = new System.Windows.Forms.Label();
             this.SolutionFolderLabel = new System.Windows.Forms.Label();
-            this.ProcessSelectSolutionButton = new System.Windows.Forms.Button();
-            this.ProcessCurrentSolutionButton = new System.Windows.Forms.Button();
-            this.ExportToWebPageButton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -73,41 +73,6 @@
             this.ProjectTypeComboBox.Size = new System.Drawing.Size(183, 21);
             this.ProjectTypeComboBox.TabIndex = 3;
             // 
-            // listView1
-            // 
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1});
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(0, 0);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(488, 266);
-            this.listView1.TabIndex = 3;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "Information";
-            this.columnHeader1.Width = 420;
-            // 
-            // SolutionLabel
-            // 
-            this.SolutionLabel.AutoSize = true;
-            this.SolutionLabel.Location = new System.Drawing.Point(19, 295);
-            this.SolutionLabel.Name = "SolutionLabel";
-            this.SolutionLabel.Size = new System.Drawing.Size(45, 13);
-            this.SolutionLabel.TabIndex = 4;
-            this.SolutionLabel.Text = "Solution";
-            // 
-            // SolutionFolderLabel
-            // 
-            this.SolutionFolderLabel.AutoSize = true;
-            this.SolutionFolderLabel.Location = new System.Drawing.Point(19, 282);
-            this.SolutionFolderLabel.Name = "SolutionFolderLabel";
-            this.SolutionFolderLabel.Size = new System.Drawing.Size(36, 13);
-            this.SolutionFolderLabel.TabIndex = 5;
-            this.SolutionFolderLabel.Text = "Folder";
-            // 
             // ProcessSelectSolutionButton
             // 
             this.ProcessSelectSolutionButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -138,8 +103,7 @@
             // 
             // ExportToWebPageButton
             // 
-            this.ExportToWebPageButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ExportToWebPageButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.ExportToWebPageButton.Enabled = false;
             this.ExportToWebPageButton.Image = global::NuGetPackageHelpers.Properties.Resources.Web_16x;
             this.ExportToWebPageButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -150,6 +114,46 @@
             this.ExportToWebPageButton.Text = "Export as web page";
             this.ExportToWebPageButton.UseVisualStyleBackColor = true;
             this.ExportToWebPageButton.Click += new System.EventHandler(this.ExportToWebPageButtonButton_Click);
+            // 
+            // listView1
+            // 
+            this.listView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1});
+            this.listView1.HideSelection = false;
+            this.listView1.Location = new System.Drawing.Point(0, 0);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(488, 266);
+            this.listView1.TabIndex = 3;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Information";
+            this.columnHeader1.Width = 420;
+            // 
+            // SolutionLabel
+            // 
+            this.SolutionLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.SolutionLabel.AutoSize = true;
+            this.SolutionLabel.Location = new System.Drawing.Point(19, 295);
+            this.SolutionLabel.Name = "SolutionLabel";
+            this.SolutionLabel.Size = new System.Drawing.Size(45, 13);
+            this.SolutionLabel.TabIndex = 4;
+            this.SolutionLabel.Text = "Solution";
+            // 
+            // SolutionFolderLabel
+            // 
+            this.SolutionFolderLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.SolutionFolderLabel.AutoSize = true;
+            this.SolutionFolderLabel.Location = new System.Drawing.Point(19, 282);
+            this.SolutionFolderLabel.Name = "SolutionFolderLabel";
+            this.SolutionFolderLabel.Size = new System.Drawing.Size(36, 13);
+            this.SolutionFolderLabel.TabIndex = 5;
+            this.SolutionFolderLabel.Text = "Folder";
             // 
             // Form1
             // 

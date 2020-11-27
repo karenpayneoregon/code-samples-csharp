@@ -60,6 +60,7 @@
     <Compile Include="Classes\GetFoldersToParent.cs" />
     <Compile Include="Classes\Package.cs" />
     <Compile Include="Classes\PackageItem.cs" />
+    <Compile Include="Classes\PackageReference.cs" />
     <Compile Include="Classes\ProjectType.cs" />
     <Compile Include="Classes\ProjectTypes.cs" />
     <Compile Include="Classes\Solution.cs" />
