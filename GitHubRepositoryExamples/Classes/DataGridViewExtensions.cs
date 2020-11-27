@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using GiHubLibrary;
 
-namespace GitHubRepositoryExamples.Classes
+namespace GitHubRepositoryDownloader.Classes
 {
     /// <summary>
     /// Specific extensions for git menu items

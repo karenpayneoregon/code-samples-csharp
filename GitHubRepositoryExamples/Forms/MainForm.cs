@@ -10,12 +10,12 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using ExceptionHandling;
 using GiHubLibrary;
-using GitHubRepositoryExamples.Classes;
-using static GitHubRepositoryExamples.Properties.Resources;
+using GitHubRepositoryDownloader.Classes;
+using static GitHubRepositoryDownloader.Properties.Resources;
 using Formatting = System.Xml.Formatting;
 
 
-namespace GitHubRepositoryExamples.Forms
+namespace GitHubRepositoryDownloader.Forms
 {
     /// <summary>
     /// Entry form for application

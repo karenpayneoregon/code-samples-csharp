@@ -1,4 +1,4 @@
-﻿namespace GitHubRepositoryExamples.Forms
+﻿namespace GitHubRepositoryDownloader.Forms
 {
     partial class CreateDownloadBatchForm
     {
@@ -44,7 +44,7 @@
             // CancelButton
             // 
             this.CancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.CancelButton.Image = global::GitHubRepositoryExamples.Properties.Resources.Close_8x_16x;
+            this.CancelButton.Image = global::GitHubRepositoryDownloader.Properties.Resources.Close_8x_16x;
             this.CancelButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.CancelButton.Location = new System.Drawing.Point(214, 272);
             this.CancelButton.Name = "CancelButton";
@@ -55,7 +55,7 @@
             // 
             // SelectProjectsButton
             // 
-            this.SelectProjectsButton.Image = global::GitHubRepositoryExamples.Properties.Resources.ExportFile_16x;
+            this.SelectProjectsButton.Image = global::GitHubRepositoryDownloader.Properties.Resources.ExportFile_16x;
             this.SelectProjectsButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.SelectProjectsButton.Location = new System.Drawing.Point(15, 272);
             this.SelectProjectsButton.Name = "SelectProjectsButton";

@@ -1,6 +1,6 @@
 ﻿using System.Windows.Forms;
 
-namespace GitHubRepositoryExamples.Classes
+namespace GitHubRepositoryDownloader.Classes
 {
     public static class CommonDialogs
     {

@@ -1,4 +1,4 @@
-﻿namespace GitHubRepositoryExamples.Forms
+﻿namespace GitHubRepositoryDownloader.Forms
 {
     partial class MainForm
     {
@@ -60,7 +60,7 @@
             this.reposoriesConfigurationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.GetMainReadMeFileButton = new System.Windows.Forms.Button();
             this.RepositoryReadMeTextBox = new System.Windows.Forms.TextBox();
-            this.RepositoryTextBox = new GitHubRepositoryExamples.Classes.NoBeepTextBox();
+            this.RepositoryTextBox = new GitHubRepositoryDownloader.Classes.NoBeepTextBox();
             this.TraverseToReadmeButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.WorkingPictureBox)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -92,7 +92,7 @@
             // 
             // FoldersForSelectedButton
             // 
-            this.FoldersForSelectedButton.Image = global::GitHubRepositoryExamples.Properties.Resources.Folder_16x;
+            this.FoldersForSelectedButton.Image = global::GitHubRepositoryDownloader.Properties.Resources.Folder_16x;
             this.FoldersForSelectedButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.FoldersForSelectedButton.Location = new System.Drawing.Point(375, 436);
             this.FoldersForSelectedButton.Name = "FoldersForSelectedButton";
@@ -205,7 +205,7 @@
             // 
             // CreateDownLoadBatchFileButton
             // 
-            this.CreateDownLoadBatchFileButton.Image = global::GitHubRepositoryExamples.Properties.Resources.Download_16x;
+            this.CreateDownLoadBatchFileButton.Image = global::GitHubRepositoryDownloader.Properties.Resources.Download_16x;
             this.CreateDownLoadBatchFileButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.CreateDownLoadBatchFileButton.Location = new System.Drawing.Point(555, 436);
             this.CreateDownLoadBatchFileButton.Name = "CreateDownLoadBatchFileButton";
@@ -217,7 +217,7 @@
             // 
             // CloseApplicationButton
             // 
-            this.CloseApplicationButton.Image = global::GitHubRepositoryExamples.Properties.Resources.Close_8x_16x;
+            this.CloseApplicationButton.Image = global::GitHubRepositoryDownloader.Properties.Resources.Close_8x_16x;
             this.CloseApplicationButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.CloseApplicationButton.Location = new System.Drawing.Point(842, 473);
             this.CloseApplicationButton.Name = "CloseApplicationButton";
@@ -229,7 +229,7 @@
             // 
             // ProjectRecentCommitsButton
             // 
-            this.ProjectRecentCommitsButton.Image = global::GitHubRepositoryExamples.Properties.Resources.Commit_16x;
+            this.ProjectRecentCommitsButton.Image = global::GitHubRepositoryDownloader.Properties.Resources.Commit_16x;
             this.ProjectRecentCommitsButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ProjectRecentCommitsButton.Location = new System.Drawing.Point(555, 473);
             this.ProjectRecentCommitsButton.Name = "ProjectRecentCommitsButton";
@@ -249,7 +249,7 @@
             // 
             // BrowseRepositoryButton
             // 
-            this.BrowseRepositoryButton.Image = global::GitHubRepositoryExamples.Properties.Resources.Web_16x;
+            this.BrowseRepositoryButton.Image = global::GitHubRepositoryDownloader.Properties.Resources.Web_16x;
             this.BrowseRepositoryButton.Location = new System.Drawing.Point(983, 173);
             this.BrowseRepositoryButton.Name = "BrowseRepositoryButton";
             this.BrowseRepositoryButton.Size = new System.Drawing.Size(33, 23);
@@ -259,7 +259,7 @@
             // 
             // FetchRepositoriesButton
             // 
-            this.FetchRepositoriesButton.Image = global::GitHubRepositoryExamples.Properties.Resources.ASX_Run_blue_16x;
+            this.FetchRepositoriesButton.Image = global::GitHubRepositoryDownloader.Properties.Resources.ASX_Run_blue_16x;
             this.FetchRepositoriesButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.FetchRepositoriesButton.Location = new System.Drawing.Point(375, 473);
             this.FetchRepositoriesButton.Name = "FetchRepositoriesButton";
@@ -311,7 +311,7 @@
             // 
             // GetMainReadMeFileButton
             // 
-            this.GetMainReadMeFileButton.Image = global::GitHubRepositoryExamples.Properties.Resources.ASX_Run_blue_16x;
+            this.GetMainReadMeFileButton.Image = global::GitHubRepositoryDownloader.Properties.Resources.ASX_Run_blue_16x;
             this.GetMainReadMeFileButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.GetMainReadMeFileButton.Location = new System.Drawing.Point(375, 364);
             this.GetMainReadMeFileButton.Name = "GetMainReadMeFileButton";
@@ -338,7 +338,7 @@
             // 
             // TraverseToReadmeButton
             // 
-            this.TraverseToReadmeButton.Image = global::GitHubRepositoryExamples.Properties.Resources.Web_16x;
+            this.TraverseToReadmeButton.Image = global::GitHubRepositoryDownloader.Properties.Resources.Web_16x;
             this.TraverseToReadmeButton.Location = new System.Drawing.Point(983, 390);
             this.TraverseToReadmeButton.Name = "TraverseToReadmeButton";
             this.TraverseToReadmeButton.Size = new System.Drawing.Size(33, 23);

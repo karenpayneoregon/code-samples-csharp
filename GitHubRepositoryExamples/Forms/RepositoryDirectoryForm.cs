@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Windows.Forms;
 
-namespace GitHubRepositoryExamples.Forms
+namespace GitHubRepositoryDownloader.Forms
 {
     public partial class RepositoryDirectoryForm : Form
     {

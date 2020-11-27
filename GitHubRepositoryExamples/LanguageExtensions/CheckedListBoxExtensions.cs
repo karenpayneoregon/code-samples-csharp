@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace GitHubRepositoryExamples.LanguageExtensions
+namespace GitHubRepositoryDownloader.LanguageExtensions
 {
     public static class CheckedListBoxExtensions
     {

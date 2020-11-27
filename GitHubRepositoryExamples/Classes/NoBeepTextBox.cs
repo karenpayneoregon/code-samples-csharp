@@ -1,6 +1,6 @@
 ﻿using System.Windows.Forms;
 
-namespace GitHubRepositoryExamples.Classes
+namespace GitHubRepositoryDownloader.Classes
 {
     /// <summary>
     /// TextBox with no beep when ENTER is pressed as is is limited usage.

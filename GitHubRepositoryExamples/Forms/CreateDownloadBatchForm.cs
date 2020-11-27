@@ -8,10 +8,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using GitHubRepositoryExamples.Classes;
-using GitHubRepositoryExamples.LanguageExtensions;
+using GitHubRepositoryDownloader.Classes;
+using GitHubRepositoryDownloader.LanguageExtensions;
 
-namespace GitHubRepositoryExamples.Forms
+namespace GitHubRepositoryDownloader.Forms
 {
     public partial class CreateDownloadBatchForm : Form
     {

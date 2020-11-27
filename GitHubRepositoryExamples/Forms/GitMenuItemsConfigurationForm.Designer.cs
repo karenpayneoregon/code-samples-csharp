@@ -1,4 +1,4 @@
-﻿namespace GitHubRepositoryExamples.Forms
+﻿namespace GitHubRepositoryDownloader.Forms
 {
     partial class GitMenuItemsConfigurationForm
     {
@@ -50,7 +50,7 @@
             // 
             // MoveDownButton
             // 
-            this.MoveDownButton.Image = global::GitHubRepositoryExamples.Properties.Resources.down_24x;
+            this.MoveDownButton.Image = global::GitHubRepositoryDownloader.Properties.Resources.down_24x;
             this.MoveDownButton.Location = new System.Drawing.Point(522, 108);
             this.MoveDownButton.Name = "MoveDownButton";
             this.MoveDownButton.Size = new System.Drawing.Size(38, 36);
@@ -60,7 +60,7 @@
             // 
             // MoveUpButton
             // 
-            this.MoveUpButton.Image = global::GitHubRepositoryExamples.Properties.Resources.up_24x;
+            this.MoveUpButton.Image = global::GitHubRepositoryDownloader.Properties.Resources.up_24x;
             this.MoveUpButton.Location = new System.Drawing.Point(522, 55);
             this.MoveUpButton.Name = "MoveUpButton";
             this.MoveUpButton.Size = new System.Drawing.Size(38, 36);

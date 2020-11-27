@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using GiHubLibrary;
 
-namespace GitHubRepositoryExamples.Forms
+namespace GitHubRepositoryDownloader.Forms
 {
     public partial class RepositoryRecentCommitsForm : Form
     {

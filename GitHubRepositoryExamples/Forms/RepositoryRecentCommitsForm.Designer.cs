@@ -1,4 +1,4 @@
-﻿namespace GitHubRepositoryExamples.Forms
+﻿namespace GitHubRepositoryDownloader.Forms
 {
     partial class RepositoryRecentCommitsForm
     {
@@ -85,7 +85,7 @@
             // CloseButton
             // 
             this.CloseButton.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.CloseButton.Image = global::GitHubRepositoryExamples.Properties.Resources.Close_8x_16x;
+            this.CloseButton.Image = global::GitHubRepositoryDownloader.Properties.Resources.Close_8x_16x;
             this.CloseButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.CloseButton.Location = new System.Drawing.Point(630, 12);
             this.CloseButton.Name = "CloseButton";

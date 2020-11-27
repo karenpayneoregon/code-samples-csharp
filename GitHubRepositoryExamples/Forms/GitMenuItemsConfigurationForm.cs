@@ -8,9 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using GiHubLibrary;
-using GitHubRepositoryExamples.Classes;
+using GitHubRepositoryDownloader.Classes;
 
-namespace GitHubRepositoryExamples.Forms
+namespace GitHubRepositoryDownloader.Forms
 {
     public partial class GitMenuItemsConfigurationForm : Form
     {

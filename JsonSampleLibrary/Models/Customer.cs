@@ -16,8 +16,10 @@ namespace JsonSampleLibrary.Models
         public string Phone { get; set; }
         public int ContactTypeIdentifier { get; set; }
         public ContactType[] ContactType { get; set; }
+        #region Shortcuts
         public string ContactTitle => ContactType.FirstOrDefault()?.ContactTitle;
         public string ContactFirstName => ContactType.FirstOrDefault()?.Contacts.FirstOrDefault()?.FirstName;
         public string ContactLastName => ContactType.FirstOrDefault()?.Contacts.FirstOrDefault()?.LastName;
+        #endregion
     }
 }

@@ -2,7 +2,7 @@
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
-namespace GitHubRepositoryExamples.LanguageExtensions
+namespace GitHubRepositoryDownloader.LanguageExtensions
 {
     public static class TextBoxWatermarkExtensionMethod
     {
