@@ -8,10 +8,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using NuGetPackageHelpers.Classes;
-using NuGetPackageHelpers.Classes.Containers;
+using NuGetPackageBrowser.Classes;
+using NuGetPackageBrowser.Classes.Containers;
 
-namespace NuGetPackageHelpers.Forms
+namespace NuGetPackageBrowser.Forms
 {
     public partial class VersionsForm : Form
     {
@@ -33,7 +33,6 @@ namespace NuGetPackageHelpers.Forms
 
         private void VersionsForm_Shown(object sender, EventArgs e)
         {
-
             Text = $"Package: '{_packageName}'";
 
             foreach (var packageResult in _packageResults)

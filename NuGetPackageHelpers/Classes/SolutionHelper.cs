@@ -3,7 +3,7 @@ using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
 
-namespace NuGetPackageHelpers.Classes
+namespace NuGetPackageBrowser.Classes
 {
     public class SolutionHelper
     {

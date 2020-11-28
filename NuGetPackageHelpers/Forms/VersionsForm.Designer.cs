@@ -1,4 +1,4 @@
-﻿namespace NuGetPackageHelpers.Forms
+﻿namespace NuGetPackageBrowser.Forms
 {
     partial class VersionsForm
     {
@@ -66,7 +66,7 @@
             // 
             // ExportButton
             // 
-            this.ExportButton.Image = global::NuGetPackageHelpers.Properties.Resources.csv;
+            this.ExportButton.Image = global::NuGetPackageBrowser.Properties.Resources.csv;
             this.ExportButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.ExportButton.Location = new System.Drawing.Point(12, 17);
             this.ExportButton.Name = "ExportButton";
@@ -80,7 +80,7 @@
             // 
             this.CloseButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.CloseButton.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.CloseButton.Image = global::NuGetPackageHelpers.Properties.Resources.Exit_16x;
+            this.CloseButton.Image = global::NuGetPackageBrowser.Properties.Resources.Exit_16x;
             this.CloseButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.CloseButton.Location = new System.Drawing.Point(341, 17);
             this.CloseButton.Name = "CloseButton";

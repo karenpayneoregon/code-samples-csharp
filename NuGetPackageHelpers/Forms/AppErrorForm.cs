@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace NuGetPackageHelpers.Forms
+namespace NuGetPackageBrowser.Forms
 {
     public partial class AppErrorForm : Form
     {

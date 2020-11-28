@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace NuGetPackageHelpers.Classes.Containers
+namespace NuGetPackageBrowser.Classes.Containers
 {
     public class PackageReference
     {

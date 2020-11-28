@@ -6,9 +6,9 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ExceptionHandling;
-using NuGetPackageHelpers.Forms;
+using NuGetPackageBrowser.Forms;
 
-namespace NuGetPackageHelpers
+namespace NuGetPackageBrowser
 {
     static class Program
     {

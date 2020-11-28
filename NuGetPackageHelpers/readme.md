@@ -44,7 +44,8 @@ cd code
 git init
 git remote add -f origin https://github.com/karenpayneoregon/code-samples-csharp
 git sparse-checkout init --cone
-git sparse-checkout add NuGetPackageHelpers
+git sparse-checkout add ExceptionHandling
+git sparse-checkout add NuGetPackageBrowser
 git pull origin master
 :clean-up
 del .gitattributes
@@ -53,7 +54,13 @@ del .yml
 del .editorconfig
 del *.md
 del *.sln
+
 ``````
+
+# Restore NuGet packages
+
+Before building the project, right click on solution explorer, select restore NuGet packages.
+
 # Finding packages from the Package manager console
 
 **All packages for EF Core**

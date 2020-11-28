@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace NuGetPackageHelpers.Classes.Containers
+namespace NuGetPackageBrowser.Classes.Containers
 {
     public class Package
     {

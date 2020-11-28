@@ -4,10 +4,10 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
-using NuGetPackageHelpers.Classes;
-using NuGetPackageHelpers.Classes.Containers;
+using NuGetPackageBrowser.Classes;
+using NuGetPackageBrowser.Classes.Containers;
 
-namespace NuGetPackageHelpers.Forms
+namespace NuGetPackageBrowser.Forms
 {
     public partial class MainForm : Form
     {
@@ -51,11 +51,11 @@ namespace NuGetPackageHelpers.Forms
             {
                 var item = new ListViewItem(sender) {Font = _projectNameFont};
                 item.ForeColor = Color.Crimson;
-                listView1.Items.Add(item);
+                MainListView.Items.Add(item);
             }
             else
             {
-                listView1.Items.Add(sender);
+                MainListView.Items.Add(sender);
             }
             
         }
@@ -76,7 +76,7 @@ namespace NuGetPackageHelpers.Forms
         /// <param name="e"></param>
         private void ProcessCurrentSolutionButton_Click(object sender, EventArgs e)
         {
-            listView1.Items.Clear();
+            MainListView.Items.Clear();
 
             var projectType = ((ProjectType) ProjectTypeComboBox.SelectedItem).Extension;
             Operations.BuilderPackageTable(GetFoldersToParent.GetSolutionFolderPath(), projectType);
@@ -97,7 +97,7 @@ namespace NuGetPackageHelpers.Forms
         private void ProcessSelectSolutionButton_Click(object sender, EventArgs e)
         {
             Solution = Operations.Solution;
-            listView1.Items.Clear();
+            MainListView.Items.Clear();
 
             var initialPath = @"C:\OED\Dotnetland\VS2019\";
 
@@ -190,7 +190,7 @@ namespace NuGetPackageHelpers.Forms
 
         private void ReportButton_Click(object sender, EventArgs e)
         {
-            if (Operations.Solution == null || Operations.Solution.Packages.Count <= 0) return;
+            if (Operations.Solution == null || Operations.Solution.Packages.Count <= 0 || _packageItemList.Count == 0) return;
 
 
             var viewForm = new VersionsForm(PackageComboBox.Text,Operations.VersionGroup(PackageComboBox.Text, _packageItemList));

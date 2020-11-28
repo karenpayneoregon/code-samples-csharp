@@ -1,4 +1,4 @@
-﻿namespace NuGetPackageHelpers.Forms
+﻿namespace NuGetPackageBrowser.Forms
 {
     partial class AppErrorForm
     {
@@ -56,7 +56,7 @@
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = global::NuGetPackageHelpers.Properties.Resources.FoundMe;
+            this.pictureBox2.Image = global::NuGetPackageBrowser.Properties.Resources.FoundMe;
             this.pictureBox2.Location = new System.Drawing.Point(8, 8);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(691, 449);

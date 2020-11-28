@@ -12,7 +12,7 @@ namespace ExceptionHandling
     /// Provides writing run time exceptions to a text file
     /// </summary>
     /// <remarks>
-    /// filePath variable is intentionally not a private class level variable
+    /// What's here works while there will be many modifications later on.
     /// </remarks>
     public static class Exceptions
     {
@@ -23,19 +23,14 @@ namespace ExceptionHandling
         /// <param name="exceptionLogType">Type of exception which determines which file to log to. Not passing this parameter will default to the general log file</param>
         public static void Write(Exception exception, ExceptionLogType exceptionLogType = ExceptionLogType.General)
         {
-            var filePath = "D:\\UISides\\sidesconnectorservice";
             var fileName = "";
 
             switch (exceptionLogType)
             {
-                case ExceptionLogType.Import:
-                    fileName = Path.Combine(filePath, "ImportUnhandledException.txt");
-                    break;
                 case ExceptionLogType.Post:
-                    fileName = Path.Combine(filePath, "PostUnhandledException.txt");
                     break;
                 case ExceptionLogType.General:
-                    fileName = Path.Combine(filePath, "GeneralUnhandledException.txt");
+                    fileName = "GeneralUnhandledException.txt";
                     break;
             }
 

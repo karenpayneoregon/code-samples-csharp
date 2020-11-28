@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using NuGetPackageHelpers.Classes.Containers;
+using NuGetPackageBrowser.Classes.Containers;
 
-namespace NuGetPackageHelpers.Classes
+namespace NuGetPackageBrowser.Classes
 {
     public class PackageResult
     {

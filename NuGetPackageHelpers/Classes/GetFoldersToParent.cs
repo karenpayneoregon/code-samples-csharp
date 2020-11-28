@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 
-namespace NuGetPackageHelpers.Classes
+namespace NuGetPackageBrowser.Classes
 {
   
     /// <summary>

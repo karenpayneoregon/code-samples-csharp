@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NuGetPackageHelpers.Classes.Containers
+namespace NuGetPackageBrowser.Classes.Containers
 {
     public static class CollectionExtension
     {

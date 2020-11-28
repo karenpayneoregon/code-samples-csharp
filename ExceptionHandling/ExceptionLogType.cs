@@ -12,13 +12,7 @@ namespace ExceptionHandling
         /// Common exceptions
         /// </summary>
         General,
-        /// <summary>
-        /// Import process exceptions
-        /// </summary>
-        Import,
-        /// <summary>
-        /// Post process exceptions
-        /// </summary>
+        Unknown,
         Post
     }
 }

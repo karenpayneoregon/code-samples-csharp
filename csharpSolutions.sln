@@ -81,7 +81,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GiHubLibrary", "GiHubLibrar
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GitHubRepositoryExamples", "GitHubRepositoryExamples\GitHubRepositoryExamples.csproj", "{77030A50-73CF-4264-ACB4-7A71052351DF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NuGetPackageHelpers", "NuGetPackageHelpers\NuGetPackageHelpers.csproj", "{4F8D7E77-2F4E-4252-8511-023197D18CEE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NuGetPackageBrowser", "NuGetPackageHelpers\NuGetPackageBrowser.csproj", "{4F8D7E77-2F4E-4252-8511-023197D18CEE}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LanguageExtensionsLibrary", "LanguageExtensionsLibrary\LanguageExtensionsLibrary.csproj", "{59D7DA67-8E52-45BA-A7CF-8B160C614AC3}"
 EndProject

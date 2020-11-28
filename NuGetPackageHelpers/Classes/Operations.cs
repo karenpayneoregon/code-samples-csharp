@@ -6,9 +6,9 @@ using System.Linq;
 using System.Text;
 using System.Xml.Linq;
 using System.Xml.XPath;
-using NuGetPackageHelpers.Classes.Containers;
+using NuGetPackageBrowser.Classes.Containers;
 
-namespace NuGetPackageHelpers.Classes
+namespace NuGetPackageBrowser.Classes
 {
 
     public class Operations 
