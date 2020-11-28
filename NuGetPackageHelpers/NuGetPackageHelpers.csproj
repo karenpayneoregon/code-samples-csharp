@@ -60,26 +60,46 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\Containers\CollectionExtension.cs" />
     <Compile Include="Classes\GetFoldersToParent.cs" />
-    <Compile Include="Classes\Package.cs" />
-    <Compile Include="Classes\PackageItem.cs" />
-    <Compile Include="Classes\PackageReference.cs" />
-    <Compile Include="Classes\ProjectType.cs" />
-    <Compile Include="Classes\ProjectTypes.cs" />
-    <Compile Include="Classes\Solution.cs" />
+    <Compile Include="Classes\Containers\Package.cs" />
+    <Compile Include="Classes\Containers\PackageItem.cs" />
+    <Compile Include="Classes\Containers\PackageReference.cs" />
+    <Compile Include="Classes\Containers\ProjectType.cs" />
+    <Compile Include="Classes\Containers\ProjectTypes.cs" />
+    <Compile Include="Classes\Containers\Solution.cs" />
     <Compile Include="Classes\SolutionHelper.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="Forms\AppErrorForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Forms\AppErrorForm.designer.cs">
+      <DependentUpon>AppErrorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Classes\Operations.cs" />
+    <Compile Include="Classes\PackageResult.cs" />
+    <Compile Include="Forms\VersionsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\VersionsForm.Designer.cs">
+      <DependentUpon>VersionsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\AppErrorForm.resx">
+      <DependentUpon>AppErrorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\VersionsForm.resx">
+      <DependentUpon>VersionsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -117,6 +137,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="git1.ico" />
+    <None Include="Resources\FoundMe.png" />
+    <None Include="Resources\csv.png" />
+    <None Include="Resources\Exit_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ExceptionHandling\ExceptionHandling.csproj">
+      <Project>{6D49F625-E9F5-4751-833B-B0C0A01C4D7A}</Project>
+      <Name>ExceptionHandling</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

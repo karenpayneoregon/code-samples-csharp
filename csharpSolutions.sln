@@ -143,6 +143,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassesWhichImplementInterf
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JsonSampleLibrary", "JsonSampleLibrary\JsonSampleLibrary.csproj", "{A9A8AADC-FE3A-47F0-927F-9FDD869FD8A3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CheckBoxMeddling", "CheckBoxMeddling\CheckBoxMeddling.csproj", "{30841FE3-E5DF-4120-8A6E-94F3B7D52F29}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -450,6 +452,12 @@ Global
 		{A9A8AADC-FE3A-47F0-927F-9FDD869FD8A3}.NormalDebug|Any CPU.Build.0 = Debug|Any CPU
 		{A9A8AADC-FE3A-47F0-927F-9FDD869FD8A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A9A8AADC-FE3A-47F0-927F-9FDD869FD8A3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{30841FE3-E5DF-4120-8A6E-94F3B7D52F29}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30841FE3-E5DF-4120-8A6E-94F3B7D52F29}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30841FE3-E5DF-4120-8A6E-94F3B7D52F29}.NormalDebug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30841FE3-E5DF-4120-8A6E-94F3B7D52F29}.NormalDebug|Any CPU.Build.0 = Debug|Any CPU
+		{30841FE3-E5DF-4120-8A6E-94F3B7D52F29}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30841FE3-E5DF-4120-8A6E-94F3B7D52F29}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -514,6 +522,7 @@ Global
 		{980F8837-DB89-444E-BEAF-6EB7EC261D36} = {59913604-EA0C-4F44-ABF9-0B75371FD20B}
 		{254D21B7-8B3D-44CD-8217-BD3F1116BC21} = {7E7B6C8D-F6D3-44E0-A325-94D16A588708}
 		{A9A8AADC-FE3A-47F0-927F-9FDD869FD8A3} = {AF1D6999-6E01-45C2-A94C-D20F032B4CF3}
+		{30841FE3-E5DF-4120-8A6E-94F3B7D52F29} = {AF1D6999-6E01-45C2-A94C-D20F032B4CF3}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D3524478-BF74-469F-8C79-7CBBFCC7C4EA}

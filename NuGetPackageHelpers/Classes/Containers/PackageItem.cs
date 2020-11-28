@@ -1,4 +1,6 @@
-﻿namespace NuGetPackageHelpers.Classes
+﻿using System;
+
+namespace NuGetPackageHelpers.Classes.Containers
 {
     public class PackageItem
     {
@@ -9,8 +11,12 @@
         /// <summary>
         /// NuGet package version
         /// </summary>
-        public string Version { get; set; }
+        public Version Version { get; set; }
         public string Delimited => $"{Name},{Version}";
+        public string[] ItemArray => new[]
+        {
+            Name, Version.ToString()
+        };
         public override string ToString() => Name;
 
     }

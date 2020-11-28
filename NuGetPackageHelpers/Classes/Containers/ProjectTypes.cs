@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace NuGetPackageHelpers.Classes
+namespace NuGetPackageHelpers.Classes.Containers
 {
     /// <summary>
     /// Supported project types

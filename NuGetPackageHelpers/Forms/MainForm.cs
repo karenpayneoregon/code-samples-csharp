@@ -1,25 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Xml.Linq;
-using System.Xml.XPath;
 using NuGetPackageHelpers.Classes;
+using NuGetPackageHelpers.Classes.Containers;
 
-namespace NuGetPackageHelpers
+namespace NuGetPackageHelpers.Forms
 {
-    public partial class Form1 : Form
+    public partial class MainForm : Form
     {
 
         public Solution Solution = new Solution();
 
-        public Form1()
+        public MainForm()
         {
             InitializeComponent();
 
@@ -91,6 +86,8 @@ namespace NuGetPackageHelpers
             DisplayDetails();
             ExportToWebPageButton.Enabled = Solution.Packages.Any();
 
+            PackageComboBox.DataSource = Operations.DistinctPackageNames();
+
         }
         /// <summary>
         /// Process the selected solution from the folder dialog by language
@@ -129,6 +126,8 @@ namespace NuGetPackageHelpers
 
                 ExportToWebPageButton.Enabled = Solution.Packages.Any();
 
+                PackageComboBox.DataSource = Operations.DistinctPackageNames();
+
             }
         }
         /// <summary>
@@ -147,6 +146,64 @@ namespace NuGetPackageHelpers
             {
                 MessageBox.Show("Please select and process and solution");
             }
+        }
+        /// <summary>
+        /// Find package in ComboBox across all projects in the solution
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void CheckVersioningButton_Click(object sender, EventArgs e)
+        {
+            if (Operations.Solution == null || Operations.Solution.Packages.Count <= 0) return;
+
+            PackagesListView.Items.Clear();
+            _packageItemList.Clear();
+
+            var packages = Operations.Solution.Packages;
+            _packageItemList = new List<PackageItem>();
+
+            foreach (var package in packages)
+            { 
+
+                var packageItems = package
+                    .PackageItems
+                    .Where(x => x.Name == PackageComboBox.Text);
+
+                if (packageItems.Any())
+                {
+                    _packageItemList.AddRange(packageItems.Select(packageItem => new PackageItem() {Name = package.ProjectName, Version = packageItem.Version}));
+                }
+            }
+
+            foreach (var packageItem in _packageItemList)
+            {
+                PackagesListView.Items.Add(new ListViewItem(packageItem.ItemArray));
+            }
+
+            PackagesListView.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
+
+
+            VersionCountLabel.Text = _packageItemList.Select(x => x.Version).Distinct().Count().ToString();
+        }
+
+        private List<PackageItem> _packageItemList = new List<PackageItem>();
+
+        private void ReportButton_Click(object sender, EventArgs e)
+        {
+            if (Operations.Solution == null || Operations.Solution.Packages.Count <= 0) return;
+
+
+            var viewForm = new VersionsForm(PackageComboBox.Text,Operations.VersionGroup(PackageComboBox.Text, _packageItemList));
+
+            try
+            {
+                viewForm.ShowDialog();
+            }
+            finally
+            {
+                viewForm.Dispose();
+            }
+
         }
     }
 }

@@ -30,6 +30,11 @@ This was done against the following VS2017 solution using .NET 4.7.2, EF Core 3.
 
 ![screen1](../assets/NuGetPackagehelper2017.png)
 
+Additional to above screenshots (added check versions)
+
+![screen2](../assets/CheckVersions.png)
+
+
 ### Download 
 Create a batch file with the following and process.
 

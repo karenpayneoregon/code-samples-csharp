@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Xml.Linq;
 using System.Xml.XPath;
+using NuGetPackageHelpers.Classes.Containers;
 
 namespace NuGetPackageHelpers.Classes
 {
@@ -14,6 +16,26 @@ namespace NuGetPackageHelpers.Classes
         public delegate void DisplayInformation(string sender, bool bold);
         public static event DisplayInformation DisplayInformationHandler;
         public static Solution Solution;
+
+        /// <summary>
+        /// List of distinct package names in solution
+        /// </summary>
+        /// <returns></returns>
+        public static List<string> DistinctPackageNames()
+        {
+            var sorted = new SortedSet<string>();
+
+            foreach (var package in Solution.Packages)
+            {
+                foreach (var packageItem in package.PackageItems)
+                {
+                    sorted.Add(packageItem.Name);
+                }
+
+            }
+            
+            return sorted.ToList();
+        }
 
         /// <summary>
         /// File name for exporting results to a web page
@@ -59,13 +81,14 @@ namespace NuGetPackageHelpers.Classes
                     DisplayInformationHandler?.Invoke(projectNameWithoutExtension, true);
                     package.ProjectName = projectNameWithoutExtension;
 
-                    var document = XDocument.Load(fileName);
+                    var doc = XDocument.Load(fileName);
 
-                    foreach (var packageNode in document.XPathSelectElements("/packages/package"))
+                    foreach (var packageNode in doc.XPathSelectElements("/packages/package"))
                     {
                         var packageName = packageNode.Attribute("id").Value;
-                        var version = packageNode.Attribute("version").Value;
-
+                        //var version = packageNode.Attribute("version").Value;
+                        Version version = new Version(packageNode.Attribute("version").Value);
+                        
                         DisplayInformationHandler?.Invoke($"    {packageName}, {version}", false);
                         package.PackageItems.Add(new PackageItem() {Name = packageName, Version = version});
 
@@ -77,7 +100,7 @@ namespace NuGetPackageHelpers.Classes
                 }
                 else
                 {
-                    package = new Package(); // {SolutionFolder = solutionFolder };
+                    package = new Package(); 
                     var projectFiles = Directory.GetFiles(folder, projectType);
                     if (projectFiles.Length == 0)
                     {
@@ -104,25 +127,28 @@ namespace NuGetPackageHelpers.Classes
                     Version = new Version(pr.Attribute("Version").Value)
                 });
 
-            if (packageReferences.Count() == 0)
+            if (!packageReferences.Any())
             {
                 return;
             }
 
             package.ProjectName = Path.GetFileNameWithoutExtension(projectFileName);
-            Console.WriteLine(package.ProjectName);
             DisplayInformationHandler?.Invoke(Path.GetFileNameWithoutExtension(projectFileName), true);
-            foreach (var packageReference in packageReferences)
+
+            foreach (PackageReference packageReference in packageReferences)
             {
+
                 package.PackageItems.Add(new PackageItem()
                 {
                     Name = packageReference.Include,
-                    Version = packageReference.Version.ToString()
+                    Version = packageReference.Version
                 });
                 
                 
                 DisplayInformationHandler?.Invoke($"    {packageReference.Include}, {packageReference.Version}", false);
+
             }
+
             Solution.Packages.Add(package);
 
         }
@@ -177,7 +203,53 @@ namespace NuGetPackageHelpers.Classes
             
             File.WriteAllText(ExportWebPageFileName, sb.ToString());
 
+            if (File.Exists(ExportWebPageFileName))
+            {
+                Process.Start(ExportWebPageFileName);
+            }
+
         }
+        /// <summary>
+        /// Provides packages grouped by version
+        /// </summary>
+        /// <param name="packageName">Package name</param>
+        /// <param name="packageItems">List of PackageItem</param>
+        /// <returns></returns>
+        public static List<PackageResult> VersionGroup(string packageName, List<PackageItem> packageItems)
+        {
+            return packageItems.GroupBy(packageItem => packageItem.Version)
+                .Select(iGroup => new PackageResult { Version = iGroup.Key, List = iGroup.ToList() }).ToList();
+        }
+        /// <summary>
+        /// Create a comma-delimited string
+        /// </summary>
+        /// <param name="packageName">Name of package</param>
+        /// <param name="packageItems"></param>
+        /// <returns></returns>
+        public static string VersionReport(string packageName,List<PackageItem> packageItems)
+        {
+            var sb = new StringBuilder();
+
+            sb.AppendLine(packageName).Replace("'","");
+            sb.AppendLine(new string('-', 30));
+
+            var results = packageItems.GroupBy(packageItem => packageItem.Version)
+                .Select(iGroup => new PackageResult { Version = iGroup.Key, List = iGroup.ToList() }).ToList();
+
+            foreach (var result in results)
+            {
+                sb.AppendLine(result.Version.ToString());
+                foreach (var packageItem in result.List)
+                {
+                    sb.AppendLine($"{packageItem.Name}");
+                }
+
+                sb.AppendLine(new string('-', 30));
+            }
+
+            return sb.ToString();
+        }
+
 
 
     }

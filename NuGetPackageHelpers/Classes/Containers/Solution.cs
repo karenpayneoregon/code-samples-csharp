@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace NuGetPackageHelpers.Classes
+namespace NuGetPackageHelpers.Classes.Containers
 {
     /// <summary>
     /// Container for results from parsing a solution for NuGet packages
