@@ -145,7 +145,8 @@ namespace NuGetPackageBrowser.Classes
                 });
                 
                 
-                DisplayInformationHandler?.Invoke($"    {packageReference.Include}, {packageReference.Version}", false);
+                DisplayInformationHandler?
+                    .Invoke($"    {packageReference.Include}, {packageReference.Version}", false);
 
             }
 
@@ -186,8 +187,9 @@ namespace NuGetPackageBrowser.Classes
             foreach (var package in Solution.Packages)
             {
                 Console.WriteLine(package.ProjectName);
-                sb.AppendLine($"<tr><td style='background-color:#FFFF66 !important;'><strong>{package.ProjectName}</strong></td>" + 
-                              "<td style='white-space: pre;background-color:#FFFF66 !important;'></td></tr>");
+                sb.AppendLine(
+                    $"<tr><td style='background-color:#FFFF66 !important;'><strong>{package.ProjectName}</strong></td>" + 
+                    "<td style='white-space: pre;background-color:#FFFF66 !important;'></td></tr>");
 
                 foreach (var packageItem in package.PackageItems)
                 {
@@ -218,7 +220,11 @@ namespace NuGetPackageBrowser.Classes
         public static List<PackageResult> VersionGroup(string packageName, List<PackageItem> packageItems)
         {
             return packageItems.GroupBy(packageItem => packageItem.Version)
-                .Select(iGroup => new PackageResult { Version = iGroup.Key, List = iGroup.ToList() }).ToList();
+                .Select(iGroup => new PackageResult
+                {
+                    Version = iGroup.Key,
+                    List = iGroup.ToList()
+                }).ToList();
         }
         /// <summary>
         /// Create a comma-delimited string
@@ -234,7 +240,11 @@ namespace NuGetPackageBrowser.Classes
             sb.AppendLine(new string('-', 30));
 
             var results = packageItems.GroupBy(packageItem => packageItem.Version)
-                .Select(iGroup => new PackageResult { Version = iGroup.Key, List = iGroup.ToList() }).ToList();
+                .Select(iGroup => new PackageResult
+                {
+                    Version = iGroup.Key,
+                    List = iGroup.ToList()
+                }).ToList();
 
             foreach (var result in results)
             {
@@ -249,8 +259,5 @@ namespace NuGetPackageBrowser.Classes
 
             return sb.ToString();
         }
-
-
-
     }
 }

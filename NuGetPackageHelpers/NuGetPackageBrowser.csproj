@@ -83,7 +83,7 @@
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Classes\Operations.cs" />
-    <Compile Include="Classes\PackageResult.cs" />
+    <Compile Include="Classes\Containers\PackageResult.cs" />
     <Compile Include="Forms\VersionsForm.cs">
       <SubType>Form</SubType>
     </Compile>
