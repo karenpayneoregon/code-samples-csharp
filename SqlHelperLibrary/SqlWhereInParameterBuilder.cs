@@ -55,7 +55,7 @@ namespace SqlHelperLibrary
             //
             if (Debugger.IsAttached)
             {
-                Console.WriteLine(cmd.CommandText);
+                Debug.WriteLine($"Our command text\n{cmd.CommandText}");
             }
 
         }

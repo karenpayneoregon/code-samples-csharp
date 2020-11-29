@@ -23,7 +23,18 @@ namespace SqlDynamicGenerator
         {
             SuppliersNamesListBox.DataSource = new List<string>() { "Google", "Kimberly-Clark", "Tyson Foods" };
             SuppliersIdsListBox.DataSource = new List<string>() {"1","2","3","4","5"};
+
+            Mocked.OnExceptionEvent += Mocked_OnExceptionEvent;
         }
+
+        private bool _hasException;
+        private Exception _lastException;
+        private void Mocked_OnExceptionEvent(Exception exception)
+        {
+            _hasException = true;
+            _lastException = exception;
+        }
+
         /// <summary>
         /// Create WHERE IN for string
         /// </summary>
@@ -78,6 +89,19 @@ namespace SqlDynamicGenerator
             else
             {
                 MessageBox.Show("Please select one or more suppliers identifiers");
+            }
+        }
+
+        private void HardCodedButton_Click(object sender, EventArgs e)
+        {
+            var dataTable = Mocked.Example1(new List<string>() { "Assistant Sales Agent", "Owner"});
+            if (_hasException)
+            {
+                MessageBox.Show($"Failed with\n{_lastException.Message}");
+            }
+            else
+            {
+                MessageBox.Show($"Returned {dataTable.Rows.Count} rows");
             }
         }
     }

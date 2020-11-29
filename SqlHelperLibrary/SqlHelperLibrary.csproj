@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataTypes.cs" />
+    <Compile Include="Mocked.cs" />
     <Compile Include="SqlGenerator.cs" />
     <Compile Include="SqlWhereInParameterBuilder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

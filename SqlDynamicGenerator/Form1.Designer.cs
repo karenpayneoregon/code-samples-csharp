@@ -38,6 +38,7 @@
             this.SuppliersIdsListBox = new System.Windows.Forms.ListBox();
             this.ProcessSuppliersByIdButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.HardCodedButton = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -136,11 +137,22 @@
             this.label1.Text = "Make sure to test generated sql in SSMS or run in Visual Studio using a .sql file" +
     "";
             // 
+            // HardCodedButton
+            // 
+            this.HardCodedButton.Location = new System.Drawing.Point(16, 457);
+            this.HardCodedButton.Name = "HardCodedButton";
+            this.HardCodedButton.Size = new System.Drawing.Size(146, 23);
+            this.HardCodedButton.TabIndex = 7;
+            this.HardCodedButton.Text = "Hard coded";
+            this.HardCodedButton.UseVisualStyleBackColor = true;
+            this.HardCodedButton.Click += new System.EventHandler(this.HardCodedButton_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(482, 464);
+            this.ClientSize = new System.Drawing.Size(482, 509);
+            this.Controls.Add(this.HardCodedButton);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -168,6 +180,7 @@
         private System.Windows.Forms.ListBox SuppliersIdsListBox;
         private System.Windows.Forms.Button ProcessSuppliersByIdButton;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button HardCodedButton;
     }
 }
 
