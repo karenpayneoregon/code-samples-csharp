@@ -149,6 +149,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SqlHelperLibrary", "SqlHelp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SqlDynamicGenerator", "SqlDynamicGenerator\SqlDynamicGenerator.csproj", "{F0628D66-704E-4384-AF31-139E2CD4AA59}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SqlDelimited", "SqlDelimited\SqlDelimited.csproj", "{DCEFAEBC-3C3E-4B60-8C92-CD405F72F52A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -474,6 +476,12 @@ Global
 		{F0628D66-704E-4384-AF31-139E2CD4AA59}.NormalDebug|Any CPU.Build.0 = Debug|Any CPU
 		{F0628D66-704E-4384-AF31-139E2CD4AA59}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F0628D66-704E-4384-AF31-139E2CD4AA59}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DCEFAEBC-3C3E-4B60-8C92-CD405F72F52A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DCEFAEBC-3C3E-4B60-8C92-CD405F72F52A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DCEFAEBC-3C3E-4B60-8C92-CD405F72F52A}.NormalDebug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DCEFAEBC-3C3E-4B60-8C92-CD405F72F52A}.NormalDebug|Any CPU.Build.0 = Debug|Any CPU
+		{DCEFAEBC-3C3E-4B60-8C92-CD405F72F52A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DCEFAEBC-3C3E-4B60-8C92-CD405F72F52A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -541,6 +549,7 @@ Global
 		{30841FE3-E5DF-4120-8A6E-94F3B7D52F29} = {AF1D6999-6E01-45C2-A94C-D20F032B4CF3}
 		{8AA30B1D-F610-4318-A031-F9A9BBF0669B} = {AE963514-7D0C-4A0D-B3D4-5D0EC1442B35}
 		{F0628D66-704E-4384-AF31-139E2CD4AA59} = {7E7B6C8D-F6D3-44E0-A325-94D16A588708}
+		{DCEFAEBC-3C3E-4B60-8C92-CD405F72F52A} = {AF1D6999-6E01-45C2-A94C-D20F032B4CF3}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D3524478-BF74-469F-8C79-7CBBFCC7C4EA}
