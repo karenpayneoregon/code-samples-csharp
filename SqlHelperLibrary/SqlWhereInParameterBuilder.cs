@@ -10,6 +10,11 @@ namespace SqlHelperLibrary
 {
     public static class SqlWhereInParameterBuilder
     {
+        public delegate void OnShowCommandStatement(string statement); 
+        /// <summary>
+        /// Callback for subscribers to know about a problem
+        /// </summary>
+        public static event OnShowCommandStatement OnShowCommandStatementEvent; 
         /// <summary>
         /// Create a SQL SELECT statement which is then passed off to
         /// AddParamsToCommand to create a parameter for each value.
@@ -50,13 +55,7 @@ namespace SqlHelperLibrary
                 cmd.Parameters.AddWithValue(parameterNames[index], parameterValues[index]);
             }
 
-            //
-            // Display what a hacker would see
-            //
-            if (Debugger.IsAttached)
-            {
-                Debug.WriteLine($"Our command text\n{cmd.CommandText}");
-            }
+            OnShowCommandStatementEvent?.Invoke( cmd.CommandText );
 
         }
         /// <summary>

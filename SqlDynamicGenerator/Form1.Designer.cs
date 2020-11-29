@@ -38,7 +38,11 @@
             this.SuppliersIdsListBox = new System.Windows.Forms.ListBox();
             this.ProcessSuppliersByIdButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.HardCodedButton = new System.Windows.Forms.Button();
+            this.CustomersDataTableButton = new System.Windows.Forms.Button();
+            this.CustomerListButton = new System.Windows.Forms.Button();
+            this.ProductListButton = new System.Windows.Forms.Button();
+            this.DumpStatementsButton = new System.Windows.Forms.Button();
+            this.DisplayFormattedSqlCheckBox = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -78,7 +82,7 @@
             this.groupBox1.Controls.Add(this.SuppliersNameResultsTextBox);
             this.groupBox1.Controls.Add(this.SuppliersNamesListBox);
             this.groupBox1.Controls.Add(this.ProcessSuppliersByNameButton);
-            this.groupBox1.Location = new System.Drawing.Point(4, 52);
+            this.groupBox1.Location = new System.Drawing.Point(4, 39);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(479, 192);
             this.groupBox1.TabIndex = 4;
@@ -92,7 +96,7 @@
             this.groupBox2.Controls.Add(this.SuppliersIdsResultsTextBox);
             this.groupBox2.Controls.Add(this.SuppliersIdsListBox);
             this.groupBox2.Controls.Add(this.ProcessSuppliersByIdButton);
-            this.groupBox2.Location = new System.Drawing.Point(4, 250);
+            this.groupBox2.Location = new System.Drawing.Point(4, 239);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(479, 192);
             this.groupBox2.TabIndex = 5;
@@ -137,22 +141,67 @@
             this.label1.Text = "Make sure to test generated sql in SSMS or run in Visual Studio using a .sql file" +
     "";
             // 
-            // HardCodedButton
+            // CustomersDataTableButton
             // 
-            this.HardCodedButton.Location = new System.Drawing.Point(16, 457);
-            this.HardCodedButton.Name = "HardCodedButton";
-            this.HardCodedButton.Size = new System.Drawing.Size(146, 23);
-            this.HardCodedButton.TabIndex = 7;
-            this.HardCodedButton.Text = "Hard coded";
-            this.HardCodedButton.UseVisualStyleBackColor = true;
-            this.HardCodedButton.Click += new System.EventHandler(this.HardCodedButton_Click);
+            this.CustomersDataTableButton.Location = new System.Drawing.Point(12, 446);
+            this.CustomersDataTableButton.Name = "CustomersDataTableButton";
+            this.CustomersDataTableButton.Size = new System.Drawing.Size(192, 23);
+            this.CustomersDataTableButton.TabIndex = 7;
+            this.CustomersDataTableButton.Text = "Customers DataTable";
+            this.CustomersDataTableButton.UseVisualStyleBackColor = true;
+            this.CustomersDataTableButton.Click += new System.EventHandler(this.CustomersDataTableButtonButton_Click);
+            // 
+            // CustomerListButton
+            // 
+            this.CustomerListButton.Location = new System.Drawing.Point(12, 475);
+            this.CustomerListButton.Name = "CustomerListButton";
+            this.CustomerListButton.Size = new System.Drawing.Size(192, 23);
+            this.CustomerListButton.TabIndex = 8;
+            this.CustomerListButton.Text = "Customers list";
+            this.CustomerListButton.UseVisualStyleBackColor = true;
+            this.CustomerListButton.Click += new System.EventHandler(this.CustomerListButton_Click);
+            // 
+            // ProductListButton
+            // 
+            this.ProductListButton.Location = new System.Drawing.Point(12, 504);
+            this.ProductListButton.Name = "ProductListButton";
+            this.ProductListButton.Size = new System.Drawing.Size(192, 23);
+            this.ProductListButton.TabIndex = 9;
+            this.ProductListButton.Text = "Products List";
+            this.ProductListButton.UseVisualStyleBackColor = true;
+            this.ProductListButton.Click += new System.EventHandler(this.ProductListButton_Click);
+            // 
+            // DumpStatementsButton
+            // 
+            this.DumpStatementsButton.Location = new System.Drawing.Point(278, 504);
+            this.DumpStatementsButton.Name = "DumpStatementsButton";
+            this.DumpStatementsButton.Size = new System.Drawing.Size(192, 23);
+            this.DumpStatementsButton.TabIndex = 10;
+            this.DumpStatementsButton.Text = "Dump statements";
+            this.DumpStatementsButton.UseVisualStyleBackColor = true;
+            this.DumpStatementsButton.Click += new System.EventHandler(this.DumpStatementsButton_Click);
+            // 
+            // DisplayFormattedSqlCheckBox
+            // 
+            this.DisplayFormattedSqlCheckBox.AutoSize = true;
+            this.DisplayFormattedSqlCheckBox.Location = new System.Drawing.Point(278, 452);
+            this.DisplayFormattedSqlCheckBox.Name = "DisplayFormattedSqlCheckBox";
+            this.DisplayFormattedSqlCheckBox.Size = new System.Drawing.Size(116, 17);
+            this.DisplayFormattedSqlCheckBox.TabIndex = 11;
+            this.DisplayFormattedSqlCheckBox.Text = "Show formatted sql";
+            this.DisplayFormattedSqlCheckBox.UseVisualStyleBackColor = true;
+            this.DisplayFormattedSqlCheckBox.CheckedChanged += new System.EventHandler(this.DisplayFormattedSqlCheckBox_CheckedChanged);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(482, 509);
-            this.Controls.Add(this.HardCodedButton);
+            this.ClientSize = new System.Drawing.Size(482, 546);
+            this.Controls.Add(this.DisplayFormattedSqlCheckBox);
+            this.Controls.Add(this.DumpStatementsButton);
+            this.Controls.Add(this.ProductListButton);
+            this.Controls.Add(this.CustomerListButton);
+            this.Controls.Add(this.CustomersDataTableButton);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -180,7 +229,11 @@
         private System.Windows.Forms.ListBox SuppliersIdsListBox;
         private System.Windows.Forms.Button ProcessSuppliersByIdButton;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button HardCodedButton;
+        private System.Windows.Forms.Button CustomersDataTableButton;
+        private System.Windows.Forms.Button CustomerListButton;
+        private System.Windows.Forms.Button ProductListButton;
+        private System.Windows.Forms.Button DumpStatementsButton;
+        private System.Windows.Forms.CheckBox DisplayFormattedSqlCheckBox;
     }
 }
 

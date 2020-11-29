@@ -41,22 +41,22 @@ namespace SqlHelperLibrary
         /// </summary>
         public string SelectStatement { get; set; }
         /// <summary>
-        /// Delimited string
+        /// Delimited string to use in the IN clause
         /// </summary>
-        public string Text { get; set; }
+        public string DelimitedValues { get; set; }
         /// <summary>
         /// Generate SQL SELECT/WHERE IN
         /// </summary>
         public void CreateWhereStatement()
         {
 
-            if (!string.IsNullOrWhiteSpace(Text) && !string.IsNullOrWhiteSpace(SelectStatement))
+            if (!string.IsNullOrWhiteSpace(DelimitedValues) && !string.IsNullOrWhiteSpace(SelectStatement))
             {
 
                 if (!string.IsNullOrWhiteSpace(ColumnName) && !(Separator == '\0'))
                 {
 
-                    string[] splitTokensArray = Text.Split(Separator);
+                    string[] splitTokensArray = DelimitedValues.Split(Separator);
 
                     var sb = new StringBuilder();
                     var whereConcatenate = "";
@@ -110,6 +110,5 @@ namespace SqlHelperLibrary
                 _isValid = false;
             }
         }
-
     }
 }
