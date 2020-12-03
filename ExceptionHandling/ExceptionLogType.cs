@@ -13,6 +13,7 @@ namespace ExceptionHandling
         /// </summary>
         General,
         Unknown,
+        Data,
         Post
     }
 }

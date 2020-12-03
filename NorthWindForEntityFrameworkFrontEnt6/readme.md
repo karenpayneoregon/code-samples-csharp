@@ -1,5 +1,7 @@
 ﻿# About 
 
+![screen](../assets/Crawler1.png)
+
 This project and the class project [NorthWindForEntityFramework6](https://github.com/karenpayneoregon/code-samples-csharp/tree/master/NorthWindForEntityFramework6) provide the ground work for digging into Entity Framework models and their details. No attempts made to create graphics.
 
 - There are various gems not uncovered here but by taking time to review presented code and inspecting various items there is a good deal to be extracted.
@@ -33,4 +35,3 @@ del *.md
 del *.sln
 ```
 
-![screen](../assets/Crawler1.png)
