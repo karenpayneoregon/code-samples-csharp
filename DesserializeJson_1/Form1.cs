@@ -229,14 +229,4 @@ namespace DesserializeJson_1
         public override string ToString() => documentation;
     }
 
-
-
-
-
-    public class ConfigurationGeneral
-    {
-        public string IncomingFolder { get; set; }
-        public bool TestMode { get; set; }
-    }
-
 }

@@ -1,0 +1,1 @@
+﻿Raw T4 template for converting table data in database to an enum.
