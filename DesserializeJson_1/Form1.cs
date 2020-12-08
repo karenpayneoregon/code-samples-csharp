@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -126,7 +127,7 @@ namespace DesserializeJson_1
                 sb.AppendLine("</tr>");
 
                 sb.AppendLine("<tr>");
-                
+
                 sb.AppendLine($"<td><pre>{coldFusion.documentation.Replace("**USAGE:**", "<strong>USAGE:</strong>").Replace("**PARAMETERS:**", "<strong>PARAMETERS:</strong>").Replace("*", "")}</pre></td>");
                 sb.AppendLine("</tr>");
 
@@ -159,24 +160,83 @@ namespace DesserializeJson_1
             }
 
         }
+
+        private void ReadOrdersButton1_Click(object sender, EventArgs e)
+        {
+            DynamicOperations.ReadOrders1A("orders.json");
+        }
+
+        private void ReadOrdersButton2_Click(object sender, EventArgs e)
+        {
+            var ordersList = DynamicOperations.ReadOrdersStrongTyped("orders.json");
+
+            for (int index = 0; index < ordersList.Count; index++)
+            {
+                Console.WriteLine(ordersList[index].id);
+            }
+
+            Console.WriteLine();
+
+            var id = 234;
+
+            var specificOrder = ordersList.Where(order => order.customerId == id).ToList();
+
+            for (int index = 0; index < specificOrder.Count(); index++)
+            {
+                Console.WriteLine(specificOrder[index].id);
+            }
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            FixedSizeStack items = new FixedSizeStack(5);
+
+            for (int index = 0; index < 10; index++)
+            {
+                items.Push(index);
+            }
+
+            var results = items.OfType<int>().ToList();
+            Console.WriteLine();
+        }
     }
 
 
-    public class Data1
+    public class FixedSizeStack : Stack
     {
-        public string field_name { get; set; }
-        public object field_value { get; set; }
+        private int MaxNumber;
+        public FixedSizeStack(int Limit)
+        {
+            MaxNumber = Limit;
+        }
+
+        public override void Push(object obj)
+        {
+            if (Count < MaxNumber)
+            {
+                base.Push(obj);
+            }
+        }
     }
 
 
-    public class ColdFusion 
+    public class ColdFusion
     {
         public string prefix { get; set; }
         public string body { get; set; }
         public string documentation { get; set; }
         public override string ToString() => documentation;
-
     }
 
+
+
+
+
+    public class ConfigurationGeneral
+    {
+        public string IncomingFolder { get; set; }
+        public bool TestMode { get; set; }
+    }
 
 }

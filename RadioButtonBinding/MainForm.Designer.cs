@@ -1,6 +1,6 @@
 ﻿namespace RadioButtonBinding
 {
-    partial class Form2
+    partial class MainForm
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.LastNameTextBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.FirstNameTextBox = new System.Windows.Forms.TextBox();
@@ -49,9 +49,14 @@
             this.MrsRadioButton = new System.Windows.Forms.RadioButton();
             this.MrRadioButton = new System.Windows.Forms.RadioButton();
             this.InspectButton = new System.Windows.Forms.Button();
+            this.GenderRadioGroupBox = new RadioButtonBinding.RadioGroupBox();
+            this.OtherRadioButton = new System.Windows.Forms.RadioButton();
+            this.MaleRadioButton = new System.Windows.Forms.RadioButton();
+            this.FemaleRadioButton = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.PeopleNavigator)).BeginInit();
             this.PeopleNavigator.SuspendLayout();
             this.SuffixRadioGroupBox.SuspendLayout();
+            this.GenderRadioGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // LastNameTextBox
@@ -229,7 +234,7 @@
             // 
             // InspectButton
             // 
-            this.InspectButton.Location = new System.Drawing.Point(19, 118);
+            this.InspectButton.Location = new System.Drawing.Point(246, 157);
             this.InspectButton.Name = "InspectButton";
             this.InspectButton.Size = new System.Drawing.Size(75, 23);
             this.InspectButton.TabIndex = 13;
@@ -237,11 +242,61 @@
             this.InspectButton.UseVisualStyleBackColor = true;
             this.InspectButton.Click += new System.EventHandler(this.InspectButton_Click);
             // 
+            // GenderRadioGroupBox
+            // 
+            this.GenderRadioGroupBox.Controls.Add(this.OtherRadioButton);
+            this.GenderRadioGroupBox.Controls.Add(this.MaleRadioButton);
+            this.GenderRadioGroupBox.Controls.Add(this.FemaleRadioButton);
+            this.GenderRadioGroupBox.Location = new System.Drawing.Point(12, 109);
+            this.GenderRadioGroupBox.Name = "GenderRadioGroupBox";
+            this.GenderRadioGroupBox.Selected = 0;
+            this.GenderRadioGroupBox.Size = new System.Drawing.Size(184, 61);
+            this.GenderRadioGroupBox.TabIndex = 13;
+            this.GenderRadioGroupBox.TabStop = false;
+            this.GenderRadioGroupBox.Text = "Gender";
+            // 
+            // OtherRadioButton
+            // 
+            this.OtherRadioButton.AutoSize = true;
+            this.OtherRadioButton.Location = new System.Drawing.Point(121, 24);
+            this.OtherRadioButton.Name = "OtherRadioButton";
+            this.OtherRadioButton.Size = new System.Drawing.Size(51, 17);
+            this.OtherRadioButton.TabIndex = 2;
+            this.OtherRadioButton.TabStop = true;
+            this.OtherRadioButton.Tag = "3";
+            this.OtherRadioButton.Text = "Other";
+            this.OtherRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // MaleRadioButton
+            // 
+            this.MaleRadioButton.AutoSize = true;
+            this.MaleRadioButton.Location = new System.Drawing.Point(70, 24);
+            this.MaleRadioButton.Name = "MaleRadioButton";
+            this.MaleRadioButton.Size = new System.Drawing.Size(48, 17);
+            this.MaleRadioButton.TabIndex = 1;
+            this.MaleRadioButton.TabStop = true;
+            this.MaleRadioButton.Tag = "2";
+            this.MaleRadioButton.Text = "Male";
+            this.MaleRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // FemaleRadioButton
+            // 
+            this.FemaleRadioButton.AutoSize = true;
+            this.FemaleRadioButton.Location = new System.Drawing.Point(13, 24);
+            this.FemaleRadioButton.Name = "FemaleRadioButton";
+            this.FemaleRadioButton.Size = new System.Drawing.Size(59, 17);
+            this.FemaleRadioButton.TabIndex = 0;
+            this.FemaleRadioButton.TabStop = true;
+            this.FemaleRadioButton.Tag = "1";
+            this.FemaleRadioButton.Text = "Female";
+            this.FemaleRadioButton.UseVisualStyleBackColor = true;
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(344, 149);
+            this.ClientSize = new System.Drawing.Size(344, 246);
+            this.Controls.Add(this.GenderRadioGroupBox);
             this.Controls.Add(this.InspectButton);
             this.Controls.Add(this.SuffixRadioGroupBox);
             this.Controls.Add(this.PeopleNavigator);
@@ -258,6 +313,8 @@
             this.PeopleNavigator.PerformLayout();
             this.SuffixRadioGroupBox.ResumeLayout(false);
             this.SuffixRadioGroupBox.PerformLayout();
+            this.GenderRadioGroupBox.ResumeLayout(false);
+            this.GenderRadioGroupBox.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -283,5 +340,9 @@
         private System.Windows.Forms.RadioButton MrsRadioButton;
         private System.Windows.Forms.RadioButton MrRadioButton;
         private System.Windows.Forms.Button InspectButton;
+        private RadioGroupBox GenderRadioGroupBox;
+        private System.Windows.Forms.RadioButton OtherRadioButton;
+        private System.Windows.Forms.RadioButton MaleRadioButton;
+        private System.Windows.Forms.RadioButton FemaleRadioButton;
     }
 }
