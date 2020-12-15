@@ -44,10 +44,5 @@ namespace PersonalData
                 MessageBox.Show("We failed to find your file.");
             }
         }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
