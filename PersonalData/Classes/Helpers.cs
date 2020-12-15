@@ -10,6 +10,12 @@ namespace PersonalData.Classes
 {
     public class Helpers
     {
+        /// <summary>
+        /// Download profile image
+        /// </summary>
+        /// <param name="address">URL for profile image</param>
+        /// <param name="fileName">File name to save image</param>
+        /// <returns></returns>
         public static bool DownLoadProfileImage(string address, string fileName)
         {
 

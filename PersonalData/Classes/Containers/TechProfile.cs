@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace PersonalData.Classes
+namespace PersonalData.Classes.Containers
 {
     [Newtonsoft.Json.JsonObject(Title = "Techprofile")]
     public class TechProfile

@@ -39,6 +39,9 @@ namespace PersonalData.Classes
                 {"ReputationPoints", "reputationPoints"},
                 {"CreatedOn", "createdOn"},
                 {"DateAdded", "dateAdded"},
+                {"TotalPoints", "totalPoints"},
+                {"Achievements", "achievements"},
+                {"Title", "title"},
             };
         }
 

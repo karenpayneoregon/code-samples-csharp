@@ -1,4 +1,4 @@
-﻿namespace PersonalData.Classes
+﻿namespace PersonalData.Classes.Containers
 {
     public class UpperLevel 
     {

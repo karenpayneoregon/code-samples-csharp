@@ -1,7 +1,7 @@
 ﻿using System;
 using Newtonsoft.Json;
 
-namespace PersonalData.Classes
+namespace PersonalData.Classes.Containers
 {
     public class List
     {
