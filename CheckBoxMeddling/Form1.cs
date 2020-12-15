@@ -34,7 +34,7 @@ namespace CheckBoxMeddling
         private void CheckedChanged(object sender, EventArgs e)
         {
             var cb = (CheckBox) sender;
-            var number = Convert.ToInt32(Regex.Replace(cb.Name, "[^0-9 _]", ""));
+            var number =  cb.Name.ToInt();
 
             if (number > 5)
             {
