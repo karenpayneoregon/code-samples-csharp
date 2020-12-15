@@ -2,7 +2,8 @@
 
 namespace PersonalData.Classes
 {
-    public class Techprofile
+    [Newtonsoft.Json.JsonObject(Title = "Techprofile")]
+    public class TechProfile
     {
         public string Email { get; set; }
         public string Locale { get; set; }

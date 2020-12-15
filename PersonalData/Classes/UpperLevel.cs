@@ -6,7 +6,7 @@
         public Progress Progress { get; set; }
         public object NextSteps { get; set; }
         public List[] Lists { get; set; }
-        public Techprofile TechProfile { get; set; }
+        public TechProfile TechProfile { get; set; }
         public XP XP { get; set; }
         public object Challenges { get; set; }
         public QA[] QA { get; set; }

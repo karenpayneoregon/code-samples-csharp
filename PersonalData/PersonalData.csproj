@@ -68,7 +68,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Classes\QA.cs" />
-    <Compile Include="Classes\Techprofile.cs" />
+    <Compile Include="Classes\TechProfile.cs" />
     <Compile Include="Classes\UpperLevel.cs" />
     <Compile Include="Classes\XP.cs" />
     <EmbeddedResource Include="Form1.resx">
