@@ -171,6 +171,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BindingExample_1", "Binding
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CopyFileWhenDone", "CopyFileWhenDone\CopyFileWhenDone.csproj", "{4235DF67-DD54-4849-A024-ED15E200FD4E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersonalData", "PersonalData\PersonalData.csproj", "{AB5DC534-2639-496F-8985-C2ED9E59A1E5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -550,6 +552,12 @@ Global
 		{4235DF67-DD54-4849-A024-ED15E200FD4E}.NormalDebug|Any CPU.Build.0 = Debug|Any CPU
 		{4235DF67-DD54-4849-A024-ED15E200FD4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4235DF67-DD54-4849-A024-ED15E200FD4E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB5DC534-2639-496F-8985-C2ED9E59A1E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB5DC534-2639-496F-8985-C2ED9E59A1E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB5DC534-2639-496F-8985-C2ED9E59A1E5}.NormalDebug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB5DC534-2639-496F-8985-C2ED9E59A1E5}.NormalDebug|Any CPU.Build.0 = Debug|Any CPU
+		{AB5DC534-2639-496F-8985-C2ED9E59A1E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB5DC534-2639-496F-8985-C2ED9E59A1E5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -628,6 +636,7 @@ Global
 		{ECE8060E-A8E9-4BA7-A285-579BC7A14587} = {B9B40266-0D9F-4C14-85E6-B3D7ED121910}
 		{0AC0826B-2EC6-4EBD-B40E-960671E1B0C6} = {AF1D6999-6E01-45C2-A94C-D20F032B4CF3}
 		{4235DF67-DD54-4849-A024-ED15E200FD4E} = {AF1D6999-6E01-45C2-A94C-D20F032B4CF3}
+		{AB5DC534-2639-496F-8985-C2ED9E59A1E5} = {AF1D6999-6E01-45C2-A94C-D20F032B4CF3}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D3524478-BF74-469F-8C79-7CBBFCC7C4EA}

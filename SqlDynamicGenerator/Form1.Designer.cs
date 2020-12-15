@@ -43,13 +43,15 @@
             this.ProductListButton = new System.Windows.Forms.Button();
             this.DumpStatementsButton = new System.Windows.Forms.Button();
             this.DisplayFormattedSqlCheckBox = new System.Windows.Forms.CheckBox();
+            this.OrderDatesButton = new System.Windows.Forms.Button();
+            this.OrdersResultTextBox = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // ProcessSuppliersByNameButton
             // 
-            this.ProcessSuppliersByNameButton.Location = new System.Drawing.Point(8, 130);
+            this.ProcessSuppliersByNameButton.Location = new System.Drawing.Point(6, 95);
             this.ProcessSuppliersByNameButton.Name = "ProcessSuppliersByNameButton";
             this.ProcessSuppliersByNameButton.Size = new System.Drawing.Size(150, 23);
             this.ProcessSuppliersByNameButton.TabIndex = 0;
@@ -63,14 +65,14 @@
             this.SuppliersNamesListBox.Location = new System.Drawing.Point(8, 24);
             this.SuppliersNamesListBox.Name = "SuppliersNamesListBox";
             this.SuppliersNamesListBox.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
-            this.SuppliersNamesListBox.Size = new System.Drawing.Size(150, 95);
+            this.SuppliersNamesListBox.Size = new System.Drawing.Size(150, 56);
             this.SuppliersNamesListBox.TabIndex = 1;
             // 
             // SuppliersNameResultsTextBox
             // 
             this.SuppliersNameResultsTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.SuppliersNameResultsTextBox.Location = new System.Drawing.Point(10, 161);
+            this.SuppliersNameResultsTextBox.Location = new System.Drawing.Point(6, 124);
             this.SuppliersNameResultsTextBox.Name = "SuppliersNameResultsTextBox";
             this.SuppliersNameResultsTextBox.Size = new System.Drawing.Size(456, 20);
             this.SuppliersNameResultsTextBox.TabIndex = 2;
@@ -84,7 +86,7 @@
             this.groupBox1.Controls.Add(this.ProcessSuppliersByNameButton);
             this.groupBox1.Location = new System.Drawing.Point(4, 39);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(479, 192);
+            this.groupBox1.Size = new System.Drawing.Size(479, 170);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "By supplier names";
@@ -96,7 +98,7 @@
             this.groupBox2.Controls.Add(this.SuppliersIdsResultsTextBox);
             this.groupBox2.Controls.Add(this.SuppliersIdsListBox);
             this.groupBox2.Controls.Add(this.ProcessSuppliersByIdButton);
-            this.groupBox2.Location = new System.Drawing.Point(4, 239);
+            this.groupBox2.Location = new System.Drawing.Point(4, 222);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(479, 192);
             this.groupBox2.TabIndex = 5;
@@ -143,7 +145,7 @@
             // 
             // CustomersDataTableButton
             // 
-            this.CustomersDataTableButton.Location = new System.Drawing.Point(12, 446);
+            this.CustomersDataTableButton.Location = new System.Drawing.Point(15, 419);
             this.CustomersDataTableButton.Name = "CustomersDataTableButton";
             this.CustomersDataTableButton.Size = new System.Drawing.Size(192, 23);
             this.CustomersDataTableButton.TabIndex = 7;
@@ -153,7 +155,7 @@
             // 
             // CustomerListButton
             // 
-            this.CustomerListButton.Location = new System.Drawing.Point(12, 475);
+            this.CustomerListButton.Location = new System.Drawing.Point(15, 448);
             this.CustomerListButton.Name = "CustomerListButton";
             this.CustomerListButton.Size = new System.Drawing.Size(192, 23);
             this.CustomerListButton.TabIndex = 8;
@@ -163,7 +165,7 @@
             // 
             // ProductListButton
             // 
-            this.ProductListButton.Location = new System.Drawing.Point(12, 504);
+            this.ProductListButton.Location = new System.Drawing.Point(15, 477);
             this.ProductListButton.Name = "ProductListButton";
             this.ProductListButton.Size = new System.Drawing.Size(192, 23);
             this.ProductListButton.TabIndex = 9;
@@ -173,7 +175,7 @@
             // 
             // DumpStatementsButton
             // 
-            this.DumpStatementsButton.Location = new System.Drawing.Point(278, 504);
+            this.DumpStatementsButton.Location = new System.Drawing.Point(278, 477);
             this.DumpStatementsButton.Name = "DumpStatementsButton";
             this.DumpStatementsButton.Size = new System.Drawing.Size(192, 23);
             this.DumpStatementsButton.TabIndex = 10;
@@ -184,7 +186,7 @@
             // DisplayFormattedSqlCheckBox
             // 
             this.DisplayFormattedSqlCheckBox.AutoSize = true;
-            this.DisplayFormattedSqlCheckBox.Location = new System.Drawing.Point(278, 452);
+            this.DisplayFormattedSqlCheckBox.Location = new System.Drawing.Point(278, 425);
             this.DisplayFormattedSqlCheckBox.Name = "DisplayFormattedSqlCheckBox";
             this.DisplayFormattedSqlCheckBox.Size = new System.Drawing.Size(116, 17);
             this.DisplayFormattedSqlCheckBox.TabIndex = 11;
@@ -192,11 +194,36 @@
             this.DisplayFormattedSqlCheckBox.UseVisualStyleBackColor = true;
             this.DisplayFormattedSqlCheckBox.CheckedChanged += new System.EventHandler(this.DisplayFormattedSqlCheckBox_CheckedChanged);
             // 
+            // OrderDatesButton
+            // 
+            this.OrderDatesButton.Location = new System.Drawing.Point(15, 506);
+            this.OrderDatesButton.Name = "OrderDatesButton";
+            this.OrderDatesButton.Size = new System.Drawing.Size(189, 23);
+            this.OrderDatesButton.TabIndex = 3;
+            this.OrderDatesButton.Text = "Orders Date example";
+            this.OrderDatesButton.UseVisualStyleBackColor = true;
+            this.OrderDatesButton.Click += new System.EventHandler(this.OrderDatesButton_Click);
+            // 
+            // OrdersResultTextBox
+            // 
+            this.OrdersResultTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.OrdersResultTextBox.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.OrdersResultTextBox.Location = new System.Drawing.Point(14, 535);
+            this.OrdersResultTextBox.Multiline = true;
+            this.OrdersResultTextBox.Name = "OrdersResultTextBox";
+            this.OrdersResultTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.OrdersResultTextBox.Size = new System.Drawing.Size(456, 110);
+            this.OrdersResultTextBox.TabIndex = 12;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(482, 546);
+            this.ClientSize = new System.Drawing.Size(482, 657);
+            this.Controls.Add(this.OrdersResultTextBox);
+            this.Controls.Add(this.OrderDatesButton);
             this.Controls.Add(this.DisplayFormattedSqlCheckBox);
             this.Controls.Add(this.DumpStatementsButton);
             this.Controls.Add(this.ProductListButton);
@@ -234,6 +261,8 @@
         private System.Windows.Forms.Button ProductListButton;
         private System.Windows.Forms.Button DumpStatementsButton;
         private System.Windows.Forms.CheckBox DisplayFormattedSqlCheckBox;
+        private System.Windows.Forms.Button OrderDatesButton;
+        private System.Windows.Forms.TextBox OrdersResultTextBox;
     }
 }
 

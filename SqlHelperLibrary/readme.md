@@ -56,6 +56,19 @@ ORDER BY C.CompanyName;
 * Currently setup for SQL-Server, to use for other databases alter the switch statement in SqlGenerator.CreateWhereStatement
 * Requires script.sql to run for demo code samples to run from the project SqlDynamicGenerator.
 
+# TSql~~Parser 
+
+- TSql80Parser - SQL Server 2000
+- TSql90Parser - SQL Server 2005
+- TSql100Parser - SQL Server 2008
+- TSql110Parser - SQL Server 2012
+- TSql120Parser - SQL Server 2014
+- TSql130Parser - SQL Server 2016
+- TSql140Parser - SQL Server 2017
+- TSql150Parser - SQL Server 2019
+
+
+
 # Extracting from this repository
 
 Using Git create a temp folder e.g. C:\Dotnet\Temp, create a batch file with the following and execute to download. Make sure to have the lastest version of Git installed.

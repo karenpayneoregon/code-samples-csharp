@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SqlDynamicGenerator.Classes;
 using SqlHelperLibrary;
 
 namespace SqlDynamicGenerator
@@ -24,7 +26,7 @@ namespace SqlDynamicGenerator
 
             Shown += Form1_Shown;
 
-            Mocked.OnShowCommandStatementEvent += Mocked_OnShowCommandStatementEvent;
+            SqlOperations.OnShowCommandStatementEvent += Mocked_OnShowCommandStatementEvent;
         }
 
         private void Mocked_OnShowCommandStatementEvent(string methodName,string statement)
@@ -34,10 +36,17 @@ namespace SqlDynamicGenerator
 
         private void Form1_Shown(object sender, EventArgs e)
         {
-            SuppliersNamesListBox.DataSource = new List<string>() { "Google", "Kimberly-Clark", "Tyson Foods" };
-            SuppliersIdsListBox.DataSource = new List<string>() {"1","2","3","4","5"};
+            SuppliersNamesListBox.DataSource = new List<string>()
+            {
+                "Google", "Kimberly-Clark", "Tyson Foods"
+            };
 
-            Mocked.OnExceptionEvent += Mocked_OnExceptionEvent;
+            SuppliersIdsListBox.DataSource = new List<string>()
+            {
+                "1","2","3","4","5"
+            };
+
+            SqlOperations.OnExceptionEvent += Mocked_OnExceptionEvent;
         }
 
         private bool _hasException;
@@ -111,7 +120,7 @@ namespace SqlDynamicGenerator
             /*
              * Contact types passed to ExampleCustomersList1 are existing values in the ContactType table
              */
-            var dataTable = Mocked.ExampleCustomersDataTable1(new List<string>() { "Assistant Sales Agent", "Owner"});
+            var dataTable = SqlOperations.ExampleCustomersDataTable1(new List<string>() { "Assistant Sales Agent", "Owner"});
             if (_hasException)
             {
                 MessageBox.Show($"Failed with\n{_lastException.Message}");
@@ -127,7 +136,7 @@ namespace SqlDynamicGenerator
             /*
              * Contact types passed to ExampleCustomersList1 are existing values in the ContactType table
              */
-            var customers = Mocked.ExampleCustomersList1(new List<string>() { "Assistant Sales Agent", "Owner" });
+            var customers = SqlOperations.ExampleCustomersList1(new List<string>() { "Assistant Sales Agent", "Owner" });
             if (_hasException)
             {
                 MessageBox.Show($"Failed with\n{_lastException.Message}");
@@ -143,7 +152,7 @@ namespace SqlDynamicGenerator
             /*
              * Categories passed to ExampleProductsList are existing values in the Category table
              */
-            var customers = Mocked.ExampleProductsList(new List<string>() { "Beverages", "Dairy Products", "Condiments" });
+            var customers = SqlOperations.ExampleProductsList(new List<string>() { "Beverages", "Dairy Products", "Condiments" });
             if (_hasException)
             {
                 MessageBox.Show($"Failed with\n{_lastException.Message}");
@@ -183,7 +192,49 @@ namespace SqlDynamicGenerator
         /// <param name="e"></param>
         private void DisplayFormattedSqlCheckBox_CheckedChanged(object sender, EventArgs e)
         {
-            Mocked.DisplayFormattedSql = DisplayFormattedSqlCheckBox.Checked;
+            SqlOperations.DisplayFormattedSql = DisplayFormattedSqlCheckBox.Checked;
+        }
+
+        private void OrderDatesButton_Click(object sender, EventArgs e)
+        {
+            OrdersResultTextBox.Text = "";
+            SqlOperations.DisplayFormattedSql = true;
+            SqlOperations.OnShowFormattedStatementEvent += SqlOperations_OnShowFormattedStatementEvent;
+            var sb = new StringBuilder();
+
+            sb.AppendLine("Results");
+            sb.AppendLine("");
+
+            var orderDates = new List<string>()
+            {
+                "10-17-2014", "06/11/2015", "10/30/2015"
+            };
+
+
+            var orders = SqlOperations.ExampleOrderDates(orderDates);
+            var groupedOrderItems = orders
+                .GroupBy(ord => ord.OrderDate)
+                .Select(ord => new OrderItem
+                {
+                    OrderDateTime = ord.Key,
+                    OrderList = ord.ToList()
+                })
+                .ToList();
+
+            foreach (var groupedOrderItem in groupedOrderItems)
+            {
+                sb.AppendLine($"{groupedOrderItem.OrderDateTime.Value:d} - {groupedOrderItem.OrderList.Count}");
+            }
+
+            MessageBox.Show(sb.ToString());
+            SqlOperations.OnShowFormattedStatementEvent -= SqlOperations_OnShowFormattedStatementEvent;
+            SqlOperations.DisplayFormattedSql = false;
+
+        }
+
+        private void SqlOperations_OnShowFormattedStatementEvent(string statement)
+        {
+            OrdersResultTextBox.Text = statement;
         }
     }
 }

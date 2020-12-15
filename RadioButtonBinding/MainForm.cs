@@ -22,6 +22,11 @@ namespace RadioButtonBinding
 
             Shown += MainForm_Shown;
 
+            /*
+             * Used in RadioButtonGroupBox.Selected property.
+             * Tag can also be set in the property window of
+             * each RadioButton
+             */
             MrRadioButton.Tag = 1;
             MrsRadioButton.Tag = 2;
             MissRadioButton.Tag = 3;
@@ -34,29 +39,50 @@ namespace RadioButtonBinding
 
         private void MainForm_Shown(object sender, EventArgs e)
         {
+            /*
+             * Setup events to update current person
+             */
             SuffixRadioGroupBox.SelectedChanged += SuffixRadioGroupBox_SelectedChanged;
             GenderRadioGroupBox.SelectedChanged += GenderRadioGroupBox_SelectedChanged;
             
-            _peopleBindingList = new BindingList<Person>(Mocked.PeopleList);
+            /*
+             * Setup data source from mocked data
+             */
+            _peopleBindingList = new BindingList<Person>(DataOperations.ReadPeople());
             _peopleBindingSource.DataSource = _peopleBindingList;
 
+            /*
+             * Setup data bindings to Suffix and Gender properties which are both enumerations, for
+             * real applications these are int type.
+             */
             SuffixRadioGroupBox.DataBindings.Add("Selected", _peopleBindingSource, "Suffix");
             GenderRadioGroupBox.DataBindings.Add("Selected", _peopleBindingSource, "Gender");
 
+            /*
+             * Setup data bindings for string properties
+             */
             FirstNameTextBox.DataBindings.Add("Text", _peopleBindingSource, "FirstName");
             LastNameTextBox.DataBindings.Add("Text", _peopleBindingSource, "LastName");
 
+            /*
+             * Provides navigation of people
+             */
             PeopleNavigator.BindingSource = _peopleBindingSource;
 
         }
 
+        /// <summary>
+        /// Set current person's gender type
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void GenderRadioGroupBox_SelectedChanged(object sender, RadioGroupBox.SelectedChangedEventArgs e)
         {
             _peopleBindingList[_peopleBindingSource.Position].Gender = (GenderType)e.Selected;
         }
 
         /// <summary>
-        /// Update current person
+        /// Set current person's suffix type
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -65,6 +91,11 @@ namespace RadioButtonBinding
             _peopleBindingList[_peopleBindingSource.Position].Suffix = (SuffixType) e.Selected;
         }
 
+        /// <summary>
+        /// Display all people to ensure changes done are proper
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void InspectButton_Click(object sender, EventArgs e)
         {
             var sb = new StringBuilder();
@@ -74,6 +105,20 @@ namespace RadioButtonBinding
             }
 
             MessageBox.Show(sb.ToString());
+        }
+
+        /// <summary>
+        /// Here is a mocked update for the current person
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void UpdateCurrentPersonButton_Click(object sender, EventArgs e)
+        {
+            if (_peopleBindingSource.Current != null)
+            {
+                DataOperations.UpdatePerson((Person)_peopleBindingSource.Current);
+            }
+            
         }
     }
 }

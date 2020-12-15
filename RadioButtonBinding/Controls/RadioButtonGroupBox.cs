@@ -38,7 +38,8 @@ namespace RadioButtonBinding
             set
             {
                 int val = 0;
-                var radioButton = this.Controls.OfType<RadioButton>().FirstOrDefault(radio => radio.Tag != null && int.TryParse(radio.Tag.ToString(), out val) && val == value);
+                var radioButton = this.Controls.OfType<RadioButton>()
+                    .FirstOrDefault(radio => radio.Tag != null && int.TryParse(radio.Tag.ToString(), out val) && val == value);
 
                 if (radioButton != null)
                 {

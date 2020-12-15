@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace RadioButtonBinding.Properties {
+namespace PersonalData.Properties {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace RadioButtonBinding.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("RadioButtonBinding.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("PersonalData.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -63,19 +63,9 @@ namespace RadioButtonBinding.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Save_16x {
+        internal static System.Drawing.Bitmap JSONFile_16x {
             get {
-                object obj = ResourceManager.GetObject("Save_16x", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap View_16x {
-            get {
-                object obj = ResourceManager.GetObject("View_16x", resourceCulture);
+                object obj = ResourceManager.GetObject("JSONFile_16x", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

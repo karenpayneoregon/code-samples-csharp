@@ -5,18 +5,22 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SqlHelperLibrary.Extensions;
+using SqlHelperLibrary.Models;
 
 namespace SqlHelperLibrary
 {
-    public class Mocked
+    public class SqlOperations
     {
-        public static string _connectionString = "Data Source=.\\SQLEXPRESS;Initial Catalog=NorthWindAzure1;Integrated Security=True";
+        public static string _connectionString = 
+            "Data Source=.\\SQLEXPRESS;" + 
+            "Initial Catalog=NorthWindAzure1;" + 
+            "Integrated Security=True";
 
         /// <summary>
         /// Set true to display formatted SQL in output window
         /// </summary>
         public static bool DisplayFormattedSql;
-
 
         public delegate void OnException(Exception exception);
         /// <summary>
@@ -30,7 +34,16 @@ namespace SqlHelperLibrary
         /// </summary>
         public static event OnShowCommandStatement OnShowCommandStatementEvent;
 
+        public delegate void OnShowFormattedStatement(string statement);
+
+        public static event OnShowFormattedStatement OnShowFormattedStatementEvent;
+
         public static string _methodName;
+
+        public static void KarenDemo()
+        {
+            Scripter.GetBatchesExample();
+        }
 
         public static DataTable ExampleCustomersDataTable1(List<string> pContactTitleList)
         {
@@ -159,6 +172,68 @@ namespace SqlHelperLibrary
 
             return customers;
         }
+
+        public static List<Orders> ExampleOrderDates(List<string> pDatesList)
+        {
+
+            _methodName = nameof(ExampleOrderDates);
+
+            SqlWhereInParameterBuilder.OnShowCommandStatementEvent += SqlWhereInParameterBuilder_OnShowCommandStatementEvent;
+
+            var orders = new List<Orders>();
+
+            const string parameterPrefix = "O.OrderDate";
+
+            var selectStatement = 
+                "SELECT O.OrderID, O.CustomerIdentifier, O.OrderDate, O.RequiredDate, O.ShipCity, O.ShipPostalCode  " +
+                "FROM Orders AS O  " +
+                $"WHERE {parameterPrefix} IN ({{0}})";
+
+            var commandText = SqlWhereInParameterBuilder.BuildWhereInClause(selectStatement, parameterPrefix, pDatesList);
+
+            using (var cn = new SqlConnection { ConnectionString = _connectionString })
+            {
+
+                using (var cmd = new SqlCommand { Connection = cn })
+                {
+
+                    cmd.CommandText = commandText;
+                    cmd.AddParamsToCommand(parameterPrefix, pDatesList);
+
+
+                    try
+                    {
+                        cn.Open();
+
+                        var reader = cmd.ExecuteReader();
+
+                        while (reader.Read())
+                        {
+                            orders.Add(new Orders() {OrderID = reader.GetInt32(0), OrderDate = reader.GetNullableDateTime("OrderDate") });
+                        }
+
+                        if (DisplayFormattedSql)
+                        {
+                            OnShowFormattedStatementEvent?.Invoke(Scripter.Format(cmd.CommandText));
+                        }
+
+                    }
+                    catch (Exception ex)
+                    {
+                        OnExceptionEvent?.Invoke(ex);
+                    }
+                    finally
+                    {
+                        SqlWhereInParameterBuilder.OnShowCommandStatementEvent -= SqlWhereInParameterBuilder_OnShowCommandStatementEvent;
+                    }
+                }
+
+            }
+
+
+            return orders;
+        }
+
         public static List<Product> ExampleProductsList(List<string> pCategoryList)
         {
             _methodName = nameof(ExampleProductsList);
@@ -204,10 +279,7 @@ namespace SqlHelperLibrary
                             });
                         }
 
-                        if (DisplayFormattedSql)
-                        {
-                            Console.WriteLine(Scripter.Format(cmd.CommandText));
-                        }
+
 
                     }
                     catch (Exception ex)

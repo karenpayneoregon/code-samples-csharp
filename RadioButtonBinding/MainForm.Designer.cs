@@ -44,19 +44,20 @@
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.SuffixRadioGroupBox = new RadioButtonBinding.RadioGroupBox();
-            this.MissRadioButton = new System.Windows.Forms.RadioButton();
-            this.MrsRadioButton = new System.Windows.Forms.RadioButton();
-            this.MrRadioButton = new System.Windows.Forms.RadioButton();
             this.InspectButton = new System.Windows.Forms.Button();
+            this.UpdateCurrentPersonButton = new System.Windows.Forms.Button();
             this.GenderRadioGroupBox = new RadioButtonBinding.RadioGroupBox();
             this.OtherRadioButton = new System.Windows.Forms.RadioButton();
             this.MaleRadioButton = new System.Windows.Forms.RadioButton();
             this.FemaleRadioButton = new System.Windows.Forms.RadioButton();
+            this.SuffixRadioGroupBox = new RadioButtonBinding.RadioGroupBox();
+            this.MissRadioButton = new System.Windows.Forms.RadioButton();
+            this.MrsRadioButton = new System.Windows.Forms.RadioButton();
+            this.MrRadioButton = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.PeopleNavigator)).BeginInit();
             this.PeopleNavigator.SuspendLayout();
-            this.SuffixRadioGroupBox.SuspendLayout();
             this.GenderRadioGroupBox.SuspendLayout();
+            this.SuffixRadioGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // LastNameTextBox
@@ -183,64 +184,29 @@
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
-            // SuffixRadioGroupBox
-            // 
-            this.SuffixRadioGroupBox.Controls.Add(this.MissRadioButton);
-            this.SuffixRadioGroupBox.Controls.Add(this.MrsRadioButton);
-            this.SuffixRadioGroupBox.Controls.Add(this.MrRadioButton);
-            this.SuffixRadioGroupBox.Location = new System.Drawing.Point(12, 42);
-            this.SuffixRadioGroupBox.Name = "SuffixRadioGroupBox";
-            this.SuffixRadioGroupBox.Selected = 0;
-            this.SuffixRadioGroupBox.Size = new System.Drawing.Size(184, 61);
-            this.SuffixRadioGroupBox.TabIndex = 12;
-            this.SuffixRadioGroupBox.TabStop = false;
-            this.SuffixRadioGroupBox.Text = "Suffix";
-            // 
-            // MissRadioButton
-            // 
-            this.MissRadioButton.AutoSize = true;
-            this.MissRadioButton.Location = new System.Drawing.Point(113, 24);
-            this.MissRadioButton.Name = "MissRadioButton";
-            this.MissRadioButton.Size = new System.Drawing.Size(46, 17);
-            this.MissRadioButton.TabIndex = 2;
-            this.MissRadioButton.TabStop = true;
-            this.MissRadioButton.Tag = "";
-            this.MissRadioButton.Text = "Miss";
-            this.MissRadioButton.UseVisualStyleBackColor = true;
-            // 
-            // MrsRadioButton
-            // 
-            this.MrsRadioButton.AutoSize = true;
-            this.MrsRadioButton.Location = new System.Drawing.Point(65, 24);
-            this.MrsRadioButton.Name = "MrsRadioButton";
-            this.MrsRadioButton.Size = new System.Drawing.Size(42, 17);
-            this.MrsRadioButton.TabIndex = 1;
-            this.MrsRadioButton.TabStop = true;
-            this.MrsRadioButton.Tag = "";
-            this.MrsRadioButton.Text = "Mrs";
-            this.MrsRadioButton.UseVisualStyleBackColor = true;
-            // 
-            // MrRadioButton
-            // 
-            this.MrRadioButton.AutoSize = true;
-            this.MrRadioButton.Location = new System.Drawing.Point(13, 24);
-            this.MrRadioButton.Name = "MrRadioButton";
-            this.MrRadioButton.Size = new System.Drawing.Size(37, 17);
-            this.MrRadioButton.TabIndex = 0;
-            this.MrRadioButton.TabStop = true;
-            this.MrRadioButton.Tag = "";
-            this.MrRadioButton.Text = "Mr";
-            this.MrRadioButton.UseVisualStyleBackColor = true;
-            // 
             // InspectButton
             // 
-            this.InspectButton.Location = new System.Drawing.Point(246, 157);
+            this.InspectButton.Image = global::RadioButtonBinding.Properties.Resources.View_16x;
+            this.InspectButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.InspectButton.Location = new System.Drawing.Point(12, 227);
             this.InspectButton.Name = "InspectButton";
-            this.InspectButton.Size = new System.Drawing.Size(75, 23);
+            this.InspectButton.Size = new System.Drawing.Size(184, 35);
             this.InspectButton.TabIndex = 13;
-            this.InspectButton.Text = "Inspect";
+            this.InspectButton.Text = "Inspect list";
             this.InspectButton.UseVisualStyleBackColor = true;
             this.InspectButton.Click += new System.EventHandler(this.InspectButton_Click);
+            // 
+            // UpdateCurrentPersonButton
+            // 
+            this.UpdateCurrentPersonButton.Image = global::RadioButtonBinding.Properties.Resources.Save_16x;
+            this.UpdateCurrentPersonButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.UpdateCurrentPersonButton.Location = new System.Drawing.Point(12, 176);
+            this.UpdateCurrentPersonButton.Name = "UpdateCurrentPersonButton";
+            this.UpdateCurrentPersonButton.Size = new System.Drawing.Size(184, 35);
+            this.UpdateCurrentPersonButton.TabIndex = 14;
+            this.UpdateCurrentPersonButton.Text = "Update current person";
+            this.UpdateCurrentPersonButton.UseVisualStyleBackColor = true;
+            this.UpdateCurrentPersonButton.Click += new System.EventHandler(this.UpdateCurrentPersonButton_Click);
             // 
             // GenderRadioGroupBox
             // 
@@ -291,11 +257,61 @@
             this.FemaleRadioButton.Text = "Female";
             this.FemaleRadioButton.UseVisualStyleBackColor = true;
             // 
-            // Form2
+            // SuffixRadioGroupBox
+            // 
+            this.SuffixRadioGroupBox.Controls.Add(this.MissRadioButton);
+            this.SuffixRadioGroupBox.Controls.Add(this.MrsRadioButton);
+            this.SuffixRadioGroupBox.Controls.Add(this.MrRadioButton);
+            this.SuffixRadioGroupBox.Location = new System.Drawing.Point(12, 42);
+            this.SuffixRadioGroupBox.Name = "SuffixRadioGroupBox";
+            this.SuffixRadioGroupBox.Selected = 0;
+            this.SuffixRadioGroupBox.Size = new System.Drawing.Size(184, 61);
+            this.SuffixRadioGroupBox.TabIndex = 12;
+            this.SuffixRadioGroupBox.TabStop = false;
+            this.SuffixRadioGroupBox.Text = "Suffix";
+            // 
+            // MissRadioButton
+            // 
+            this.MissRadioButton.AutoSize = true;
+            this.MissRadioButton.Location = new System.Drawing.Point(113, 24);
+            this.MissRadioButton.Name = "MissRadioButton";
+            this.MissRadioButton.Size = new System.Drawing.Size(46, 17);
+            this.MissRadioButton.TabIndex = 2;
+            this.MissRadioButton.TabStop = true;
+            this.MissRadioButton.Tag = "";
+            this.MissRadioButton.Text = "Miss";
+            this.MissRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // MrsRadioButton
+            // 
+            this.MrsRadioButton.AutoSize = true;
+            this.MrsRadioButton.Location = new System.Drawing.Point(65, 24);
+            this.MrsRadioButton.Name = "MrsRadioButton";
+            this.MrsRadioButton.Size = new System.Drawing.Size(42, 17);
+            this.MrsRadioButton.TabIndex = 1;
+            this.MrsRadioButton.TabStop = true;
+            this.MrsRadioButton.Tag = "";
+            this.MrsRadioButton.Text = "Mrs";
+            this.MrsRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // MrRadioButton
+            // 
+            this.MrRadioButton.AutoSize = true;
+            this.MrRadioButton.Location = new System.Drawing.Point(13, 24);
+            this.MrRadioButton.Name = "MrRadioButton";
+            this.MrRadioButton.Size = new System.Drawing.Size(37, 17);
+            this.MrRadioButton.TabIndex = 0;
+            this.MrRadioButton.TabStop = true;
+            this.MrRadioButton.Tag = "";
+            this.MrRadioButton.Text = "Mr";
+            this.MrRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(344, 246);
+            this.ClientSize = new System.Drawing.Size(344, 276);
+            this.Controls.Add(this.UpdateCurrentPersonButton);
             this.Controls.Add(this.GenderRadioGroupBox);
             this.Controls.Add(this.InspectButton);
             this.Controls.Add(this.SuffixRadioGroupBox);
@@ -305,16 +321,16 @@
             this.Controls.Add(this.FirstNameTextBox);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Name = "Form2";
+            this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Data bind three radio buttons";
             ((System.ComponentModel.ISupportInitialize)(this.PeopleNavigator)).EndInit();
             this.PeopleNavigator.ResumeLayout(false);
             this.PeopleNavigator.PerformLayout();
-            this.SuffixRadioGroupBox.ResumeLayout(false);
-            this.SuffixRadioGroupBox.PerformLayout();
             this.GenderRadioGroupBox.ResumeLayout(false);
             this.GenderRadioGroupBox.PerformLayout();
+            this.SuffixRadioGroupBox.ResumeLayout(false);
+            this.SuffixRadioGroupBox.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -344,5 +360,6 @@
         private System.Windows.Forms.RadioButton OtherRadioButton;
         private System.Windows.Forms.RadioButton MaleRadioButton;
         private System.Windows.Forms.RadioButton FemaleRadioButton;
+        private System.Windows.Forms.Button UpdateCurrentPersonButton;
     }
 }

@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{F0628D66-704E-4384-AF31-139E2CD4AA59}</ProjectGuid>
+    <ProjectGuid>{AB5DC534-2639-496F-8985-C2ED9E59A1E5}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>SqlDynamicGenerator</RootNamespace>
-    <AssemblyName>SqlDynamicGenerator</AssemblyName>
+    <RootNamespace>PersonalData</RootNamespace>
+    <AssemblyName>PersonalData</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -32,10 +32,10 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-  <PropertyGroup>
-    <ApplicationIcon>SQL_16x.ico</ApplicationIcon>
-  </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -49,15 +49,27 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\Assessments.cs" />
+    <Compile Include="Classes\Authenticationmode.cs" />
+    <Compile Include="Classes\CustomContractResolver.cs" />
+    <Compile Include="Classes\JsonOperations.cs" />
+    <Compile Include="Classes\Progress.cs" />
+    <Compile Include="Classes\Completedlearningitem.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Classes\OrderItem.cs" />
+    <Compile Include="Classes\Level.cs" />
+    <Compile Include="Classes\List.cs" />
+    <Compile Include="Classes\Node.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Classes\QA.cs" />
+    <Compile Include="Classes\Techprofile.cs" />
+    <Compile Include="Classes\UpperLevel.cs" />
+    <Compile Include="Classes\XP.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -69,7 +81,12 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="packages.config" />
+    <None Include="personal.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -85,15 +102,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\SqlHelperLibrary\SqlHelperLibrary.csproj">
-      <Project>{8aa30b1d-f610-4318-a031-f9a9bbf0669b}</Project>
-      <Name>SqlHelperLibrary</Name>
-    </ProjectReference>
+    <None Include="Resources\JSONFile_16x.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Content Include="script.sql" />
-    <Content Include="SQL_16x.ico" />
-  </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
