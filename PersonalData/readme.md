@@ -2,6 +2,8 @@
 
 Experiment for obtaining Q&A personal data.
 
+![screen](../assets/qaScreenShot.png)
+
 # Clone
 
 - Create batch file in a temp folder

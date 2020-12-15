@@ -52,6 +52,7 @@
     <Compile Include="Classes\Assessments.cs" />
     <Compile Include="Classes\Authenticationmode.cs" />
     <Compile Include="Classes\CustomContractResolver.cs" />
+    <Compile Include="Classes\Helpers.cs" />
     <Compile Include="Classes\JsonOperations.cs" />
     <Compile Include="Classes\Progress.cs" />
     <Compile Include="Classes\Completedlearningitem.cs" />

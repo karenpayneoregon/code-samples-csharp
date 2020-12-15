@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -31,11 +32,22 @@ namespace PersonalData
                 DisplayNameTextBox.Text = profile.DisplayName;
                 MvpCheckBox.Checked = profile.IsMvp;
                 DateAddedTextBox.Text = profile.AuthenticationModes.FirstOrDefault()?.DateAdded.ToString("d");
+
+                var imageFileName = "ProfileImage.png";
+                if (Helpers.DownLoadProfileImage(profile.AvatarUrl,imageFileName))
+                {
+                    ProfilePictureBox.Image = Image.FromFile(imageFileName);
+                }
             }
             else
             {
                 MessageBox.Show("We failed to find your file.");
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

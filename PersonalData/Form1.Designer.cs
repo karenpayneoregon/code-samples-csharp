@@ -35,6 +35,8 @@
             this.MvpCheckBox = new System.Windows.Forms.CheckBox();
             this.label3 = new System.Windows.Forms.Label();
             this.DateAddedTextBox = new System.Windows.Forms.TextBox();
+            this.ProfilePictureBox = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.ProfilePictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // DeserializeButton
@@ -99,11 +101,21 @@
             this.DateAddedTextBox.Size = new System.Drawing.Size(194, 20);
             this.DateAddedTextBox.TabIndex = 6;
             // 
+            // ProfilePictureBox
+            // 
+            this.ProfilePictureBox.Location = new System.Drawing.Point(301, 21);
+            this.ProfilePictureBox.Name = "ProfilePictureBox";
+            this.ProfilePictureBox.Size = new System.Drawing.Size(125, 121);
+            this.ProfilePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.ProfilePictureBox.TabIndex = 7;
+            this.ProfilePictureBox.TabStop = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(270, 167);
+            this.ClientSize = new System.Drawing.Size(441, 178);
+            this.Controls.Add(this.ProfilePictureBox);
             this.Controls.Add(this.DateAddedTextBox);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.MvpCheckBox);
@@ -115,6 +127,7 @@
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Q&A Settings";
+            ((System.ComponentModel.ISupportInitialize)(this.ProfilePictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -129,6 +142,7 @@
         private System.Windows.Forms.CheckBox MvpCheckBox;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox DateAddedTextBox;
+        private System.Windows.Forms.PictureBox ProfilePictureBox;
     }
 }
 
