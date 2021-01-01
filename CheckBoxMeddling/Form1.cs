@@ -18,6 +18,7 @@ namespace CheckBoxMeddling
             InitializeComponent();
 
             Shown += Form1_Shown;
+
         }
 
         private void Form1_Shown(object sender, EventArgs e)

@@ -120,5 +120,14 @@ namespace RadioButtonBinding
             }
             
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+            ComponentResourceManager resources = new ComponentResourceManager(typeof(MainForm));
+            var t1 = new Bitmap((Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
+            t1.Save("MoveLastItem.bmp");
+        }
+
     }
 }

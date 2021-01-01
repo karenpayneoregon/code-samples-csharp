@@ -54,6 +54,7 @@
             this.MissRadioButton = new System.Windows.Forms.RadioButton();
             this.MrsRadioButton = new System.Windows.Forms.RadioButton();
             this.MrRadioButton = new System.Windows.Forms.RadioButton();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.PeopleNavigator)).BeginInit();
             this.PeopleNavigator.SuspendLayout();
             this.GenderRadioGroupBox.SuspendLayout();
@@ -306,11 +307,22 @@
             this.MrRadioButton.Text = "Mr";
             this.MrRadioButton.UseVisualStyleBackColor = true;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(223, 181);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 15;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(344, 276);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.UpdateCurrentPersonButton);
             this.Controls.Add(this.GenderRadioGroupBox);
             this.Controls.Add(this.InspectButton);
@@ -361,5 +373,6 @@
         private System.Windows.Forms.RadioButton MaleRadioButton;
         private System.Windows.Forms.RadioButton FemaleRadioButton;
         private System.Windows.Forms.Button UpdateCurrentPersonButton;
+        private System.Windows.Forms.Button button1;
     }
 }
