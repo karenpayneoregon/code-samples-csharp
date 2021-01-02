@@ -127,20 +127,28 @@ namespace DataGridViewCombo1
                 return;
             }
 
-            var customerRow = ((DataRowView) _customerBindingSource.Current).Row;
+            #region Get primary table information
+
+            var customerRow = ((DataRowView)_customerBindingSource.Current).Row;
             var customerPrimaryKey = customerRow.Field<int>("Id");
             var colorKey = customerRow.Field<int>("ColorId");
             var vendorKey = customerRow.Field<int>("VendorId");
 
-            var vendorName = ((DataTable) _vendorBindingSource.DataSource)
+            #endregion
+
+            #region Get child table information
+
+            var vendorName = ((DataTable)_vendorBindingSource.DataSource)
                 .AsEnumerable()
                 .FirstOrDefault(row => row.Field<int>("VendorId") == vendorKey)
                 .Field<string>("VendorName");
 
-            var colorName = ((DataTable) _colorBindingSource.DataSource)
+            var colorName = ((DataTable)_colorBindingSource.DataSource)
                 .AsEnumerable()
                 .FirstOrDefault(row => row.Field<int>("ColorId") == colorKey)
                 .Field<string>("ColorText");
+
+            #endregion
 
 
             DisplayInformationTextBox.Text =

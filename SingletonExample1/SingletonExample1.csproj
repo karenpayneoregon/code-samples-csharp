@@ -55,6 +55,7 @@
     </Compile>
     <Compile Include="Classes\ApplicationSettings.cs" />
     <Compile Include="Classes\RuntimeSettings.cs" />
+    <Compile Include="Classes\DataConnections.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -21,6 +21,8 @@ namespace SingletonExample1.Classes
             }
         }
 
+        public string ConnectionString => ApplicationSettings.DatabaseConnectionString();
+
         public delegate void OnDataPathChanged();
         public static event OnDataPathChanged OnDatabasePathChangedEvent;
 

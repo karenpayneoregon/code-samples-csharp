@@ -31,6 +31,7 @@ namespace SingletonExample1
 
         private void OpenChildForm_Click(object sender, EventArgs e)
         {
+            
             var childForm = new ChildForm();
             try
             {
