@@ -2,25 +2,29 @@
 using System.Threading;
 using System.Windows.Forms;
 using CancellationToken.Classes;
+using ControlManager;
 
 namespace CancellationToken
 {
     public partial class Form1 : Form
     {
         private int _totalIterations = 500;
-        private CancellationTokenSource _cancellationTokenSource = 
-            new CancellationTokenSource();
+        private CancellationTokenSource _cancellationTokenSource = new CancellationTokenSource();
 
         public Form1()
         {
             InitializeComponent();
 
             progressBar1.Maximum = _totalIterations;
+
+            ControlMoverOrResizer.Init(shadowPanel1);
+
         }
+
 
         private async void RunButton_Click(object sender, EventArgs e)
         {
-            RunButton.Enabled = false;
+            //RunButton.Enabled = false;
 
             if (_cancellationTokenSource.IsCancellationRequested)
             {
@@ -64,6 +68,33 @@ namespace CancellationToken
 
             _cancellationTokenSource.Cancel();
             RunButton.Enabled = true;
+        }
+
+        private void RunDemobutton_Click(object sender, EventArgs e)
+        {
+            if (_cancellationTokenSource.IsCancellationRequested)
+            {
+                _cancellationTokenSource.Dispose();
+                _cancellationTokenSource = new CancellationTokenSource();
+            }
+
+            controlDemo1._cancellationToken = _cancellationTokenSource.Token;
+        }
+
+        private string controlsInfoStr;
+        private void button2_Click(object sender, EventArgs e)
+        {
+            controlsInfoStr = ControlMoverOrResizer.GetSizeAndPositionOfControlsToString(this);
+            Console.WriteLine();
+            //ControlMoverOrResizer.SetSizeAndPositionOfControlsFromString(shadowPanel1,"");
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrWhiteSpace(controlsInfoStr))
+            {
+                ControlMoverOrResizer.SetSizeAndPositionOfControlsFromString(this, controlsInfoStr);
+            }
         }
     }
 }

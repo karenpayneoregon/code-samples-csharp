@@ -23,6 +23,7 @@ namespace IEqualityComparerApp
             InitializeComponent();
 
             PersonList();
+
         }
 
         private void PersonList()
@@ -81,13 +82,13 @@ namespace IEqualityComparerApp
 
             List<PersonGroup1> groupResults1 = _persons
                 .GroupBy((person) => new { person.Name, person.Surname })
-                .Select((g) => 
+                .Select((@group) => 
                     new PersonGroup1()
                     {
-                        Count = g.Count(),
-                        FirstName = g.Key.Name,
-                        SurName = g.Key.Surname,
-                        PersonsList = g.ToList()
+                        Count = @group.Count(),
+                        FirstName = @group.Key.Name,
+                        SurName = @group.Key.Surname,
+                        PersonsList = @group.ToList()
                     })
                 .Where(personGroup => personGroup.Count >1)
                 .ToList();
@@ -105,14 +106,14 @@ namespace IEqualityComparerApp
 
             List<PersonGroup> groupResults2 =  _persons
                 .GroupBy((person) => new { person.Name, person.Surname })
-                .Select((g) => new PersonGroup
+                .Select((@group) => new PersonGroup
                 {
-                    PersonCount = g.Count(),
-                    FirstName = g.Key.Name,
-                    LastName = g.Key.Surname,
-                    Id = g.FirstOrDefault().Id,
-                    Count = g.Count(),
-                    PersonsList = g.ToList()
+                    PersonCount = @group.Count(),
+                    FirstName = @group.Key.Name,
+                    LastName = @group.Key.Surname,
+                    Id = @group.FirstOrDefault().Id,
+                    Count = @group.Count(),
+                    PersonsList = @group.ToList()
                 }).Where(personGroup => personGroup.PersonCount > 1).ToList();
 
 
@@ -136,14 +137,14 @@ namespace IEqualityComparerApp
             Console.WriteLine("groupResults3 results");
             List<PersonGroup2> groupResults3 = _persons
                 .GroupBy((person) => new { person.Name, person.Surname })
-                .Select((g) => new PersonGroup2
+                .Select(gouping => new PersonGroup2
                 {
-                    PersonCount = g.Count(),
-                    FirstName = g.Key.Name,
-                    LastName = g.Key.Surname,
-                    Id = g.FirstOrDefault().Id,
-                    Count = g.Count(),
-                    IdentifiersList = g.Select(x => x.Id).ToList()
+                    PersonCount = gouping.Count(),
+                    FirstName = gouping.Key.Name,
+                    LastName = gouping.Key.Surname,
+                    Id = gouping.FirstOrDefault().Id,
+                    Count = gouping.Count(),
+                    IdentifiersList = gouping.Select(x => x.Id).ToList()
                 }).Where(personGroup => personGroup.PersonCount > 1).ToList();
 
 
@@ -152,16 +153,7 @@ namespace IEqualityComparerApp
                 Console.WriteLine($"{personGroup.Id} {personGroup.FirstName} {personGroup.LastName} => {string.Join(",", personGroup.IdentifiersList)}");
             }
 
-
-
         }
-        private void button2_Click(object sender, EventArgs e)
-        {
-            
 
-        }
     }
-
-
-
 }

@@ -46,7 +46,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\ControlMoverOrResizer.cs" />
     <Compile Include="Classes\DelegatesSignatures.cs" />
+    <Compile Include="Classes\ShadowPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ControlDemo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlDemo.Designer.cs">
+      <DependentUpon>ControlDemo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -55,19 +65,26 @@
     </Compile>
     <Compile Include="Classes\MonitorArgs.cs" />
     <Compile Include="Classes\Operations.cs" />
+    <Compile Include="PanelDropShadow.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="ControlDemo.resx">
+      <DependentUpon>ControlDemo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -83,6 +100,20 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Images\tshadowdown.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\tshadowdownleft.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\tshadowdownright.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\tshadowright.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\tshadowtopright.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
