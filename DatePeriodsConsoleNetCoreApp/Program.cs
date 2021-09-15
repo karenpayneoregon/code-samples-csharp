@@ -38,9 +38,6 @@ namespace DatePeriodsConsoleNetCoreApp
 
     }
 
-
-
-    }
     public class Period
     {
         public DateTime FromDate;
