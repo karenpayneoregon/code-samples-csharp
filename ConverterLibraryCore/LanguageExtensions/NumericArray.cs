@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 
-namespace ConverterLibrary
+namespace ConverterLibraryCore.LanguageExtensions
 {
     public static class NumericArray
     {
@@ -48,7 +48,8 @@ namespace ConverterLibrary
                     new { IsInteger = true, Index = index } :
                     new { IsInteger = false, Index = index })
                 .ToArray()
-                .Where(item => item.IsInteger == false).Select(item => item.Index).ToArray();
+                .Where(item => item.IsInteger == false)
+                .Select(item => item.Index).ToArray();
         }
         /// <summary>
         /// Convert all values in array to int array where non int values will be set to the default value.
@@ -133,7 +134,8 @@ namespace ConverterLibrary
                         new { IsDouble = true, Index = index } :
                         new { IsDouble = false, Index = index })
                 .ToArray()
-                .Where(item => item.IsDouble == false).Select(item => item.Index).ToArray();
+                .Where(item => item.IsDouble == false).Select(item => item.Index)
+                .ToArray();
         }
 
         #endregion
@@ -200,7 +202,8 @@ namespace ConverterLibrary
                         new { IsDecimal = true, Index = index } :
                         new { IsDecimal = false, Index = index })
                 .ToArray()
-                .Where(item => item.IsDecimal == false).Select(item => item.Index).ToArray();
+                .Where(item => item.IsDecimal == false)
+                .Select(item => item.Index).ToArray();
         }
         #endregion
 
@@ -264,73 +267,11 @@ namespace ConverterLibrary
                         new { IsFloat = true, Index = index } :
                         new { IsFloat = false, Index = index })
                 .ToArray()
-                .Where(item => item.IsFloat == false).Select(item => item.Index).ToArray();
-        }
-        #endregion
-
-        #region short convert methods
-        /// <summary>
-        /// Determine if all string elements can represent decimal
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <returns></returns>
-        public static bool AllShort(this string[] sender) =>
-            sender.All(item => short.TryParse(item, out var test));
-
-        /// <summary>
-        /// Convert values in array to short array discards non short values in array.
-        /// </summary>
-        /// <param name="sender">string array</param>
-        /// <returns>All valid elements that are short discarding non short values</returns>
-        public static short[] ToShortArray(this string[] sender)
-        {
-
-            var shortArray = Array
-                .ConvertAll(sender,
-                    (input) => new
-                    {
-                        IsShort = short.TryParse(input, out var shortValue),
-                        Value = shortValue
-                    })
-                .Where(result => result.IsShort)
-                .Select(result => result.Value)
+                .Where(item => item.IsFloat == false).Select(item => item.Index)
                 .ToArray();
-
-            return shortArray;
-
-        }
-        /// <summary>
-        /// Convert all values in array to short array where non short values will be set to the default value.
-        /// </summary>
-        /// <param name="sender">string array</param>
-        /// <returns>All elements in array as short</returns>
-        public static float[] ToShortPreserveArray(this string[] sender)
-        {
-
-            var shortArray = Array.ConvertAll(sender, (input) =>
-            {
-                float.TryParse(input, out var shortValue);
-                return shortValue;
-            });
-
-            return shortArray;
-
-        }
-        /// <summary>
-        /// Get all non-short values
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <returns></returns>
-        public static int[] GetNonShortIndexes(this string[] sender)
-        {
-            return sender.Select(
-                    (item, index) => short.TryParse(item, out var tResult) ?
-                        new { IsShort = true, Index = index } :
-                        new { IsShort = false, Index = index })
-                .ToArray()
-                .Where(item => item.IsShort == false).Select(item => item.Index).ToArray();
         }
         #endregion
+
 
     }
 }

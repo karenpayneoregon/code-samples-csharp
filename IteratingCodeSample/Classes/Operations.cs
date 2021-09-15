@@ -10,8 +10,8 @@ namespace IteratingCodeSample.Classes
         public delegate void DisplayInformation(Countries sender);
         public static event DisplayInformation DisplayInformationHandler;
 
-        private static string _connectionString = "Data Source=.\\sqlexpress;Initial " +
-                                          "Catalog=northwind2020;Integrated Security=True";
+        private static string _connectionString => 
+            "Data Source=.\\sqlexpress;Initial Catalog=northwind2020;Integrated Security=True";
 
         /// <summary>
         /// Get countries, the user interface remains responsive
