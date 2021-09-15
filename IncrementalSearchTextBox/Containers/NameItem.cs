@@ -1,4 +1,4 @@
-﻿namespace IncrementalSearchTextBox
+﻿namespace IncrementalSearchTextBox.Containers
 {
     public class NameBase
     {
