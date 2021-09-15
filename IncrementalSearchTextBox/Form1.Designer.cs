@@ -31,6 +31,7 @@ namespace IncrementalSearchTextBox
         {
             this.GirlsNameListBox = new System.Windows.Forms.ListBox();
             this.SearchTextBox = new System.Windows.Forms.TextBox();
+            this.CurrentButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // GirlsNameListBox
@@ -48,11 +49,22 @@ namespace IncrementalSearchTextBox
             this.SearchTextBox.Size = new System.Drawing.Size(166, 20);
             this.SearchTextBox.TabIndex = 1;
             // 
+            // CurrentButton
+            // 
+            this.CurrentButton.Location = new System.Drawing.Point(31, 291);
+            this.CurrentButton.Name = "CurrentButton";
+            this.CurrentButton.Size = new System.Drawing.Size(166, 23);
+            this.CurrentButton.TabIndex = 2;
+            this.CurrentButton.Text = "Current";
+            this.CurrentButton.UseVisualStyleBackColor = true;
+            this.CurrentButton.Click += new System.EventHandler(this.CurrentButton_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(229, 332);
+            this.Controls.Add(this.CurrentButton);
             this.Controls.Add(this.SearchTextBox);
             this.Controls.Add(this.GirlsNameListBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
@@ -68,6 +80,7 @@ namespace IncrementalSearchTextBox
 
         private System.Windows.Forms.ListBox GirlsNameListBox;
         private System.Windows.Forms.TextBox SearchTextBox;
+        private System.Windows.Forms.Button CurrentButton;
     }
 }
 

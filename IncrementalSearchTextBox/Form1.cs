@@ -49,5 +49,13 @@ namespace IncrementalSearchTextBox
             GirlsNameListBox.DataSource = _girlNamesBindingSource;
 
         }
+
+        private void CurrentButton_Click(object sender, EventArgs e)
+        {
+            if (_girlNamesBindingSource.Current == null) return;
+            // ReSharper disable once LocalizableElement
+            MessageBox.Show($"{_girlsNamesBindingList[_girlNamesBindingSource.Position].Index}");
+
+        }
     }
 }
