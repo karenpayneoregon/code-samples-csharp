@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.1231
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31624.102
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Class project", "Class project", "{AE963514-7D0C-4A0D-B3D4-5D0EC1442B35}"
 EndProject
@@ -174,6 +174,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersonalData", "PersonalData\PersonalData.csproj", "{AB5DC534-2639-496F-8985-C2ED9E59A1E5}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SingletonExample1", "SingletonExample1\SingletonExample1.csproj", "{7BAC9117-70D9-4EE7-9D73-250F7732D7FC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IncrementalSearchTextBox", "IncrementalSearchTextBox\IncrementalSearchTextBox.csproj", "{3ECA164F-0AF4-4435-B8DA-EB162ECE6989}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -566,6 +568,12 @@ Global
 		{7BAC9117-70D9-4EE7-9D73-250F7732D7FC}.NormalDebug|Any CPU.Build.0 = Debug|Any CPU
 		{7BAC9117-70D9-4EE7-9D73-250F7732D7FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7BAC9117-70D9-4EE7-9D73-250F7732D7FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3ECA164F-0AF4-4435-B8DA-EB162ECE6989}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3ECA164F-0AF4-4435-B8DA-EB162ECE6989}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3ECA164F-0AF4-4435-B8DA-EB162ECE6989}.NormalDebug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3ECA164F-0AF4-4435-B8DA-EB162ECE6989}.NormalDebug|Any CPU.Build.0 = Debug|Any CPU
+		{3ECA164F-0AF4-4435-B8DA-EB162ECE6989}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3ECA164F-0AF4-4435-B8DA-EB162ECE6989}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -646,6 +654,7 @@ Global
 		{4235DF67-DD54-4849-A024-ED15E200FD4E} = {AF1D6999-6E01-45C2-A94C-D20F032B4CF3}
 		{AB5DC534-2639-496F-8985-C2ED9E59A1E5} = {AF1D6999-6E01-45C2-A94C-D20F032B4CF3}
 		{7BAC9117-70D9-4EE7-9D73-250F7732D7FC} = {AF1D6999-6E01-45C2-A94C-D20F032B4CF3}
+		{3ECA164F-0AF4-4435-B8DA-EB162ECE6989} = {AF1D6999-6E01-45C2-A94C-D20F032B4CF3}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D3524478-BF74-469F-8C79-7CBBFCC7C4EA}
