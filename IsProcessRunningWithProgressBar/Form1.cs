@@ -24,6 +24,7 @@ namespace IsProcessRunningWithProgressBar
             if (process.FirstOrDefault() == null)
             {
                 progressBar1.Visible = false;
+                RunningLabel.Text = "Not running";
             }
             else
             {
@@ -32,10 +33,11 @@ namespace IsProcessRunningWithProgressBar
                     currentProcess.MainModule != null && 
                     currentProcess.MainModule.FileName.StartsWith(@"C:\OED\Dotnetland\SIDES MPC\Debug")) != default(Process);
 
-                if (isRunning && !progressBar1.Visible)
+                if (isRunning)
                 {
                     progressBar1.Visible = true;
                 }
+                RunningLabel.Text = "Running";
             }
 
         }
